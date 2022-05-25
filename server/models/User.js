@@ -9,23 +9,27 @@ const userSchema = new Schema ({
         type: String,
         required: true,
         unique: true,
+        trim: true,
     },
     email: {
         type: String,
         required: true,
         isEmail: true,
         unique: true,
+        match: [/.+@.+\..+/, 'Please enter a valid email address.'],
     },
     password: {
         type: String,
         required: true,
     },
-    posted_tasks: {
-        type: Array,
-    },
-    claimed_tasks: {
-        type: Array,
-    },
+    posted_tasks: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Task',
+    }],
+    claimed_tasks: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Task',
+    }],
     zip_code: {
         type: Number,
         required: true,

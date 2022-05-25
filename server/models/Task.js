@@ -12,11 +12,22 @@ const taskSchema = new Schema ({
     open: {
         type: Boolean,
     },
-    created_by: [userSchema],
+    created_by: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        }
+    ],
     created_at: {
         type: Date,
+        default: Date.now,
     },
-    claimed_by: [userSchema],
+    claimed_by: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        }
+    ],
     completed_at: {
         Type: Date,
     },
