@@ -37,6 +37,19 @@ const userSchema = new Schema ({
     address: {
         type: String,
     },
+    city: {
+        type: String,
+    },
+    state: {
+        type: String,
+    },
+    latitude: {
+        type: Number,
+    },
+    longitude: {
+        type: Number,
+    },
+
 });
 
 const User = model('User', userSchema);

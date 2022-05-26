@@ -34,6 +34,20 @@ const taskSchema = new Schema ({
     contactless: {
         Type: Boolean,
     },
+    city: {
+        Type: String,
+        required: true,
+    },
+    state: {
+        Type: String,
+        required: true,
+    },
+    latitude: {
+        Type: Number,
+    },
+    longitude: {
+        Type: Number,
+    },
 });
 
 const Task = model('Task', taskSchema);
