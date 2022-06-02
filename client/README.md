@@ -77,7 +77,7 @@ Roles:
 Emma - Pseudocode, Backend, queries, mutations, models, schemas, authentication, CSS
 Emerald - UI/UX, Design, Backend
 David - Front end, Design, React 
-Dylan - Zapier, Zip code radius w/ latitude longitude or map API (geolocation) ** Needs more research (Emma & Dylan)
+Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geolocation) ** Needs more research (Emma & Dylan)
 
 
 // MVP:
