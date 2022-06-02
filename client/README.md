@@ -115,10 +115,11 @@ Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geoloca
 // FindOne Task Page - ** If you click on a task in your area ** 
 All single task information 
 TODO (Emma): Add missing items to schemas/typedefs
--- Name
--- Category*
--- Description*
--- Directions*
+-- name
+-- category*
+-- description*
+-- directions*
+-- contactlessDirections*
 -- created_by: user
 -- claimed_by: user
 -- A button to claim the task
