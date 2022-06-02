@@ -43,7 +43,7 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 
 Roles:
-Emma - Pseudocode, Backend, queries, mutations, models, schemas, authentication, CSS
+Emma - Pseudocode, Backend, queries, mutations, models, schemas, authentication, CSS, test data (seeds)
 Emerald - UI/UX, Design, Backend, CSS, React
 David - Front end, Design, React, "Toggle Elements" (ifLoggedIn) w/ Emma, Presentation
 Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geolocation) ** Needs more research (Emma & Dylan), Presentation
