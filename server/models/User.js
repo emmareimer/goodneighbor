@@ -1,11 +1,14 @@
 const { Schema, model } = require('mongoose');
 
+
+// TODO (Emma): Change posted tasks and claimed tasks to full task json data instead of objectId
+
 const userSchema = new Schema ({
     name: {
         type: String,
         required: true,
     },
-    usernae: {
+    username: {
         type: String,
         required: true,
         unique: true,
