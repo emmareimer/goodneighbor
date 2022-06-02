@@ -107,12 +107,10 @@ Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geoloca
         -- Furniture Assembly
         -- Errands
         -- Moving
+-- (findAll) body with all open tasks in your location mapped
 
 
--- body with all open tasks in your location mapped
-
-
-// FindOne Task Page - ** If you click on a task in your area ** 
+// (FindOne) Task Page - ** If you click on a task in your area ** 
 All single task information 
 TODO (Emma): Add missing items to schemas/typedefs
 -- name
@@ -133,6 +131,15 @@ Will include:
 -- Tasks are links to render back to the findone task page
 -- Edit zip code TODO: (Emma) add in to typedefs/resolvers
 
+// CreateTask page
+-- name
+-- category*
+-- description*
+-- directions*
+-- contactlessDirections*
+-- created_by: user
+-- claimed_by: user
+-- A button to claim the task
 
 // Stretch Goals:
 -- Flagging/reporting tasks
