@@ -79,6 +79,15 @@ Emerald - UI/UX, Design, Backend
 David - Front end, Design, React 
 Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geolocation) ** Needs more research (Emma & Dylan)
 
+// Roadmap
+
+
+BY NEXT CLASS (6/4)
+Emma - 
+Emerald - 
+David - 
+Dylan - 
+
 
 // MVP:
 -- Contactless - we set the safety parameters - we're in control of deadlines/notifications/etc.
