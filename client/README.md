@@ -43,10 +43,10 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 
 Roles:
-Emma - Pseudocode, Backend, queries, mutations, models, schemas, authentication, CSS, test data (seeds)
+Emma - Pseudocode, Backend, queries, mutations, models, schemas, authentication, polishing, test data (seeds)
 Emerald - UI/UX, Design, Backend, CSS, React
-David - Front end, Design, React, "Toggle Elements" (ifLoggedIn) w/ Emma, Presentation
-Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geolocation) ** Needs more research (Emma & Dylan), Presentation
+David - Front end, React, "Toggle Elements" (ifLoggedIn) w/ Emma, Presentation
+Dylan - React, Zip code radius w/ latitude longitude or map API (geolocation), expanding cards for tasks, Presentation, Stretch Goal: Zapier
 
 
 // Roadmap
@@ -96,8 +96,9 @@ TODO (Emma): Add missing items to schemas/typedefs
         -- name
         -- category*
         -- description*
-        -- directions*
-        -- contactlessDirections*
+        -- instructions* 
+        -- full address (will be shown to the user who claims the task on their profile)
+        -- contactlessInstructions* 
         -- created_by: user
         -- claimed_by: user
         -- A button to claim the task
@@ -115,10 +116,10 @@ Will include:
         -- category*
         -- description*
         -- directions*
+        -- full address
         -- contactlessDirections*
         -- created_by: user
         -- claimed_by: user
-        -- A button to claim the task
 
 8. Stretch Goals:
 -- Flagging/reporting tasks
