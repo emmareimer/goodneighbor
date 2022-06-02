@@ -39,57 +39,29 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
 
 Roles:
 Emma - Pseudocode, Backend, queries, mutations, models, schemas, authentication, CSS
-Emerald - UI/UX, Design, Backend
-David - Front end, Design, React 
-Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geolocation) ** Needs more research (Emma & Dylan)
+Emerald - UI/UX, Design, Backend, CSS, React
+David - Front end, Design, React, "Toggle Elements" (ifLoggedIn) w/ Emma, Presentation
+Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geolocation) ** Needs more research (Emma & Dylan), Presentation
 
 
 // Roadmap
 
 BY NEXT CLASS (6/4)
-Emma - 
-Emerald - 
-David - 
-Dylan - 
+Emma - Mongodb, graphql, authentication, more research
+Emerald - Figma
+David - Figma, Main Container
+Dylan - Geolocation
 
 
 // MVP:
 -- Contactless - we set the safety parameters - we're in control of deadlines/notifications/etc.
 -- Mailjs
+-- Mobile friendly
 
 PAGES:
 
@@ -121,37 +93,37 @@ PAGES:
 5. (FindOne) Task Page - ** If you click on a task in your area ** 
 All single task information 
 TODO (Emma): Add missing items to schemas/typedefs
--- name
--- category*
--- description*
--- directions*
--- contactlessDirections*
--- created_by: user
--- claimed_by: user
--- A button to claim the task
-
+        -- name
+        -- category*
+        -- description*
+        -- directions*
+        -- contactlessDirections*
+        -- created_by: user
+        -- claimed_by: user
+        -- A button to claim the task
 
 6. Profile page -
 Will include:
--- Open tasks that you've created
--- Claimed tasks that you've completed
--- Claimed tasks 
--- Tasks are links to render back to the findone task page
--- Edit zip code TODO: (Emma) add in to typedefs/resolvers
+        -- Open tasks that you've created
+        -- Claimed tasks that you've completed
+        -- Claimed tasks 
+        -- Tasks are links to render back to the findone task page
+        -- Edit zip code TODO: (Emma) add in to typedefs/resolvers
 
 7. CreateTask page
--- name
--- category*
--- description*
--- directions*
--- contactlessDirections*
--- created_by: user
--- claimed_by: user
--- A button to claim the task
+        -- name
+        -- category*
+        -- description*
+        -- directions*
+        -- contactlessDirections*
+        -- created_by: user
+        -- claimed_by: user
+        -- A button to claim the task
 
 8. Stretch Goals:
 -- Flagging/reporting tasks
 -- Allowing users to enter hyperlinks
+-- Modals or Bootstrap Alerts
 -- More user input on deadlines, contactless boolean and what that does
 -- Zapier
 -- Add more to task page
@@ -159,7 +131,6 @@ Will include:
 -- Save function
 -- Calendar of when tasks need to be completed
 -- Calendar view
-
 
 
 // Color scheme: crisp, modern, friendly - blue, green, white, black???
