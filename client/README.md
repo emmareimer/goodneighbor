@@ -53,8 +53,8 @@ Dylan - React, Zapier, Zip code radius w/ latitude longitude or map API (geoloca
 
 BY NEXT CLASS (6/4)
 Emma - Mongodb, graphql, authentication, more research
-Emerald - Figma
-David - Figma, Main Container
+Emerald - Completed figma design
+David - Figma, After we decide on Figma -> Main Container, Strecth: Nav & Footer
 Dylan - Geolocation
 
 
