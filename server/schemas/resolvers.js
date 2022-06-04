@@ -16,19 +16,31 @@ const resolvers = {
       },
     },
 
-    Mutation: { // TODO: Add mutation for loginUser and registerUser using jwt tokens
-    //   createMatchup: async (parent, args) => {
-    //     const matchup = await Matchup.create(args);
-    //     return matchup;
-    //   },
-    //   createVote: async (parent, { _id, techNum }) => {
-    //     const vote = await Matchup.findOneAndUpdate(
-    //       { _id },
-    //       { $inc: { [`tech${techNum}_votes`]: 1 } },
-    //       { new: true }
-    //     );
-    //     return vote;
-    //   },
+    Mutation: { 
+      addUser: async (parent, args) => {
+        const user = await User.create(args);
+        const token = signToken(user);
+  
+        return { token, user };
+      },
+      login: async (parent, { email, password }) => {
+        const user = await User.findOne({ email });
+  
+        if (!user) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
+  
+        const correctPw = await user.isCorrectPassword(password);
+  
+        if (!correctPw) {
+          throw new AuthenticationError('Incorrect credentials');
+        }
+  
+        const token = signToken(user);
+  
+        return { token, user };
+      },
+      
     },
   };
   
