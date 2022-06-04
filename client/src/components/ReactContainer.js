@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Header from './Header';
+import Nav from './Nav';
 import Home from './pages/Home';
-import Footer from './Footer';
+import Footer from './Nav';
 
 const Container = () => {
     const [currentPage, setCurrentPage] = useState('Home');
@@ -16,7 +16,7 @@ const Container = () => {
 
     return (
         <div>
-            <Header />
+            <Nav />
             <Footer />
         </div>
     )
