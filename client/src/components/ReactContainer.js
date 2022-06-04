@@ -3,7 +3,7 @@ import Header from './Header';
 import Home from './pages/Home';
 import Footer from './Footer';
 
-const MainContainer = () => {
+const Container = () => {
     const [currentPage, setCurrentPage] = useState('Home');
 
     const renderPage = () => {
@@ -22,4 +22,4 @@ const MainContainer = () => {
     )
 }
 
-export default MainContainer;
+export default Container;
