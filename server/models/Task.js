@@ -39,33 +39,33 @@ const taskSchema = new Schema ({
     completed_by: [
         {
             type: Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'User',
         }
     ],
     completed_at: {
-        Type: Date,
+        type: Date,
     },
     contactless: {
-        Type: Boolean,
+        type: Boolean,
     },
     city: {
-        Type: String,
+        type: String,
         required: true,
     },
     state: {
-        Type: String,
+        type: String,
         required: true,
     },
     zipcode: {
-        Type: Number,
+        type: Number,
         required: true,
     },
     streetAddress: {
-        Type: String,
+        type: String,
         required: true,
     },
     optionalUnitNumber: {
-        Type: String,
+        type: String,
     }
 });
 
