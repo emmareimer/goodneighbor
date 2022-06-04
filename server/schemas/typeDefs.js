@@ -41,6 +41,7 @@ const typeDefs = gql`
     }
 
     type Query {
+        task: Task
         tasks: [Task]
         user(_id: ID!): User
     }

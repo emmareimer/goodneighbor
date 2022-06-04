@@ -1,7 +1,12 @@
 const { Task, User } = require('../models');
+const { AuthenticationError } = require('apollo-server-express');
+const { signToken } = require('../utils/auth');
 
 const resolvers = {
     Query: {
+      task: async (parent, {_id}) => {
+        return Task.findOne({_id});
+      },
       tasks: async (parent, args = {}) => {
         // const params = open ? { open } : {};
         return Task.find(args);
@@ -9,12 +14,9 @@ const resolvers = {
       user: async (parent, {_id}) => {
           return User.findOne({_id});
       },
-      userLogin: async (parent, {username, password}) => {
-          // TODO: bcrypt compare plaintext pass to stored pass
-        //   return User.findOne({username, password})
-      }
     },
-    Mutation: { // TODO: Add mutation for userLogin and signup using jwt tokens
+
+    Mutation: { // TODO: Add mutation for loginUser and registerUser using jwt tokens
     //   createMatchup: async (parent, args) => {
     //     const matchup = await Matchup.create(args);
     //     return matchup;
