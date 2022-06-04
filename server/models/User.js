@@ -20,6 +20,7 @@ const userSchema = new Schema ({
         isEmail: true,
         unique: true,
         match: [/.+@.+\..+/, 'Please enter a valid email address.'],
+        trim: true,
     },
     password: {
         type: String,
@@ -33,26 +34,21 @@ const userSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'Task',
     }],
-    zip_code: {
-        type: Number,
-        required: true,
-    },
-    address: {
-        type: String,
-    },
     city: {
         type: String,
     },
     state: {
         type: String,
     },
-    latitude: {
+    zip_code: {
         type: Number,
     },
-    longitude: {
-        type: Number,
+    streetAddress: {
+        type: String,
     },
-
+    optionalUnitNumber: {
+        type: String,
+    }
 });
 
 const User = model('User', userSchema);
