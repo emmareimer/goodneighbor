@@ -3,14 +3,15 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type User {
         _id: ID!
-        name: String!
-        username: String!
+        name: String
+        email: String!
+        username: String
         password: String!
         posted_tasks: [Task]
         claimed_tasks: [Task]
         city: String
         state: String
-        zipcode: Int!
+        zipcode: Int
         streetAddress: String
         optionalUnitNumber: String
     }
@@ -47,12 +48,12 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addUser(email: String!, password: String!): Auth
+        addUser(email: String!, password: String!, username: String): Auth
 
         updateTask(id: ID, completed_by: String, completed_at: String, open: Boolean, latitude: Int, longitude: Int): Task
         updateUser(id: ID, posted_tasks: String, claimed_tasks: String, address: String, city: String, state: String): User
 
-        addTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: User, contactless: Boolean, city: String, State:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
+        addTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: String, contactless: Boolean, city: String, State:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
 
         loginUser(email: String!, password: String!): Auth
     }
