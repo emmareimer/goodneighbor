@@ -40,16 +40,15 @@ const resolvers = {
   
         return { token, user };
       },
-      // updateTask: {
-
-      // },
       // updateUser: {
 
       // },
       // addTask: {
 
-      // }
+      // },
+      // updateTask: {
 
+      // }
     },
   };
   
