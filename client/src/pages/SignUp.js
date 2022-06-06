@@ -7,7 +7,7 @@ import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 // import styled from "styled components";
-import "../styles/SignUp.css";
+// import "../styles/SignUp.css";ç
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -77,7 +77,7 @@ const Signup = () => {
               </h1>
               <h2 className="card-subtitle">
                 <span style={styles.ContainerSubtitleStyle}>
-                  Already have an Account? <a href="#">Login</a>{" "}
+                  Already have an Account? <a href="/login">Login</a>{" "}
                 </span>
               </h2>
               <div className="card-body">
