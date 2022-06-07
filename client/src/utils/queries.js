@@ -2,6 +2,7 @@ import { gql } from "@apollo/client";
 
 // -------------- USER QUERIES --------------
 
+// TODO UPDATE TO GET USER ID
 // -------------- GET ONE USER --------------
 export const GET_USER = gql `
 query User($email: String!) {
@@ -20,6 +21,16 @@ query User($email: String!) {
 `;
 
 // ------------- GET USER POSTED TASKS -------------
+
+export const GET_USER_POSTED_TAKS = gql`
+query User($email: String!) {
+  user(email: $email) {
+    posted_tasks {
+      _id
+    }
+  }
+}
+`;
 
 // ???????? GET ALL USER POSTED TASKS OPEN:TRUE
 

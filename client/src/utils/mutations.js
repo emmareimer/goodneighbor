@@ -5,8 +5,8 @@ import { gql } from "@apollo/client";
 // ------------- ADD USER ---------------
 
 export const ADD_USER = gql`
-mutation addUser ($email: String!, $password: String!, $username: String!, $name: String) {
-  addUser(email: $email, password: $password, username: $username, name: $name) {
+mutation addUser ($email: String!, $password: String!, $username: String!) {
+  addUser(email: $email, password: $password, username: $username) {
     token
     user {
       username
@@ -23,7 +23,6 @@ mutation addUser ($email: String!, $password: String!, $username: String!, $name
 //     "email": "emma@test.com",
 //     "password": "mypassword",
 //     "username": "emmatest",
-//     "name": "Emma Test"
 // }
 
 // ---------------- LOGIN USER -------------
@@ -81,19 +80,89 @@ mutation Mutation($name: String, $email: String, $username: String, $password: S
 
 // ---------------- UPDATE USER POSTED TASKS -----------------
 
+export const UPDATE_USER_POSTED_TASK = gql`
+mutation Mutation($email: String, $postedTasks: [ID]) {
+  updateUser(email: $email, posted_tasks: $postedTasks) {
+    posted_tasks {
+      _id
+    }
+  }
+}
+`;
+
 // TEST DATA FOR UPDATE USER POSTED TASKS
+
+// {
+//   "email": "emma@test.com",
+//   "postedTasks": "629f6a132b355e02efcf16cf"
+// }
 
 // ---------------- UPDATE USER CLAIMED TASKS -----------------
 
+export const UPDATE_USER_CLAIMED_TASK = gql`
+mutation UpdateUser($email: String, $claimedTasks: [ID]) {
+  updateUser(email: $email, claimed_tasks: $claimedTasks) {
+    email
+    claimed_tasks {
+      _id
+    }
+  }
+}
+`;
+
 // TEST DATA FOR UPDATE USER CLAIMED TASKS 
 
+// {
+//   "email": "dylan@test.com",
+//   "claimedTasks": "629f68ec2b355e02efcf16c7"
+// }
 
 
 // -------------- TASK MUTATIONS --------------
 
 // ---------------- ADD TASK ------------------
 
+export const ADD_TASK = gql`
+mutation Mutation($name: String, $taskDescription: String, $open: Boolean, $category: String, $createdBy: String, $city: String, $state: String, $zipcode: Int, $streetAddress: String, $optionalUnitNumber: String, $instructions: String, $email: String, $postedTasks: [ID]) {
+  addTask(name: $name, taskDescription: $taskDescription, open: $open, category: $category, created_by: $createdBy, city: $city, state: $state, zipcode: $zipcode, streetAddress: $streetAddress, optionalUnitNumber: $optionalUnitNumber, instructions: $instructions) {
+    name
+    taskDescription
+    open
+    category
+    instructions
+    created_by {
+      _id
+    }
+    created_at
+    city
+    state
+    zipcode
+    streetAddress
+    optionalUnitNumber
+  }
+  updateUser(email: $email) {
+    posted_tasks {
+      _id
+    }
+  }
+}
+`;
+
 // TEST DATA FOR ADD TASK
+
+// {
+//   "name": "This is a new task",
+//   "taskDescription": "Description of task",
+//   "open": true,
+//   "category": "Landscaping",
+//   "instructions": "these are instructions",
+//   "city": "Littleton",
+//   "state": "Colorado",
+//   "zipcode": 80126,
+//   "streetAddress": "8925 Test St",
+//   "optionalUnitNumber": null,
+//   "createdBy": "629cd21cb085f4d937f863c9",
+// }
 
 // --------------- UPDATE SINGLE TASK -----------------
 
