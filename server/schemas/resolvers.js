@@ -11,8 +11,8 @@ const resolvers = {
         // const params = open ? { open } : {};
         return Task.find(args);
       },
-      user: async (parent, {_id}) => {
-          return User.findOne({_id});
+      user: async (parent, {email}) => {
+          return User.findOne({email});
       },
     },
 
@@ -40,9 +40,9 @@ const resolvers = {
   
         return { token, user };
       },
-      // updateUser: {
-
-      // },
+      updateUser: async (parent, args) => {
+        return await User.findOneAndUpdate({email: args.email}, {name: args.name, email: args.email, username: args.username, password: args.password, posted_tasks: args.posted_tasks, claimed_tasks: args.claimed_tasks, city: args.city, state: args.state, zipcode: args.zipcode, streetAddress: args.streetAddress, optionalUnityNumber: args.optionalUnitNumber}, { new: true })
+      },
       // addTask: {
 
       // },

@@ -1,11 +1,12 @@
-import { gql } from '@apollo/client';
-
-export const GET_ME = gql`
-  query getMe {
-    me {
-      _id
-      username
-      email
-    }
-  }
-`;
+// query Query($email: String!) {
+//     user(email: $email) {
+//       name
+//       email
+//       username
+//       city
+//       state
+//       zipcode
+//       streetAddress
+//       optionalUnitNumber
+//     }
+//   }
