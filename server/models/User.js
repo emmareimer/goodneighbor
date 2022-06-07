@@ -37,7 +37,7 @@ const userSchema = new Schema ({
     state: {
         type: String,
     },
-    zip_code: {
+    zipcode: {
         type: Number,
     },
     streetAddress: {
