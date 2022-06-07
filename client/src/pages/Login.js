@@ -6,10 +6,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-
 import Auth from "../utils/auth";
-// import { normalizePathname } from "react-router/lib/router";
-// import "../styles/Login.css"; (for font, color, and size variables)
+import { Card, Button, Form } from "react-bootstrap";
 
 const styles = {
   ContainerTitle: {
@@ -141,7 +139,7 @@ const Login = (props) => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         {/* HeaderNav with Login and SignUp buttons; GN logo*/}
-        <div className="card">
+        <Card>
           <h1 className="card-header" style={styles.ContainerTitle}>
             Login to <span>goodneighbor</span>
           </h1>
@@ -153,9 +151,10 @@ const Login = (props) => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <span style={styles.InputTitle}>Email address</span>
-                <input
+              <Form onSubmit={handleFormSubmit}>
+                <Form.Group>
+                <Form.Label style={styles.InputTitle}>Email address</Form.Label>
+                <Form.Control
                   className="form-input"
                   placeholder=""
                   name="email"
@@ -163,30 +162,33 @@ const Login = (props) => {
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <span style={styles.InputTitle}>Password</span>
-                <input
-                  className="form-input"
-                  placeholder=""
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
+                </Form.Group>
+                <Form.Group>
+                    <Form.Label style={styles.InputTitle}>Password</Form.Label>
+                    <Form.Control
+                      className="form-input"
+                      placeholder=""
+                      name="password"
+                      type="password"
+                      value={formState.password}
+                      onChange={handleChange}
+                    />
+                </Form.Group>
+                <Button
                   className="btn btn-block btn-primary"
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
                 <div styles={styles.ButtonText1}> Log in </div>
-                </button>
-              </form>
+                </Button>
+              </Form>
             )}
             <div styles={styles.Divider}>
               <div styles={styles.Divider1}></div>
             </div>
             <div styles={styles.SignUp}>
                 <span styles={styles.ButtonTitle}> Don't have an account? </span>
-                <button
+                <Button
                   styles={styles.RedirectButton}
                   className="btn btn-block btn-primary"
                   style={{ cursor: "pointer" }}
@@ -194,7 +196,7 @@ const Login = (props) => {
                 //   onClick="/signup"
                 >
                  <div styles={styles.ButtonText2}> Sign up </div>
-                </button>
+                </Button>
             </div>
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
@@ -202,7 +204,7 @@ const Login = (props) => {
               </div>
             )}
           </div>
-        </div>
+        </Card>
       </div>
     </main>
   );
