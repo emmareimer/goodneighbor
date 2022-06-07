@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-
+import { Container, Card, Button} from "react-bootstrap";
 // import styled from "styled components";
 // import "../styles/SignUp.css"; and/or the Poppins Google Font
 const styles = {
@@ -106,8 +106,8 @@ const SignUp = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         {/* HeaderNav with Login and SignUp buttons; GN logo*/}
-        <div className="container-fluid col-4">
-          <div className="card">
+        <Container>
+          <Card>
             <h1 className="card-header">
                 <span style={styles.ContainerTitle}>
                   Create an account
@@ -161,14 +161,14 @@ const SignUp = () => {
                     Use 8 or more characters with a mix of letters, numbers
                     /u0026 symbols{" "}
                   </span>
-                  <button
+                  <Button
                     styles={styles.SubmitButton}
                     className="btn btn-block btn-primary"
                     style={{ cursor: "pointer" }}
                     type="submit"
                   >
                    <div styles={styles.ButtonText1}> Create an account </div>
-                  </button>
+                  </Button>
                 </form>
               )}
               {error && (
@@ -177,11 +177,11 @@ const SignUp = () => {
                 </div>
               )}
             </div>
-          </div>
-        </div>
+          </Card>
+        </Container>
       </div>
     </main>
   );
-};
+}
 
 export default SignUp;
