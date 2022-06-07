@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import 'bootstrap/dist/css/bootstrap.css';
-import './index.css';
-import 'https://fonts.googleapis.com/css?family=Poppins:400,700,500|Inter:400'
+// import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
