@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Header from './Header';
+import Nav from './Nav';
 import Home from './pages/Home';
 import Footer from './Footer';
 
@@ -16,7 +16,7 @@ const Container = () => {
 
     return (
         <div>
-            <Header />
+            <Nav />
             <Footer />
         </div>
     )
