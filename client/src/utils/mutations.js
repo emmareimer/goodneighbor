@@ -1,9 +1,11 @@
 import { gql } from "@apollo/client";
 
+// -------------- USER MUTATIONS --------------
+
 // ------------- ADD USER ---------------
 
 export const ADD_USER = gql`
-mutation addUser ($email: String!, $password: String!, $username: String!, $name: String!) {
+mutation addUser ($email: String!, $password: String!, $username: String!, $name: String) {
   addUser(email: $email, password: $password, username: $username, name: $name) {
     token
     user {
@@ -85,10 +87,16 @@ mutation Mutation($name: String, $email: String, $username: String, $password: S
 
 // TEST DATA FOR UPDATE USER CLAIMED TASKS 
 
+
+
+// -------------- TASK MUTATIONS --------------
+
 // ---------------- ADD TASK ------------------
 
 // TEST DATA FOR ADD TASK
 
-// --------------- UPDATE TASK -----------------
+// --------------- UPDATE SINGLE TASK -----------------
 
 // TEST DATA FOR UPDATE TASKS
+
+// --------------- DELETE TASK ---------------------
