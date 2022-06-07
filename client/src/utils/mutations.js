@@ -46,9 +46,45 @@ mutation Mutation($password: String!, $email: String) {
 //     "password": "mypassword"
 // }
 
-//----------------- UPDATE USER ---------------
+//----------------- UPDATE USER PROFILE ---------------
 
-// TEST DATA FOR UPDATE USER
+export const UPDATE_USER_PROFILE = gql`
+mutation Mutation($name: String, $email: String, $username: String, $password: String, $city: String, $state: String, $zipcode: Int, $streetAddress: String, $optionalUnitNumber: String) {
+  updateUser(name: $name, email: $email, username: $username, password: $password, city: $city, state: $state, zipcode: $zipcode, streetAddress: $streetAddress, optionalUnitNumber: $optionalUnitNumber) {
+    name
+    email
+    username
+    password
+    city
+    state
+    zipcode
+    optionalUnitNumber
+    streetAddress
+  }
+}
+`;
+
+// TEST DATA FOR UPDATE USER PROFILE
+
+// {
+//   "name": "Emma Test",
+//   "email": "emma@test.com",
+//   "username": "NewerEmma",
+//   "password": "$2b$10$CbG/ZMNjfiqSJSWaDEoUBe3fFdR0hJ3ltjtudjfFCQmWhnWKqT.OS",
+//   "city": "Littleton",
+//   "state": "Colorado",
+//   "zipcode": 80126,
+//   "streetAddress": "8925 Test Street",
+//   "optionalUnitNumber": null
+// }
+
+// ---------------- UPDATE USER POSTED TASKS -----------------
+
+// TEST DATA FOR UPDATE USER POSTED TASKS
+
+// ---------------- UPDATE USER CLAIMED TASKS -----------------
+
+// TEST DATA FOR UPDATE USER CLAIMED TASKS 
 
 // ---------------- ADD TASK ------------------
 
