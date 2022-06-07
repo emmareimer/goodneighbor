@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import { Container, Card, Button} from "react-bootstrap";
-// import styled from "styled components";
-// import "../styles/SignUp.css"; and/or the Poppins Google Font
+import { Card, Form, Button} from "react-bootstrap";
+
 const styles = {
   ContainerTitle: {
     color: "var(--mine-shaft)",
@@ -108,17 +107,17 @@ const SignUp = () => {
         {/* HeaderNav with Login and SignUp buttons; GN logo*/}
         <div>
           <Card>
-            <h1 className="card-header">
+            <Card.Header>
                 <span style={styles.ContainerTitle}>
                   Create an account
                 </span>
-            </h1>
-            <h2 className="card-subtitle">
+            </Card.Header>
+            <Card.Subtitle>
               <span style={styles.ContainerSubtitle}>
                 Already have an Account? <a href="/login">Login</a>{" "}
               </span>
-            </h2>
-            <div className="card-body">
+            </Card.Subtitle>
+            <Card.Body>
               {data ? (
                 // dont forget to edit this message later!
                 <p>
@@ -126,41 +125,47 @@ const SignUp = () => {
                   <Link to="/">back to the homepage.</Link>
                 </p>
               ) : (
-                <form onSubmit={handleFormSubmit}>
-                  <span style={styles.InputTitle}>
-                    What should we call you?
-                  </span>
-                  <input
-                    style={styles.InputContainer}
-                    className="form-input"
-                    placeholder="Enter your profile name"
-                    name="username"
-                    type="text"
-                    value={formState.username}
-                    onChange={handleChange}
-                  />
-                  <span style={styles.InputTitle}>What's your email?</span>
-                  <input
-                    className="form-input"
-                    placeholder="Enter your email address"
-                    name="email"
-                    type="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                  />
-                  <span style={styles.InputTitle}>Create a password</span>
-                  <input
-                    className="form-input"
-                    placeholder="Enter your password"
-                    name="password"
-                    type="password"
-                    value={formState.password}
-                    onChange={handleChange}
-                  />
-                  <span style={styles.InputSubtitle}>
-                    Use 8 or more characters with a mix of letters, numbers
-                    /u0026 symbols{" "}
-                  </span>
+                <Form onSubmit={handleFormSubmit}>
+                  <Form.Group>
+                    <Form.Label style={styles.InputTitle}>
+                      What should we call you?
+                    </Form.Label>
+                    <Form.Control
+                      style={styles.InputContainer}
+                      className="form-input"
+                      placeholder="Enter your profile name"
+                      name="username"
+                      type="text"
+                      value={formState.username}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                  <Form.Group>
+                    <Form.Label style={styles.InputTitle}>What's your email?</Form.Label>
+                    <Form.Control
+                      className="form-input"
+                      placeholder="Enter your email address"
+                      name="email"
+                      type="email"
+                      value={formState.email}
+                      onChange={handleChange}
+                    />
+                  </Form.Group>
+                    <Form.Group>
+                      <Form.Label style={styles.InputTitle}>Create a password</Form.Label>
+                      <Form.Control
+                        className="form-input"
+                        placeholder="Enter your password"
+                        name="password"
+                        type="password"
+                        value={formState.password}
+                        onChange={handleChange}
+                      />
+                      <span style={styles.InputSubtitle}>
+                        Use 8 or more characters with a mix of letters, numbers
+                        /u0026 symbols{" "}
+                      </span>
+                    </Form.Group>
                   <Button
                     styles={styles.SubmitButton}
                     className="btn btn-block btn-primary"
@@ -169,14 +174,14 @@ const SignUp = () => {
                   >
                    <div styles={styles.ButtonText1}> Create an account </div>
                   </Button>
-                </form>
+                </Form>
               )}
               {error && (
                 <div className="my-3 p-3 bg-danger text-white">
                   {error.message}
                 </div>
               )}
-            </div>
+            </Card.Body>
           </Card>
         </div>
       </div>
