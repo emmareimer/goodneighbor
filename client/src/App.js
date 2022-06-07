@@ -11,9 +11,9 @@ import { setContext } from '@apollo/client/link/context';
 
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-import Profile from './pages/Profile';
-import ClaimedTask from './pages/ClaimedTask';
-import CompletedTask from './pages/CompletedTask';
+// import Profile from './pages/Profile';
+// import ClaimedTask from './pages/ClaimedTask';
+// import CompletedTask from './pages/CompletedTask';
 // import CreateTask from './pages/CreateTask';
 // import TaskDescription from './pages/TaskDescription';
 // import Home from './pages/Home';
@@ -50,29 +50,29 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+           <Header />
           <div className="container">
             <Routes>
               <Route 
                 path="/login" 
                 element={<Login />}
               />
-              <Route 
+              {/* <Route 
                 path="/signup" 
                 element={<SignUp />}
               />
               <Route 
                 // path="/profiles/:username" or path="/me"
-                element={<Profile />}
+                // element={<Profile />}
               />
               <Route 
                 path="" 
-                element={<ClaimedTask />}
+                // element={<ClaimedTask />}
               />
               <Route 
                 path="" 
-                element={<CompletedTask />}
-              />
+                // element={<CompletedTask />}
+              /> */}
             </Routes>
           </div>
           <Footer />
