@@ -28,8 +28,8 @@ const typeDefs = gql`
         open: Boolean
         category: String!
         instructions: String!
-        created_by: User!
-        created_at: String!
+        created_by: User
+        created_at: String
         claimed_by: User
         completed_by: User
         completed_at: String
@@ -42,7 +42,7 @@ const typeDefs = gql`
     }
 
     type Query {
-        task: Task
+        task(id: ID): Task
         tasks: [Task]
         user(email: String!): User
     }
@@ -54,7 +54,7 @@ const typeDefs = gql`
         updateUser(id: ID, name: String, email: String, username: String, password: String, posted_tasks: [ID], claimed_tasks: [ID], city: String, state: String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): User
 
         # --- TASK MUTATIONS ---
-        addTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: String, contactless: Boolean, city: String, State:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
+        addTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: String, contactless: Boolean, city: String, state:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
         updateTask(id: ID, completed_by: String, completed_at: String, open: Boolean, latitude: Int, longitude: Int): Task
     }
 `;

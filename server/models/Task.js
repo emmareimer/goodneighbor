@@ -20,28 +20,26 @@ const taskSchema = new Schema ({
         type: String,
         required: true,
     },
-    created_by: [
-        {
+    created_by:  {
             type: Schema.Types.ObjectId,
             ref: 'User',
-        }
-    ],
+        },
     created_at: {
         type: Date,
         default: Date.now,
     },
-    claimed_by: [
+    claimed_by: 
         {
             type: Schema.Types.ObjectId,
             ref: 'User',
         }
-    ],
-    completed_by: [
+    ,
+    completed_by: 
         {
             type: Schema.Types.ObjectId,
             ref: 'User',
         }
-    ],
+    ,
     completed_at: {
         type: Date,
     },
