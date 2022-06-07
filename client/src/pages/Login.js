@@ -191,7 +191,7 @@ const Login = (props) => {
                   className="btn btn-block btn-primary"
                   style={{ cursor: "pointer" }}
                   type="button"
-                  onclick="/signup"
+                //   onClick="/signup"
                 >
                  <div styles={styles.ButtonText2}> Sign up </div>
                 </button>

@@ -106,7 +106,7 @@ const SignUp = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         {/* HeaderNav with Login and SignUp buttons; GN logo*/}
-        <Container>
+        <div>
           <Card>
             <h1 className="card-header">
                 <span style={styles.ContainerTitle}>
@@ -178,7 +178,7 @@ const SignUp = () => {
               )}
             </div>
           </Card>
-        </Container>
+        </div>
       </div>
     </main>
   );
