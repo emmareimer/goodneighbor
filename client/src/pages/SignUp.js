@@ -38,7 +38,7 @@ const styles = {
     borderRadius: "12px",
     overflow: "hidden",
     border: "1px solid var(--granite-gray-5)",
-    // text styles
+    // text styles for the placeholder text
     minHeight: "24px",
     letterSpacing: 0,
     color: "var(--granite-gray-32)",
@@ -57,6 +57,8 @@ const styles = {
     borderRadius: "40px",
     overflow: "hidden",
     opacity: 0.25,
+  },
+  ButtonText1: {
     // text styles
     letterSpacing: 0,
     marginLeft: "1px",
@@ -165,7 +167,7 @@ const SignUp = () => {
                     style={{ cursor: "pointer" }}
                     type="submit"
                   >
-                    Create an account
+                   <div styles={styles.ButtonText1}> Create an account </div>
                   </button>
                 </form>
               )}

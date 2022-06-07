@@ -38,7 +38,6 @@ const styles = {
     border: "1px solid var(--granite-gray-5",
   },
   SubmitButton: {
-    // how to do a light and dark version?
     width: "568px",
     height: "64px",
     display: "flex",
@@ -48,22 +47,60 @@ const styles = {
     borderRadius: "32px",
     overflow: "hidden",
     opacity: 0.25,
-    // text styles
-    // height: "33px",
+  },
+  ButtonText1: {
+    height: "33px",
     minWidth: "65px",
-    color:"(var--white)",
+    color: "(var--white)",
     fontFamily: "var(--font-family-poppins)",
     fontSize: "var(--font-size-xl)",
     fontWeight: 500,
     fontStyle: "normal",
-    border: "1px solid var(--licorice)", 
+    border: "1px solid var(--licorice)",
     textAlign: "center",
     letterSpacing: 0,
   },
-  Divider: {}, 
-  Divider1: {},
-  ButtonTitle: {},
-  Redirectbutton: {},
+  Divider: {
+    marginTop: "48px",
+    display: "flex",
+    alignItems: "flex-start",
+    minWidth: "500px",
+  },
+  Divider1: {
+    width: "290px",
+    height: "2px",
+    backgroundColor: "var(--granite-gray-42)",
+  },
+  SignUp: {
+    width: "580px",
+    marginTop: "48px",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    minHeight: "116px", 
+  },
+  ButtonTitle: {
+    minHeight: "36px",
+    minWidth: "288px",
+    textAlign: "center",
+    letterSpacing: 0, 
+  },
+  RedirectButton: {
+    width: "580px",
+    height: "64px",
+    marginTop: "16px",
+    display: "flex",
+    padding: "15px 248px", 
+    alignItems: "flex-start",
+    borderRadius: "32px", 
+    overflow: "hidden",
+  },
+  ButtonText2: {
+      height: "33px",
+      minWidth: "84px",
+      textAlign: "center",
+      letterSpacing: 0, 
+  }
 };
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -140,24 +177,25 @@ const Login = (props) => {
                   style={{ cursor: "pointer" }}
                   type="submit"
                 >
-                  Log in
+                <div styles={styles.ButtonText1}> Log in </div>
                 </button>
               </form>
             )}
             <div styles={styles.Divider}>
-                <div styles={styles.Divider1}>
-                </div>
+              <div styles={styles.Divider1}></div>
             </div>
-            <span styles={styles.ButtonTitle}> Don't have an account? </span>
-            <button
-              styles={styles.RedirectButton}
-              className="btn btn-block btn-primary"
-              style={{ cursor: "pointer" }}
-              type="button"
-              onclick="/signup"
-            >
-              Sign up
-            </button>
+            <div styles={styles.SignUp}>
+                <span styles={styles.ButtonTitle}> Don't have an account? </span>
+                <button
+                  styles={styles.RedirectButton}
+                  className="btn btn-block btn-primary"
+                  style={{ cursor: "pointer" }}
+                  type="button"
+                  onclick="/signup"
+                >
+                 <div styles={styles.ButtonText2}> Sign up </div>
+                </button>
+            </div>
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
                 {error.message}
