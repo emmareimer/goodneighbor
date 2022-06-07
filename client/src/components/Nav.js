@@ -14,9 +14,9 @@ function Nav() {
     //     })();
     // }, [navbarUserIsLogged]);
 
-    const signedIn = () => (event) => {
-        if(event.type === '')
-    }
+    // const signedIn = () => (event) => {
+    //     if(event.type === '')
+    // }
 
     return (
         <>

@@ -1,7 +1,5 @@
 const { Schema, model } = require('mongoose');
-
-
-// TODO (Emma): Change posted tasks and claimed tasks to full task json data instead of objectId
+const bcrypt = require('bcrypt');
 
 const userSchema = new Schema ({
     name: {
@@ -10,9 +8,8 @@ const userSchema = new Schema ({
     },
     username: {
         type: String,
-        required: true,
-        unique: true,
         trim: true,
+        required: true,
     },
     email: {
         type: String,
@@ -20,6 +17,7 @@ const userSchema = new Schema ({
         isEmail: true,
         unique: true,
         match: [/.+@.+\..+/, 'Please enter a valid email address.'],
+        trim: true,
     },
     password: {
         type: String,
@@ -33,27 +31,37 @@ const userSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: 'Task',
     }],
-    zip_code: {
-        type: Number,
-        required: true,
-    },
-    address: {
-        type: String,
-    },
     city: {
         type: String,
     },
     state: {
         type: String,
     },
-    latitude: {
+    zip_code: {
         type: Number,
     },
-    longitude: {
-        type: Number,
+    streetAddress: {
+        type: String,
     },
-
+    optionalUnitNumber: {
+        type: String,
+    }
 });
+
+// set up pre-save middleware to create password
+userSchema.pre('save', async function(next) {
+    if (this.isNew || this.isModified('password')) {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    }
+  
+    next();
+  });
+  
+  // compare the incoming password with the hashed password
+  userSchema.methods.isCorrectPassword = async function(password) {
+    return await bcrypt.compare(password, this.password);
+  };
 
 const User = model('User', userSchema);
 

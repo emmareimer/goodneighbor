@@ -5,12 +5,20 @@ const taskSchema = new Schema ({
         type: String,
         required: true,
     },
-    task_text: {
+    taskDescription: {
         type: String,
         required: true,
     },
     open: {
         type: Boolean,
+    },
+    category: {
+        type: String,
+        required: true,
+    },
+    instructions: {
+        type: String,
+        required: true,
     },
     created_by: [
         {
@@ -28,26 +36,37 @@ const taskSchema = new Schema ({
             ref: 'User',
         }
     ],
+    completed_by: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User',
+        }
+    ],
     completed_at: {
-        Type: Date,
+        type: Date,
     },
     contactless: {
-        Type: Boolean,
+        type: Boolean,
     },
     city: {
-        Type: String,
+        type: String,
         required: true,
     },
     state: {
-        Type: String,
+        type: String,
         required: true,
     },
-    latitude: {
-        Type: Number,
+    zipcode: {
+        type: Number,
+        required: true,
     },
-    longitude: {
-        Type: Number,
+    streetAddress: {
+        type: String,
+        required: true,
     },
+    optionalUnitNumber: {
+        type: String,
+    }
 });
 
 const Task = model('Task', taskSchema);

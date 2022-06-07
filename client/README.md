@@ -113,9 +113,9 @@ Will include:
 
 7. CreateTask page
         -- name
-        -- category*
-        -- description*
-        -- directions*
+        -- category
+        -- taskDescription
+        -- instructions*
         -- full address
         -- contactlessDirections*
         -- created_by: user
