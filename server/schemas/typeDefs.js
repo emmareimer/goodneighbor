@@ -44,14 +44,14 @@ const typeDefs = gql`
     type Query {
         task: Task
         tasks: [Task]
-        user(_id: ID!): User
+        user(email: String!): User
     }
 
     type Mutation {
         # --- USER MUTATIONS ---
         addUser(email: String!, password: String!, username: String!, name: String!, zipcode: Int,): Auth
         loginUser(email: String, password: String!, username: String): Auth
-        updateUser(id: ID, , posted_tasks: String, claimed_tasks: String, streetAddress: String, optionalUnitNumber: String, city: String, state: String, zipcode: Int, username: String, password: String): User
+        updateUser(id: ID, name: String, email: String, username: String, password: String, posted_tasks: [ID], claimed_tasks: [ID], city: String, state: String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): User
 
         # --- TASK MUTATIONS ---
         addTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: String, contactless: Boolean, city: String, State:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
