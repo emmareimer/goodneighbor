@@ -104,7 +104,7 @@ const SignUp = () => {
                     style={{ cursor: "pointer" }}
                     type="submit"
                   >
-                   <div className=""> Create an account </div>
+                    Create an account 
                   </Button>
                 </div>
                 </Form>

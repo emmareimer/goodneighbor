@@ -37,27 +37,27 @@ const styles = {
     border: "1px solid var(--granite-gray-5",
   },
   SubmitButton: {
-    width: "568px",
-    height: "64px",
-    display: "flex",
-    padding: "15px 251.5px",
-    alignItems: "flex-start",
-    backgroundColor: "var(--blue-ribbon)",
-    borderRadius: "32px",
-    overflow: "hidden",
-    opacity: 0.25,
+    // width: "568px",
+    // height: "64px",
+    // display: "flex",
+    // padding: "15px 251.5px",
+    // alignItems: "flex-start",
+    // backgroundColor: "var(--blue-ribbon)",
+    // borderRadius: "32px",
+    // overflow: "hidden",
+    // opacity: 0.25,
   },
   ButtonText1: {
-    height: "33px",
-    minWidth: "65px",
-    color: "(var--white)",
-    fontFamily: "var(--font-family-poppins)",
-    fontSize: "var(--font-size-xl)",
-    fontWeight: 500,
-    fontStyle: "normal",
-    border: "1px solid var(--licorice)",
-    textAlign: "center",
-    letterSpacing: 0,
+    // height: "33px",
+    // minWidth: "65px",
+    // color: "(var--white)",
+    // fontFamily: "var(--font-family-poppins)",
+    // fontSize: "var(--font-size-xl)",
+    // fontWeight: 500,
+    // fontStyle: "normal",
+    // border: "1px solid var(--licorice)",
+    // textAlign: "center",
+    // letterSpacing: 0,
   },
   Divider: {
     marginTop: "48px",
@@ -85,20 +85,20 @@ const styles = {
     letterSpacing: 0, 
   },
   RedirectButton: {
-    width: "580px",
-    height: "64px",
-    marginTop: "16px",
-    display: "flex",
-    padding: "15px 248px", 
-    alignItems: "flex-start",
-    borderRadius: "32px", 
-    overflow: "hidden",
+    // width: "580px",
+    // height: "64px",
+    // marginTop: "16px",
+    // display: "flex",
+    // padding: "15px 248px", 
+    // alignItems: "flex-start",
+    // borderRadius: "32px", 
+    // overflow: "hidden",
   },
   ButtonText2: {
-      height: "33px",
-      minWidth: "84px",
-      textAlign: "center",
-      letterSpacing: 0, 
+    //   height: "33px",
+    //   minWidth: "84px",
+    //   textAlign: "center",
+    //   letterSpacing: 0, 
   }
 };
 const Login = (props) => {
@@ -178,11 +178,11 @@ const Login = (props) => {
                             />
                         </Form.Group>
                         <Button
-                          className="btn btn-block btn-primary"
+                          className="button-login"
                           style={{ cursor: "pointer" }}
                           type="submit"
                         >
-                        <div styles={styles.ButtonText1}> Log in </div>
+                        Log in
                         </Button>
                       </Form>
                     )}
@@ -192,17 +192,16 @@ const Login = (props) => {
                     <Card.Footer styles={styles.SignUp}>
                         <span styles={styles.ButtonTitle}> Don't have an account? </span>
                         <Button
-                          styles={styles.RedirectButton}
-                          className="btn btn-block btn-primary"
+                          className="redirect-button"
                           style={{ cursor: "pointer" }}
                           type="button"
                         //   onClick="/signup"
                         >
-                         <div styles={styles.ButtonText2}> Sign up </div>
+                         <div className="button-text-2" > Sign up </div>
                         </Button>
                     </Card.Footer>
                     {error && (
-                      <div className="my-3 p-3 bg-danger text-white">
+                      <div className="">
                         {error.message}
                       </div>
                     )}

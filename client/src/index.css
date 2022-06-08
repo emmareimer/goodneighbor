@@ -1,3 +1,4 @@
+/* -----VARIABLES AND GENERAL STYLES----- */
 :root {
   --black: rgba(0, 0, 0, 1);
   --blue-ribbon: rgba(13, 110, 253, 1);
@@ -69,6 +70,9 @@ body {
   flex-direction: column;
   justify-content: center;
 }
+
+/* ----- SIGNUP ----- */
+/* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
 
 .signup-form {
   margin-top: 20px;
@@ -143,8 +147,58 @@ body {
   text-align: center;
 }
 
+/* ----- LOGIN ----- */
+
+.submit-button-login {
+  width: 568px;
+  height: 64px;
+  display: flex;
+  padding: 15px 251.5px;
+  align-items: flex-start;
+  background-color: var(--blue-ribbon);
+  border-radius: 32px;
+  overflow: hidden;
+  opacity: 0.25,
+}
+
+.redirect-button {
+  width: 580px;
+  height: 64px;
+  margin-top: 16px;
+  display: flex;
+  padding: 15px 248px;
+  align-items: flex-start;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.button-text-1 {
+  height: 33px;
+  min-width: 65px;
+  color: (var--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  font-style: normal;
+  border: 1px solid var(--licorice);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.button-text-2 {
+  height: 33px;
+  min-width: 84px;
+  text-align: center;
+  letter-spacing: 0;
+}
+
 .button-center {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+/* -----CREATE A TASK----- */
+.category-icon {
+  /* this is where the custom styling for the styling for the little travel, Pets, Plants, and Food icons will go */
 }
