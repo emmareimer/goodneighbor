@@ -5,7 +5,8 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
       task: async (parent, {_id}) => {
-        return Task.findOne({_id});
+        const params = _id ? { _id } : {};
+        return Task.findOne(params);
       },
       tasks: async (parent, args = {}) => {
         // const params = open ? { open } : {};
@@ -41,11 +42,13 @@ const resolvers = {
         return { token, user };
       },
       updateUser: async (parent, args) => {
-        return await User.findOneAndUpdate({email: args.email}, {name: args.name, email: args.email, username: args.username, password: args.password, posted_tasks: args.posted_tasks, claimed_tasks: args.claimed_tasks, city: args.city, state: args.state, zipcode: args.zipcode, streetAddress: args.streetAddress, optionalUnityNumber: args.optionalUnitNumber}, { new: true })
+        return await User.findOneAndUpdate( {email: args.email}, {name: args.name, email: args.email, username: args.username, password: args.password, posted_tasks: args.posted_tasks, claimed_tasks: args.claimed_tasks, city: args.city, state: args.state, zipcode: args.zipcode, streetAddress: args.streetAddress, optionalUnityNumber: args.optionalUnitNumber}, { new: true } )
       },
-      // addTask: {
-
-      // },
+      addTask: async (parent, args) => {
+        const task = await Task.create(args);
+        await User.findOneAndUpdate({_id: task.created_by}, {$push:{posted_tasks: task._id}})
+        return task;
+      },
       // updateTask: {
 
       // }
