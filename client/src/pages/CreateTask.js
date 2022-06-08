@@ -5,7 +5,7 @@ import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { Card, Form, FormCheck, Button, Container } from "react-bootstrap";
 
-const SignUp = () => {
+const CreateTask = () => {
   // set initial form state
   const [formState, setFormState] = useState({
     username: "",
@@ -185,4 +185,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default CreateTask;
