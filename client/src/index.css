@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding: 20px;
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Poppins', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,7 +8,82 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.signup-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
 }
+
+.form-label {
+  margin-top: 20px;
+}
+
+.form-input {
+  margin: 10px;
+  width: 715px;
+  height: 56px;
+  padding: 15px 24px;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--granite-gray-5);
+}
+
+.card-title {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-weight: 500;
+  font-style: normal;
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+
+}
+.card-subtitle {
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+  padding-top: 20px;
+}
+
+.submit-button {
+  width: 715px;
+  height: 64px;
+  display: flex;
+  padding: 20px 252.5px;
+  align-items: flex-start;
+  background-color: var(--blue-ribbon);
+  border-radius: 40px;
+  overflow: hidden;
+  opacity: 0.25;
+}
+
+.button-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.container-center-horizontal > * {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+} 
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+} 
+
+/* .center-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */

@@ -153,7 +153,7 @@ const Login = (props) => {
             ) : (
               <Form onSubmit={handleFormSubmit}>
                 <Form.Group>
-                <Form.Label style={styles.InputTitle}>Email address</Form.Label>
+                <Form.Label className="form-label" style={styles.InputTitle}>Email address</Form.Label>
                 <Form.Control
                   className="form-input"
                   placeholder=""
@@ -164,7 +164,7 @@ const Login = (props) => {
                 />
                 </Form.Group>
                 <Form.Group>
-                    <Form.Label style={styles.InputTitle}>Password</Form.Label>
+                    <Form.Label className="form-label" style={styles.InputTitle}>Password</Form.Label>
                     <Form.Control
                       className="form-input"
                       placeholder=""

@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import { Card, Form, Button, Container, Col} from "react-bootstrap";
+import { Card, Form, Button, Container} from "react-bootstrap";
 
 const styles = {
   ContainerTitle: {
-    color: "var(--mine-shaft)",
-    fontFamily: "var(--font-family-poppins)",
-    fontSize: "var(--font-size-xxxl)",
-    fontWeight: 500,
-    fontStyle: "normal",
+    // color: "var(--mine-shaft)",
+    // fontFamily: "var(--font-family-poppins)",
+    // fontSize: "var(--font-size-xxxl)",
+    // fontWeight: 500,
+    // fontStyle: "normal",
   },
   ContainerSubtitle: {
-    height: "48px",
-    minWidth: "304px",
-    textAlign: "center",
-    letterSpacing: 0,
+    // height: "48px",
+    // minWidth: "304px",
+    // textAlign: "center",
+    // letterSpacing: 0,
   },
   InputTitle: {
     minHeight: "24px",
@@ -29,14 +29,14 @@ const styles = {
     fontStyle: "normal",
   },
   InputContainer: {
-    width: "715px",
-    height: "56px",
-    display: "flex",
-    padding: "15px 24px",
-    alignItems: "flex-start",
-    borderRadius: "12px",
-    overflow: "hidden",
-    border: "1px solid var(--granite-gray-5)",
+    // width: "715px",
+    // height: "56px",
+    // display: "flex",
+    // padding: "15px 24px",
+    // alignItems: "flex-start",
+    // borderRadius: "12px",
+    // overflow: "hidden",
+    // border: "1px solid var(--granite-gray-5)",
     // text styles for the placeholder text
     minHeight: "24px",
     letterSpacing: 0,
@@ -102,17 +102,16 @@ const SignUp = () => {
   // import fonts and font colors from styleguide?
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <Col className="col-12 col-lg-10">
-        {/* HeaderNav with Login and SignUp buttons; GN logo*/}
+    <main> 
+      {/* HeaderNav with Login and SignUp buttons; GN logo*/}
+      <div className="container-center-horizontal">
+        <div className="signup screen">
         <Container>
           <Card>
-            <Card.Header>
-                <span style={styles.ContainerTitle}>
+            <Card.Header className="card-title center-text">
                   Create an account
-                </span>
             </Card.Header>
-            <Card.Subtitle style={styles.ContainerSubtitle}>
+            <Card.Subtitle className="card-subtitle">
                 Already have an Account? <a href="/login">Login</a>{" "}
             </Card.Subtitle>
             <Card.Body>
@@ -123,9 +122,9 @@ const SignUp = () => {
                   <Link to="/">back to the homepage.</Link>
                 </p>
               ) : (
-                <Form onSubmit={handleFormSubmit}>
-                  <Form.Group>
-                    <Form.Label style={styles.InputTitle}> What should we call you? </Form.Label>
+                <Form className="signup-form" onSubmit={handleFormSubmit}>
+                  <Form.Group controlId="username">
+                    <Form.Label className="form-label" style={styles.InputTitle}> What should we call you? </Form.Label>
                     <Form.Control
                       className="form-input"
                       placeholder="Enter your profile name"
@@ -135,8 +134,8 @@ const SignUp = () => {
                       onChange={handleChange}
                     />
                   </Form.Group>
-                  <Form.Group>
-                    <Form.Label style={styles.InputTitle}>What's your email?</Form.Label>
+                  <Form.Group controlId="email">
+                    <Form.Label className="form-label" style={styles.InputTitle}>What's your email?</Form.Label>
                     <Form.Control
                       className="form-input"
                       placeholder="Enter your email address"
@@ -146,8 +145,8 @@ const SignUp = () => {
                       onChange={handleChange}
                     />
                   </Form.Group>
-                    <Form.Group>
-                      <Form.Label style={styles.InputTitle}>Create a password</Form.Label>
+                    <Form.Group controlId="password">
+                      <Form.Label className="form-label" style={styles.InputTitle}>Create a password</Form.Label>
                       <Form.Control
                         className="form-input"
                         placeholder="Enter your password"
@@ -161,14 +160,15 @@ const SignUp = () => {
                         /u0026 symbols{" "}
                       </span>
                     </Form.Group>
+                <div className="button-center">
                   <Button
-                    styles={styles.SubmitButton}
-                    className="btn btn-block btn-primary"
+                    className="btn btn-block btn-primary submit-button"
                     style={{ cursor: "pointer" }}
                     type="submit"
                   >
                    <div styles={styles.ButtonText1}> Create an account </div>
                   </Button>
+                </div>
                 </Form>
               )}
               {error && (
@@ -179,7 +179,8 @@ const SignUp = () => {
             </Card.Body>
           </Card>
         </Container>
-      </Col>
+        </div>
+      </div>
     </main>
   );
 }
