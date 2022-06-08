@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/react-hooks";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import { Card, Form, Button} from "react-bootstrap";
+import { Card, Form, Button, Container, Col} from "react-bootstrap";
 
 const styles = {
   ContainerTitle: {
@@ -103,19 +103,17 @@ const SignUp = () => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
+      <Col className="col-12 col-lg-10">
         {/* HeaderNav with Login and SignUp buttons; GN logo*/}
-        <div>
+        <Container>
           <Card>
             <Card.Header>
                 <span style={styles.ContainerTitle}>
                   Create an account
                 </span>
             </Card.Header>
-            <Card.Subtitle>
-              <span style={styles.ContainerSubtitle}>
+            <Card.Subtitle style={styles.ContainerSubtitle}>
                 Already have an Account? <a href="/login">Login</a>{" "}
-              </span>
             </Card.Subtitle>
             <Card.Body>
               {data ? (
@@ -127,11 +125,8 @@ const SignUp = () => {
               ) : (
                 <Form onSubmit={handleFormSubmit}>
                   <Form.Group>
-                    <Form.Label style={styles.InputTitle}>
-                      What should we call you?
-                    </Form.Label>
+                    <Form.Label style={styles.InputTitle}> What should we call you? </Form.Label>
                     <Form.Control
-                      style={styles.InputContainer}
                       className="form-input"
                       placeholder="Enter your profile name"
                       name="username"
@@ -183,8 +178,8 @@ const SignUp = () => {
               )}
             </Card.Body>
           </Card>
-        </div>
-      </div>
+        </Container>
+      </Col>
     </main>
   );
 }
