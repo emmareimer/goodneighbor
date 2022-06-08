@@ -71,6 +71,187 @@ body {
   justify-content: center;
 }
 
+/* ----- NAVBAR ----- */
+.header-nav {
+  width: 1440px;
+  height: 73px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  border: 1px solid var(--granite-gray3)
+}
+
+.flex-row {
+  margin-top: 17px;
+  display: flex;
+  align-items: center;
+  min-width: 1360px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: var(--eucalyptus);
+  border-radius: 20px;
+}
+
+.links {
+  height: 24px;
+  margin-left: 40px;
+  margin-top: 8px;
+  display: flex;
+  align-items: flex-start;
+  min-width: 541px;
+  color: var(--granite-gray2);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+/* right now the ::hover and ::active are just default bootstrap. in figma our active page/link is gunsmoke (font weight 500) and inactive is granite gray (as above)  */
+
+.profile {
+  min-height: 24px;
+  min-width: 50px;
+  letter-spacing: 0;
+
+}
+
+.claimed-tasks {
+  min-height: 24px;
+  margin-left: 40px;
+  min-width: 117px;
+  letter-spacing: 0;
+}
+
+.completed-tasks {
+  min-height: 24px;
+  margin-left: 40px;
+  min-width: 139px;
+  letter-spacing: 0;
+}
+
+.nearby-tasks {
+  min-height: 24px;
+  margin-left: 40px;
+  letter-spacing: 0;
+}
+
+.green-button {
+  width: 98px;
+  height: 40px;
+  display: flex;
+  padding: 7.5px 18.5px;
+  align-items: flex-start;
+  background-color: var(--eucalyptus);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--licorice);
+} 
+
+.white-button {
+  width: 98px;
+  height: 40px;
+  margin-left: 16px;
+  display: flex;
+  padding: 7.5 19px;
+  align-items: flex-start;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.LoginSignUp {
+  margin-left: 1108px;
+  display: flex;
+  align-items: flex-start;
+  min-width: 212px;
+}
+
+.button-text-white {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+  height: 24px;
+  min-width: 61px;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.button-text-balck {
+  color: var(--licorice);
+  font-family: var(--font-family-poppins);
+  font-size: var(font-size-m);
+  font-weight: 400;
+  font-style: normal;
+  height: 24px;
+  min-width: 61px;
+  text-align: center;
+  letter-spacing: 0;
+}
+/* ----- SIGNUP ----- */
+/* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
+
+.signup-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.form-label {
+  margin-top: 20px;
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray3);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form-input {
+  margin: 10px;
+  width: 715px;
+  height: 56px;
+  padding: 15px 24px;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--granite-gray-5);
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray-32);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.card-title {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-weight: 500;
+  font-style: normal;
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+}
+.card-subtitle {
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+  padding-top: 20px;
+}
+
+}
+
 /* ----- SIGNUP ----- */
 /* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
 
