@@ -375,7 +375,7 @@ img {
   min-width: 65px;
   color: var(--white);
   font-family: var(--font-family-poppins) !important;
-  font-size: var(--font-size-xl) !important;
+  font-size: var(--font-size-l);
   font-weight: 500;
   font-style: normal;
   text-align: center;
@@ -388,7 +388,7 @@ img {
   min-width: 65px;
   color: var(--black);
   font-family: var(--font-family-poppins) !important;
-  font-size: var(--font-size-xl) !important;
+  font-size: var(--font-size-l);
   font-weight: 500;
   font-style: normal;
   text-align: center;
