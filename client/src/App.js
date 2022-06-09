@@ -1,3 +1,5 @@
+// import ReactContainer from './components/MainContainer'
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -18,7 +20,7 @@ import SignUp from './pages/SignUp';
 // import TaskDescription from './pages/TaskDescription';
 import Home from './pages/Home';
 // import Main from './pages/Main';
-import Header from './components/Header';
+import Nav from './components/Nav';
 import Footer from './components/Footer';
 
 // Construct our main GraphQL API endpoint
@@ -50,7 +52,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
-          <Header />
+          <Nav />
           <div className="container">
             <Routes>
               <Route

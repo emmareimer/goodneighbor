@@ -44,7 +44,7 @@ const AppNavbar = () => {
                                 <div className="button border-1px-licorice">
                                     <div className="log-out valign-text-middle poppins-normal-white-16px">
                                         <span>
-                                            <span className="poppins-normal-whitw-16px">Log Out</span>
+                                            <span className="poppins-normal-whitw-16px">Log In</span>
                                         </span>
                                     </div>
                                 </div>
