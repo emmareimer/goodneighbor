@@ -3,23 +3,23 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 // import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 
-// const styles = {
-//     body {
-//         display: "flex",
-//         alignItems: "center",
-//         justifyContent: "center",
-//         margin: "0 auto",
-//         height: "100vh",
-//         background-color: "#f1f1f1",
-//       },
+// // const styles = {
+// //     body {
+// //         display: "flex",
+// //         alignItems: "center",
+// //         justifyContent: "center",
+// //         margin: "0 auto",
+// //         height: "100vh",
+// //         background-color: "#f1f1f1",
+// //       },
 
-//    input {
-//     display: "flex",
-//         alignItems: "center",
-//             justifyContent: "center",
-//                 margin: "0 auto",
-// }
-// }
+// //    input {
+// //     display: "flex",
+// //         alignItems: "center",
+// //             justifyContent: "center",
+// //                 margin: "0 auto",
+// // }
+// // }
 
 const Home = () => {
     const [searchedTasks, setSearchedTasks] = useState([]);
