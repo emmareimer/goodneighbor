@@ -10,7 +10,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 
 import Login from './pages/Login';
-// import SignUp from './pages/SignUp';
+import SignUp from './pages/SignUp';
 // import Profile from './pages/Profile';
 // import ClaimedTask from './pages/ClaimedTask';
 // import CompletedTask from './pages/CompletedTask';
@@ -68,7 +68,7 @@ function App() {
               {/* <Route 
                 path="/signup" 
                 element={<SignUp />}
-              /> */}
+              />
               {/* <Route 
                 // path="/profiles/:username" or path="/me"
                 // element={<Profile />}
