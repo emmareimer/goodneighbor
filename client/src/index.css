@@ -255,6 +255,67 @@ body {
   padding-top: 20px;
 }
 
+}
+
+/* ----- SIGNUP ----- */
+/* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
+
+.signup-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.form-label {
+  margin-top: 20px;
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray3);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form-input {
+  margin: 10px;
+  width: 715px;
+  height: 56px;
+  padding: 15px 24px;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--granite-gray-5);
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray-32);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.card-title {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-weight: 500;
+  font-style: normal;
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+}
+.card-subtitle {
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+  padding-top: 20px;
+}
+
 .submit-button {
   width: 715px;
   height: 64px;
