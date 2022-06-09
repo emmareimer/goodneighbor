@@ -79,10 +79,12 @@ const Home = () => {
     // };
 
     return (
-        <div>
+        // <div className="bgImageHome">
+        <div className="rcorners1 page">
+            {Auth.loggedIn()}
             <Jumbotron fluid className='text-light bg-muted'>
-                <Container>
-                    <Form onSubmit={handleFormSubmit}>
+                <Container className="searchBar">
+                    <Form onSubmit={handleFormSubmit} >
                         <Form.Row>
                             <Col xs={12} md={8}>
                                 <Form.Control
@@ -92,16 +94,17 @@ const Home = () => {
                                     type='text'
                                     size='lg'
                                     placeholder='Search for a Task'
+                                    className="sbInput"
                                 />
                             </Col>
                             <Col xs={12} md={4}>
-                                <Button type='submit' variant='success' size='lg'>
+                                <Button className="searachButton" type='submit' variant='success' size='lg'>
                                     Submit Search
                                 </Button>
                             </Col>
                             <Col>
                                 <form action="#">
-                                    <label for="lang">Language</label>
+                                    <label for="lang">Category</label>
                                     <select name="languages" id="lang">
                                         <option value="food">food</option>
                                         <option value="landscaping">landscaping</option>
@@ -153,6 +156,7 @@ const Home = () => {
                 </CardColumns>
             </Container>
         </div>
+        // </div>
     );
 }
 
