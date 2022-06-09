@@ -55,9 +55,9 @@ const resolvers = {
         await User.findOneAndUpdate({_id: task.created_by}, {$push:{posted_tasks: task._id}})
         return task;
       },
-      // updateTask: {
-
-      // }
+      updateTask: async (parent, args) => {
+        return await Task.findByIdAndUpdate ( {_id: args.id}, {open: args.open, claimed_by: args.claimed_by, completed_by: args.completed_by, completed_at: args.completed_at}, {new: true})
+      }
     },
   };
   

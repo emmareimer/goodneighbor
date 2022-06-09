@@ -42,6 +42,7 @@ const taskSchema = new Schema ({
     ,
     completed_at: {
         type: Date,
+        default: Date.now,
     },
     contactless: {
         type: Boolean,
