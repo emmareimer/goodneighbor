@@ -29,7 +29,7 @@ export default function Header() {
                   Tasks Near Me
               </Nav.Link>
             </Nav>
-            <Button className="green-button >">
+            <Button className="green-button">
                Log Out
             </Button>
           </div>
