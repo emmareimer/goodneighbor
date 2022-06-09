@@ -187,13 +187,13 @@ body {
 
 .button-text-black {
   color: var(--licorice);
-  font-family: var(--font-family-poppins) important!;
-  font-size: var(font-size-m);
+  font-family: var(--font-family-poppins) !important;
+  font-size: var(font-size-m) !important;
   font-weight: 400;
   font-style: normal;
   height: 24px;
   min-width: 61px;
-  text-align: center;
+  text-align: center !important;
   letter-spacing: 0;
 }
 /* ----- SIGNUP ----- */
