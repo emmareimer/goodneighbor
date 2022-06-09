@@ -1,17 +1,18 @@
 import React from 'react';
+import { Navigate, useParams } from 'react-router-dom';
+import { useQuery } from '@apollo/client';
+import Auth from '../utils/auth';
+// import queries 
+
+// import mutations 
 
 const Profile = () => {
-    return <ProfileInfo {...profileInfoData} />;
-}
-
-export default Profile;
-
-function ProfileInfo(props) {
     const { username: userParam } = useParams();
 
-    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-        variables: { username: userParam },
-    });
+    // INSERT QUERIES HERE
+    // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    //     variables: { username: userParam },
+    // });
 
     const user = data?.me || data?.user || {};
 
@@ -31,7 +32,7 @@ function ProfileInfo(props) {
     }
 
     return (
-        <main>
+        <div>
             <div className="profile-info">
                 <img className="featured-image" src={featuredImage} />
                 <h1 className="title apercupro-medium-black-24px">
@@ -46,7 +47,9 @@ function ProfileInfo(props) {
                 <div>
                     <p className="poppins-normal-licorice-16px">{bio}</p>
                 </div>
-                <Button>{buttonProps.children}</Button>
+                <Button>
+                    {/* {buttonProps.children} */}
+                </Button>
             </div>
 
             <div className="rectangle-2">
@@ -56,30 +59,30 @@ function ProfileInfo(props) {
                     </h2>
 
                     <div className="col-12 col-md-10 mb-5">
-                        <TaskList
+                        {/* <TaskList
                             tasks={user.tasks}
                             title={`${user.username}'s Task...`}
                             showTitle={false}
                             showUsername={false}
-                        />
+                        /> */}
                     </div>
                     {!userParam && (
-                        <div
-                            className="col-12 col-md-10 mb-3 p-3"
-                            style={{ border: '1px dotted #1a1a1a' }}
-                        >
-                            <TaskForm />
+                        <div>
+                            {/* //     className="col-12 col-md-10 mb-3 p-3"
+                        //     style={{ border: '1px dotted #1a1a1a' }}
+                        // >
+                        //     <TaskForm /> */}
                         </div>
                     )}
                 </div>
             </div>
-        </main>
+        </div>
 
 
     );
 }
 
-
+export default Profile;
 
 
 {/* The code below is closer to the figma design. I want to */ }
