@@ -14,16 +14,17 @@ const Profile = () => {
     //     variables: { username: userParam },
     // });
 
-    const user = data?.me || data?.user || {};
+    // const user = data?.me || data?.user || {};
+    const user = "David Warner"
 
 
     if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
         return <Navigate to="/me" />;
     }
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
+    // if (loading) {
+    //     return <div>Loading...</div>;
+    // }
 
     if (!user?.username) {
         return (
@@ -34,9 +35,9 @@ const Profile = () => {
     return (
         <div>
             <div className="profile-info">
-                <img className="featured-image" src={featuredImage} />
+                {/* <img className="featured-image" src={featuredImage} /> */}
                 <h1 className="title apercupro-medium-black-24px">
-                    Placeholder namme
+                    Placeholder name
                 </h1>
                 <div className="username apercupro-regular-normal-manatee-16px">
                     {userParam ? `${user.username}'s` : 'your'} profile.                </div>
@@ -45,11 +46,11 @@ const Profile = () => {
                         Zip Code: </span>
                 </div>
                 <div>
-                    <p className="poppins-normal-licorice-16px">{bio}</p>
+                    <p className="poppins-normal-licorice-16px">bio</p>
                 </div>
-                <Button>
+                {/* <Button>
                     {/* {buttonProps.children} */}
-                </Button>
+                {/* </Button> */} */
             </div>
 
             <div className="rectangle-2">

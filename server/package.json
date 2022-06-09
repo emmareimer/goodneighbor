@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "author": "",
   "license": "ISC",
   "scripts": {
@@ -14,6 +14,7 @@
     "apollo-server-core": "^3.8.1",
     "apollo-server-express": "^3.6.2",
     "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
     "express": "^4.17.2",
     "graphql": "^16.5.0",
     "mongoose": "^6.1.8"

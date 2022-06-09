@@ -40,6 +40,25 @@ query User($email: String!) {
 
 // -------------- GET ALL TASKS BY ZIP CODE -------- ****
 
+export const GET_ALL_TASKS_BY_ZIP_CODE = gql `
+query Query($zipcode: Int) {
+  tasks(zipcode: $zipcode) {
+    name
+    taskDescription
+    category
+    instructions
+    open
+    city
+    state
+    zipcode
+    streetAddress
+    optionalUnitNumber
+  }
+}
+`;
+
+
+
 
 // STRETCH GOAL
 // ------------- GET USER COMPLETED TASKS ---------- ***

@@ -13,7 +13,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
-// import Profile from './pages/Profile';
+import Profile from './pages/Profile';
 // import ClaimedTask from './pages/ClaimedTask';
 // import CompletedTask from './pages/CompletedTask';
 
@@ -69,11 +69,11 @@ function App() {
                 path="/createtask"
                 element={<CreateTask />}
               />
-              {/* <Route
+              <Route
                 path="/profile"
                 element={<Profile />}
               /> 
-              <Route
+              {/* <Route
                 path="/home"
                 element={<Home />}
               /> 
@@ -82,8 +82,8 @@ function App() {
                 path="/taskdescription"
                 element={<TaskDescription />}
               />
-              <Route 
-                path="/signup" 
+              <Route
+                path="/signup"
                 element={<SignUp />}
               />
             </Routes>
