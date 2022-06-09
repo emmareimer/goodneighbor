@@ -1,85 +1,85 @@
-// import React from 'react';
+import React from 'react';
 
-// const Profile = () => {
-//     return <ProfileInfo {...profileInfoData} />;
-// }
+const Profile = () => {
+    return <ProfileInfo {...profileInfoData} />;
+}
 
-// export default Profile;
+export default Profile;
 
-// function ProfileInfo(props) {
-//     const { username: userParam } = useParams();
+function ProfileInfo(props) {
+    const { username: userParam } = useParams();
 
-//     const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-//         variables: { username: userParam },
-//     });
+    const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+        variables: { username: userParam },
+    });
 
-//     const user = data?.me || data?.user || {};
-
-
-//     if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-//         return <Navigate to="/me" />;
-//     }
-
-//     if (loading) {
-//         return <div>Loading...</div>;
-//     }
-
-//     if (!user?.username) {
-//         return (
-//             <h4>Redirect to login page </h4>
-//         );
-//     }
-
-//     return (
-//         <main>
-//             <div className="profile-info">
-//                 <img className="featured-image" src={featuredImage} />
-//                 <h1 className="title apercupro-medium-black-24px">
-//                     Placeholder namme
-//                 </h1>
-//                 <div className="username apercupro-regular-normal-manatee-16px">
-//                     {userParam ? `${user.username}'s` : 'your'} profile.                </div>
-//                 <div className="zip-code-78573 poppins-normal-licorice-16px">
-//                     <span className="poppins-normal-licorice-16px">
-//                         Zip Code: </span>
-//                 </div>
-//                 <div>
-//                     <p className="poppins-normal-licorice-16px">{bio}</p>
-//                 </div>
-//                 <Button>
-//                     {/* {buttonProps.children} */}
-//                 </Button>
-//             </div>
-
-//             <div className="rectangle-2">
-//                 <div className="flex-row justify-center mb-3">
-//                     <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
-//                         Viewing {userParam ? `${user.username}'s` : 'your'} profile.
-//                     </h2>
-
-//                     <div className="col-12 col-md-10 mb-5">
-//                         {/* <TaskList
-//                             tasks={user.tasks}
-//                             title={`${user.username}'s Task...`}
-//                             showTitle={false}
-//                             showUsername={false}
-//                         /> */}
-//                     </div>
-//                     {!userParam && (
-//                         <div>
-//                             {/* //     className="col-12 col-md-10 mb-3 p-3"
-//                         //     style={{ border: '1px dotted #1a1a1a' }}
-//                         // >
-//                         //     <TaskForm /> */}
-//                         </div>
-//                     )}
-//                 </div>
-//             </div>
-//         </main>
+    const user = data?.me || data?.user || {};
 
 
-//     );
-// }
+    if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+        return <Navigate to="/me" />;
+    }
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (!user?.username) {
+        return (
+            <h4>Redirect to login page </h4>
+        );
+    }
+
+    return (
+        <main>
+            <div className="profile-info">
+                <img className="featured-image" src={featuredImage} />
+                <h1 className="title apercupro-medium-black-24px">
+                    Placeholder namme
+                </h1>
+                <div className="username apercupro-regular-normal-manatee-16px">
+                    {userParam ? `${user.username}'s` : 'your'} profile.                </div>
+                <div className="zip-code-78573 poppins-normal-licorice-16px">
+                    <span className="poppins-normal-licorice-16px">
+                        Zip Code: </span>
+                </div>
+                <div>
+                    <p className="poppins-normal-licorice-16px">{bio}</p>
+                </div>
+                <Button>
+                    {/* {buttonProps.children} */}
+                </Button>
+            </div>
+
+            <div className="rectangle-2">
+                <div className="flex-row justify-center mb-3">
+                    <h2 className="col-12 col-md-10 bg-dark text-light p-3 mb-5">
+                        Viewing {userParam ? `${user.username}'s` : 'your'} profile.
+                    </h2>
+
+                    <div className="col-12 col-md-10 mb-5">
+                        {/* <TaskList
+                            tasks={user.tasks}
+                            title={`${user.username}'s Task...`}
+                            showTitle={false}
+                            showUsername={false}
+                        /> */}
+                    </div>
+                    {!userParam && (
+                        <div>
+                            {/* //     className="col-12 col-md-10 mb-3 p-3"
+                        //     style={{ border: '1px dotted #1a1a1a' }}
+                        // >
+                        //     <TaskForm /> */}
+                        </div>
+                    )}
+                </div>
+            </div>
+        </main>
+
+
+    );
+}
 
 
 

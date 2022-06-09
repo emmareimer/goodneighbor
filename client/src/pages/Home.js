@@ -3,6 +3,24 @@ import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'reac
 // import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 
+// const styles = {
+//     body {
+//         display: "flex",
+//         alignItems: "center",
+//         justifyContent: "center",
+//         margin: "0 auto",
+//         height: "100vh",
+//         background-color: "#f1f1f1",
+//       },
+
+//    input {
+//     display: "flex",
+//         alignItems: "center",
+//             justifyContent: "center",
+//                 margin: "0 auto",
+// }
+// }
+
 const Home = () => {
     const [searchedTasks, setSearchedTasks] = useState([]);
     const [searchInput, setSearchInput] = useState('');
@@ -79,10 +97,9 @@ const Home = () => {
     // };
 
     return (
-        <>
-            <Jumbotron fluid className='text-light'>
+        <div>
+            <Jumbotron fluid className='text-light bg-muted'>
                 <Container>
-                    <h1>Search for Tasks!</h1>
                     <Form onSubmit={handleFormSubmit}>
                         <Form.Row>
                             <Col xs={12} md={8}>
@@ -100,17 +117,32 @@ const Home = () => {
                                     Submit Search
                                 </Button>
                             </Col>
+                            <Col>
+                                <form action="#">
+                                    <label for="lang">Language</label>
+                                    <select name="languages" id="lang">
+                                        <option value="food">food</option>
+                                        <option value="landscaping">landscaping</option>
+                                        <option value="homeimprovement">home improvement</option>
+                                        <option value="cleaning">cleaning</option>
+                                        <option value="furnitureassembly">furniture assembly</option>
+                                        <option value="errands">errands</option>
+                                        <option value="moving">moving</option>
+                                    </select>
+                                    <input type="submit" value="Submit" />
+                                </form>
+                            </Col>
                         </Form.Row>
                     </Form>
                 </Container>
             </Jumbotron>
 
             <Container>
-                <h2>
+                {/* <h2>
                     {searchedTasks.length
                         ? `Viewing ${searchedTasks.length} results:`
                         : 'Search for a Task to begin'}
-                </h2>
+                </h2> */}
                 <CardColumns>
                     {searchedTasks.map((task) => {
                         return (
@@ -138,7 +170,7 @@ const Home = () => {
                     })}
                 </CardColumns>
             </Container>
-        </>
+        </div>
     );
 }
 
