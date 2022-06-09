@@ -143,16 +143,16 @@ body {
   letter-spacing: 0;
 }
 
-.green-button > {
+.green-button {
   width: 98px;
   height: 40px;
   display: flex;
   padding: 7.5px 18.5px;
   align-items: flex-start;
-  background-color: var(--eucalyptus);
+  background-color: var(--eucalyptus) !important;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--licorice);
+  border: 1px solid var(--licorice) !important;
 } 
 
 .white-button {
@@ -185,9 +185,9 @@ body {
   letter-spacing: 0;
 }
 
-.button-text-balck {
+.button-text-black {
   color: var(--licorice);
-  font-family: var(--font-family-poppins);
+  font-family: var(--font-family-poppins) important!;
   font-size: var(font-size-m);
   font-weight: 400;
   font-style: normal;
