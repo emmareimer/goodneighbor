@@ -1,13 +1,385 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* -----VARIABLES AND GENERAL STYLES----- */
+:root {
+  --black: rgba(0, 0, 0, 1);
+  --blue-ribbon: rgba(13, 110, 253, 1);
+  --licorice: rgba(17, 17, 17, 1);
+  --bigstone: rgba(21, 37, 54, 1);
+  --eucalyptus: rgba(25, 135, 84, 1);
+  --mine-shaft: rgba(51, 51, 51, 1);
+  --granite-gray-42: rgba(102, 102, 102, 0.251);
+  --granite-gray-5: rgba(102, 102, 102, 0.349);
+  --granite-gray-32: rgba(102, 102, 102 0.6);
+  --granite-gray2: rgba(102, 102, 102, 0.8);
+  --granite-gray3: rgba(102, 102, 102, 1);
+  --nevada: rgba(107, 112, 118, 1);
+  --pale-sky: rgba(108, 117, 125, 1);
+  --gunesmoke: rgba(133, 133, 133, 1);
+  --manatee: rgba(153, 158, 170, 1);
+  --manatee-2: rgba(153, 159, 170, 1);
+  --star-dust: rgba(155, 155, 155, 1);
+  --mist-gray: rgba(196, 196, 196, 1);
+  --mischka: rgba(206, 212, 218, 1);
+  --mystic: rgba(232, 234, 238, 1);
+  --aqua-spring: rgba(233, 253, 244, 1);
+  --tulip-tree-2: rgba(234, 158, 62, 0.102);
+  --tulip-tree: rgba(234, 158, 62, 0.502);
+  --wild-sand: rgba(242, 244, 247, 1);
+  --wild-sand-2: rgba(242, 244, 248, 1);
+  --froly-2: rgba(245, 118, 141, 0.102);
+  --froly: rgba(245, 118, 141, 0.502);
+  --white: rgba(255, 255, 255, 1);
+
+  --font-size-xs: 12px;
+  --font-size-s: 14px;
+  --font-size-m: 16px;
+  --font-size-l: 20px;
+  --font-size-xl: 22px;
+  --font-size-xxxl: 32px;
+  --font-size-x12: 24px;
+
+  --font-family-apercu_pro-medium: "Apercu Pro-Medium";
+  --font-family-apercu_pro-regular: "Apercu Pro-Regular";
+  --font-family-inter: "Inter";
+  --font-family-poppins: "Poppins";
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Poppins", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+
+.container-center-horizontal > * {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.center-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ----- NAVBAR ----- */
+.header-nav {
+  width: 1440px;
+  height: 73px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--white);
+  border: 1px solid var(--granite-gray3)
+}
+
+.flex-row {
+  margin-top: 17px;
+  display: flex;
+  align-items: center;
+  min-width: 1360px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background-color: var(--eucalyptus);
+  border-radius: 20px;
+}
+
+.links {
+  height: 24px;
+  margin-left: 40px;
+  margin-top: 8px;
+  display: flex;
+  align-items: flex-start;
+  min-width: 541px;
+  color: var(--granite-gray2);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+/* right now the ::hover and ::active are just default bootstrap. in figma our active page/link is gunsmoke (font weight 500) and inactive is granite gray (as above)  */
+
+.profile {
+  min-height: 24px;
+  min-width: 50px;
+  letter-spacing: 0;
+
+}
+
+.claimed-tasks {
+  min-height: 24px;
+  margin-left: 40px;
+  min-width: 117px;
+  letter-spacing: 0;
+}
+
+.completed-tasks {
+  min-height: 24px;
+  margin-left: 40px;
+  min-width: 139px;
+  letter-spacing: 0;
+}
+
+.nearby-tasks {
+  min-height: 24px;
+  margin-left: 40px;
+  letter-spacing: 0;
+}
+
+.green-button {
+  width: 98px;
+  height: 40px;
+  display: flex;
+  padding: 7.5px 18.5px;
+  align-items: flex-start;
+  background-color: var(--eucalyptus);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--licorice);
+} 
+
+.white-button {
+  width: 98px;
+  height: 40px;
+  margin-left: 16px;
+  display: flex;
+  padding: 7.5 19px;
+  align-items: flex-start;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.LoginSignUp {
+  margin-left: 1108px;
+  display: flex;
+  align-items: flex-start;
+  min-width: 212px;
+}
+
+.button-text-white {
+  color: var(--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+  height: 24px;
+  min-width: 61px;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.button-text-balck {
+  color: var(--licorice);
+  font-family: var(--font-family-poppins);
+  font-size: var(font-size-m);
+  font-weight: 400;
+  font-style: normal;
+  height: 24px;
+  min-width: 61px;
+  text-align: center;
+  letter-spacing: 0;
+}
+/* ----- SIGNUP ----- */
+/* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
+
+.signup-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.form-label {
+  margin-top: 20px;
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray3);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form-input {
+  margin: 10px;
+  width: 715px;
+  height: 56px;
+  padding: 15px 24px;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--granite-gray-5);
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray-32);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.card-title {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-weight: 500;
+  font-style: normal;
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+}
+.card-subtitle {
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+  padding-top: 20px;
+}
+
+}
+
+/* ----- SIGNUP ----- */
+/* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
+
+.signup-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.form-label {
+  margin-top: 20px;
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray3);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.form-input {
+  margin: 10px;
+  width: 715px;
+  height: 56px;
+  padding: 15px 24px;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--granite-gray-5);
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray-32);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.card-title {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xxxl);
+  font-weight: 500;
+  font-style: normal;
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+}
+.card-subtitle {
+  height: 48px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+  padding-top: 20px;
+}
+
+.submit-button {
+  width: 715px;
+  height: 64px;
+  display: flex;
+  padding: 20px 252.5px;
+  align-items: flex-start;
+  background-color: var(--blue-ribbon);
+  border-radius: 40px;
+  overflow: hidden;
+  opacity: 0.25;
+  letter-spacing: 0;
+  margin-left: 1px;
+  margin-top: 20px;
+  min-width: 209px;
+  text-align: center;
+}
+
+/* ----- LOGIN ----- */
+
+.submit-button-login {
+  width: 568px;
+  height: 64px;
+  display: flex;
+  padding: 15px 251.5px;
+  align-items: flex-start;
+  background-color: var(--blue-ribbon);
+  border-radius: 32px;
+  overflow: hidden;
+  opacity: 0.25,
+}
+
+.redirect-button {
+  width: 580px;
+  height: 64px;
+  margin-top: 16px;
+  display: flex;
+  padding: 15px 248px;
+  align-items: flex-start;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.button-text-1 {
+  height: 33px;
+  min-width: 65px;
+  color: (var--white);
+  font-family: var(--font-family-poppins);
+  font-size: var(--font-size-xl);
+  font-weight: 500;
+  font-style: normal;
+  border: 1px solid var(--licorice);
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.button-text-2 {
+  height: 33px;
+  min-width: 84px;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.button-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* -----CREATE A TASK----- */
+.category-icon {
+  /* this is where the custom styling for the styling for the little travel, Pets, Plants, and Food icons will go */
 }

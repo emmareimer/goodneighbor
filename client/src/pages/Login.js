@@ -6,10 +6,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-
 import Auth from "../utils/auth";
-// import { normalizePathname } from "react-router/lib/router";
-// import "../styles/Login.css"; (for font, color, and size variables)
+import { Container, Card, Button, Form } from "react-bootstrap";
+
 
 const styles = {
   ContainerTitle: {
@@ -38,27 +37,27 @@ const styles = {
     border: "1px solid var(--granite-gray-5",
   },
   SubmitButton: {
-    width: "568px",
-    height: "64px",
-    display: "flex",
-    padding: "15px 251.5px",
-    alignItems: "flex-start",
-    backgroundColor: "var(--blue-ribbon)",
-    borderRadius: "32px",
-    overflow: "hidden",
-    opacity: 0.25,
+    // width: "568px",
+    // height: "64px",
+    // display: "flex",
+    // padding: "15px 251.5px",
+    // alignItems: "flex-start",
+    // backgroundColor: "var(--blue-ribbon)",
+    // borderRadius: "32px",
+    // overflow: "hidden",
+    // opacity: 0.25,
   },
   ButtonText1: {
-    height: "33px",
-    minWidth: "65px",
-    color: "(var--white)",
-    fontFamily: "var(--font-family-poppins)",
-    fontSize: "var(--font-size-xl)",
-    fontWeight: 500,
-    fontStyle: "normal",
-    border: "1px solid var(--licorice)",
-    textAlign: "center",
-    letterSpacing: 0,
+    // height: "33px",
+    // minWidth: "65px",
+    // color: "(var--white)",
+    // fontFamily: "var(--font-family-poppins)",
+    // fontSize: "var(--font-size-xl)",
+    // fontWeight: 500,
+    // fontStyle: "normal",
+    // border: "1px solid var(--licorice)",
+    // textAlign: "center",
+    // letterSpacing: 0,
   },
   Divider: {
     marginTop: "48px",
@@ -86,20 +85,20 @@ const styles = {
     letterSpacing: 0, 
   },
   RedirectButton: {
-    width: "580px",
-    height: "64px",
-    marginTop: "16px",
-    display: "flex",
-    padding: "15px 248px", 
-    alignItems: "flex-start",
-    borderRadius: "32px", 
-    overflow: "hidden",
+    // width: "580px",
+    // height: "64px",
+    // marginTop: "16px",
+    // display: "flex",
+    // padding: "15px 248px", 
+    // alignItems: "flex-start",
+    // borderRadius: "32px", 
+    // overflow: "hidden",
   },
   ButtonText2: {
-      height: "33px",
-      minWidth: "84px",
-      textAlign: "center",
-      letterSpacing: 0, 
+    //   height: "33px",
+    //   minWidth: "84px",
+    //   textAlign: "center",
+    //   letterSpacing: 0, 
   }
 };
 const Login = (props) => {
@@ -138,71 +137,78 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        {/* HeaderNav with Login and SignUp buttons; GN logo*/}
-        <div className="card">
-          <h1 className="card-header" style={styles.ContainerTitle}>
-            Login to <span>goodneighbor</span>
-          </h1>
-          <div className="card-body">
-            {/* Dont forget to edit link and message. */}
-            {data ? (
-              <p>
-                Success! You may now head{" "}
-                <Link to="/">back to the homepage.</Link>
-              </p>
-            ) : (
-              <form onSubmit={handleFormSubmit}>
-                <span style={styles.InputTitle}>Email address</span>
-                <input
-                  className="form-input"
-                  placeholder=""
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <span style={styles.InputTitle}>Password</span>
-                <input
-                  className="form-input"
-                  placeholder=""
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
-                <button
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: "pointer" }}
-                  type="submit"
-                >
-                <div styles={styles.ButtonText1}> Log in </div>
-                </button>
-              </form>
-            )}
-            <div styles={styles.Divider}>
-              <div styles={styles.Divider1}></div>
-            </div>
-            <div styles={styles.SignUp}>
-                <span styles={styles.ButtonTitle}> Don't have an account? </span>
-                <button
-                  styles={styles.RedirectButton}
-                  className="btn btn-block btn-primary"
-                  style={{ cursor: "pointer" }}
-                  type="button"
-                //   onClick="/signup"
-                >
-                 <div styles={styles.ButtonText2}> Sign up </div>
-                </button>
-            </div>
-            {error && (
-              <div className="my-3 p-3 bg-danger text-white">
-                {error.message}
-              </div>
-            )}
+    <main>
+      <div className="container-center-horizontal">
+          <div className="login screen">
+            {/* HeaderNav with Login and SignUp buttons; GN logo*/}
+            <Container>
+                <Card>
+                  <Card.Header className="card-title center-text">
+                    Login to <span>goodneighbor</span>
+                  </Card.Header>
+                  <Card.Body>
+                    {/* Dont forget to edit link and message. */}
+                    {data ? (
+                      <p>
+                        Success! You may now head{" "}
+                        <Link to="/">back to the homepage.</Link>
+                      </p>
+                    ) : (
+                      <Form classNane="signup-form" onSubmit={handleFormSubmit}>
+                        <Form.Group controlId="username">
+                        <Form.Label className="form-label" style={styles.InputTitle}>Email address</Form.Label>
+                        <Form.Control
+                          className="form-input"
+                          placeholder=""
+                          name="email"
+                          type="email"
+                          value={formState.email}
+                          onChange={handleChange}
+                        />
+                        </Form.Group>
+                        <Form.Group control-Id="email">
+                            <Form.Label className="form-label" style={styles.InputTitle}>Password</Form.Label>
+                            <Form.Control
+                              className="form-input"
+                              placeholder=""
+                              name="password"
+                              type="password"
+                              value={formState.password}
+                              onChange={handleChange}
+                            />
+                        </Form.Group>
+                        <Button
+                          className="button-login"
+                          style={{ cursor: "pointer" }}
+                          type="submit"
+                        >
+                        Log in
+                        </Button>
+                      </Form>
+                    )}
+                    <Card.Divider styles={styles.Divider}>
+                      <div styles={styles.Divider1}></div>
+                    </Card.Divider>
+                    <Card.Footer styles={styles.SignUp}>
+                        <span styles={styles.ButtonTitle}> Don't have an account? </span>
+                        <Button
+                          className="redirect-button"
+                          style={{ cursor: "pointer" }}
+                          type="button"
+                        //   onClick="/signup"
+                        >
+                         <div className="button-text-2" > Sign up </div>
+                        </Button>
+                    </Card.Footer>
+                    {error && (
+                      <div className="">
+                        {error.message}
+                      </div>
+                    )}
+                  </Card.Body>
+                </Card>
+            </Container>
           </div>
-        </div>
       </div>
     </main>
   );
