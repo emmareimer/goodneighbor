@@ -1,6 +1,8 @@
 const { Task, User } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
+// Imports sendusersignup function from courier util
+const { sendUserSignup } = require('../utils/courier');
 
 const resolvers = {
     Query: {
@@ -21,9 +23,13 @@ const resolvers = {
       addUser: async (parent, args) => {
         const user = await User.create(args);
         const token = signToken(user);
-  
+
+        // Sends email to user upon signup
+        sendUserSignup(user.email);
+        
         return { token, user };
       },
+
       loginUser: async (parent, { email, password }) => {
         const user = await User.findOne({ email });
   

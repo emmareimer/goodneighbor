@@ -14,19 +14,22 @@ const courier = CourierClient({ authorizationToken: process.env.COURIER_AUTH_TOK
 //   data: {}, // optional variables for merging into templates
 // });
 
-export const sendCourierNotification = async (email) => {
+
+
+const sendUserSignup = async (email) => {
   const { messageId } = await courier.send({
   
     "message": {
-      "template": process.env.COURIER_NOTIF_ID,
+      "template": process.env.USER_SIGNUP_ID,
       "to": {
         "email": email
       }
     }
   }
   )
-}
-
+};
 
 // Import, then call function to send email
 // sendCourierNotification("developwithemma@gmail.com")
+
+module.exports = {sendUserSignup}
