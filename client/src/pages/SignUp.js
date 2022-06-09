@@ -100,11 +100,11 @@ const SignUp = () => {
                     </Form.Group>
                 <div className="button-center">
                   <Button
-                    className="btn btn-block btn-primary submit-button"
+                    className="submit-button"
                     style={{ cursor: "pointer" }}
                     type="submit"
                   >
-                    Create an account 
+                    <span className="button-text-1">Create an account</span> 
                   </Button>
                 </div>
                 </Form>
