@@ -122,6 +122,7 @@ img {
   font-weight: 700;
   color: var(--blue-ribbon);
   font-size: var(--font-size-xxxl);
+  margin: 10px;
 }
 
 .footer {
@@ -331,7 +332,7 @@ img {
   background-color: var(--eucalyptus);
   border-radius: 40px;
   overflow: hidden;
-  opacity: 0.25;
+  /* opacity: 0.25; */
   letter-spacing: 0;
   margin-left: 1px;
   margin-top: 20px;
@@ -368,26 +369,44 @@ img {
 .button-text-1 {
   height: 33px;
   min-width: 65px;
-  color: (var--white);
+  color: var(--white);
   font-family: var(--font-family-poppins) !important;
   font-size: var(--font-size-xl) !important;
   font-weight: 500;
   font-style: normal;
   text-align: center;
   letter-spacing: 0;
+  margin: auto;
 }
 
 .button-text-2 {
   height: 33px;
-  min-width: 84px;
+  min-width: 65px;
+  color: var(--black);
+  font-family: var(--font-family-poppins) !important;
+  font-size: var(--font-size-xl) !important;
+  font-weight: 500;
+  font-style: normal;
   text-align: center;
   letter-spacing: 0;
+  margin: auto;
 }
 
 .button-center {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.button-title {
+  /* min-height: 36px; */
+  /* min-width: 288px; */
+  text-align: center;
+  letter-spacing: 0; 
+  width: 580px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 /* -----TASK DESCRIPTION----- */
@@ -409,5 +428,11 @@ img {
 }
 
 /* -----CREATE A TASK----- */
-
+.form-check{
+  margin: auto;
+  padding: 40px; 
+  display: inline-flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
 
