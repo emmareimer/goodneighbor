@@ -32,22 +32,14 @@ query User($email: String!) {
 }
 `;
 
-// ???????? GET ALL USER POSTED TASKS OPEN:TRUE
-
-// ???????? GET ALL USER POSTED TASKS OPEN:FALSE
-
-// ------------- GET USER CLAIMED TASKS ------------
-
-// ???????? GET ALL USER CLAIMED TASKS OPEN:TRUE
-
-// ???????? GET ALL USER CLAIMED TASKS OPEN:FALSE
-
-
+// ------------- GET USER CLAIMED TASKS ------------ ***
 
 // -------------- TASK QUERIES ---------------------
 
-// -------------- GET SINGLE TASK ------------------
+// -------------- GET SINGLE TASK ------------------ ****
 
-// -------------- GET ALL TASKS ----------------
+// -------------- GET ALL TASKS BY ZIP CODE -------- ****
 
-// -------------- GET ALL OPEN TASKS BY ZIP CODE, CITY, STATE --------
+
+// STRETCH GOAL
+// ------------- GET USER COMPLETED TASKS ---------- ***
