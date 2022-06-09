@@ -16,7 +16,7 @@ import SignUp from './pages/SignUp';
 // import CompletedTask from './pages/CompletedTask';
 // import CreateTask from './pages/CreateTask';
 // import TaskDescription from './pages/TaskDescription';
-// import Home from './pages/Home';
+import Home from './pages/Home';
 // import Main from './pages/Main';
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -57,10 +57,10 @@ function App() {
                 path="/login"
                 element={<Login />}
               />
-              {/* <Route
+              <Route
                 path="/home"
                 element={<Home />}
-              /> */}
+              />
               {/* <Route
                 path="/profile"
                 element={<Profile />}

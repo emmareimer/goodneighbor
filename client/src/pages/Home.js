@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
-import { useMutation } from '@apollo/client';
-
+// import { useMutation } from '@apollo/client';
+import Auth from '../utils/auth';
 
 const Home = () => {
     const [searchedTasks, setSearchedTasks] = useState([]);
@@ -15,7 +15,9 @@ const Home = () => {
     //     return () => saveTaskIds(savedTaskIds);
     // });
 
-    const searchBar = ()
+    const searchBar = () => {
+
+    }
 
 
     const handleFormSubmit = async (event) => {
@@ -35,11 +37,6 @@ const Home = () => {
             const { items } = await response.json();
 
             const TaskData = items.map((Task) => ({
-                name: Task.name,
-                description: Task.taskDescription,
-                open: Task.open,
-                category: Task.category,
-                instruction: Task.instruction,
                 zipcode: Task.zipcode,
             }));
 
@@ -50,36 +47,36 @@ const Home = () => {
         }
     };
 
-    // create function to handle saving a Task to our database
-    const handleSaveTask = async (TaskId) => {
-        // find the Task in `searchedTasks` state by the matching id
-        const TaskToSave = searchedTasks.find((Task) => Task.TaskId === TaskId);
-        // get token
-        const token = Auth.loggedIn() ? Auth.getToken() : null;
+    // // create function to handle saving a Task to our database
+    // const handleSaveTask = async (TaskId) => {
+    //     // find the Task in `searchedTasks` state by the matching id
+    //     const taskToSave = searchedTasks.find((Task) => Task.TaskId === TaskId);
+    //     // get token
+    //     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
-        if (!token) {
-            return false;
-        }
+    //     if (!token) {
+    //         return false;
+    //     }
 
 
 
-        try {
-            // console.log('TaskToSave: ', TaskToSave);
-            // console.log('ADD_Task: ', addTask);
-            const response = await saveTask({
-                variables: { input: TaskToSave }
-            });
-            console.log('saveTask Response: ', response);
-            if (response.errors) {
-                throw new Error('something went wrong!');
-            }
+    //     try {
+    //         // console.log('TaskToSave: ', TaskToSave);
+    //         // console.log('ADD_Task: ', addTask);
+    //         const response = await saveTask({
+    //             variables: { input: TaskToSave }
+    //         });
+    //         console.log('saveTask Response: ', response);
+    //         if (response.errors) {
+    //             throw new Error('something went wrong!');
+    //         }
 
-            // if Task successfully saves to user's account, save Task id to state
-            setSavedTaskIds([...savedTaskIds, TaskToSave.TaskId]);
-        } catch (err) {
-            console.error(err);
-        }
-    };
+    //         // if Task successfully saves to user's account, save Task id to state
+    //         setSavedTaskIds([...savedTaskIds, TaskToSave.TaskId]);
+    //     } catch (err) {
+    //         console.error(err);
+    //     }
+    // };
 
     return (
         <>
@@ -115,7 +112,7 @@ const Home = () => {
                         : 'Search for a Task to begin'}
                 </h2>
                 <CardColumns>
-                    {searchedTasks.map((Task) => {
+                    {searchedTasks.map((task) => {
                         return (
                             <Card key={task.taskId} border='dark'>
                                 {task.image ? (
@@ -126,13 +123,13 @@ const Home = () => {
                                     <p className='small'>Authors: {task.authors}</p>
                                     <Card.Text>{task.description}</Card.Text>
                                     {Auth.loggedIn() && (
-                                        <Button
-                                            disabled={savedTaskIds?.some((savedTaskId) => savedTaskId === Task.TaskId)}
+                                        <Button>
+                                            {/* disabled={savedTaskIds?.some((savedTaskId) => savedTaskId === Task.TaskId)}
                                             className='btn-block btn-info'
                                             onClick={() => handleSaveTask(task.taskId)}>
                                             {savedTaskIds?.some((savedTaskId) => savedTaskId === task.TaskId)
                                                 ? 'This task  has already been claimed!'
-                                                : 'Claim this Task!'}
+                                                : 'Claim this Task!'} */}
                                         </Button>
                                     )}
                                 </Card.Body>
