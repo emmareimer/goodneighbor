@@ -1,4 +1,4 @@
-require ('dotenv').config({path: '../.env'})
+require('dotenv').config()
 const { CourierClient } = require("@trycourier/courier");
 
 const courier = CourierClient({ authorizationToken: process.env.COURIER_AUTH_TOKEN }); // get from the Courier UI
@@ -13,7 +13,6 @@ const courier = CourierClient({ authorizationToken: process.env.COURIER_AUTH_TOK
 //   },
 //   data: {}, // optional variables for merging into templates
 // });
-
 
 
 const sendUserSignup = async (email) => {
