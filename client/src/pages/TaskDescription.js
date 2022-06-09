@@ -24,10 +24,10 @@ const TaskDescription = () => {
                 </Card.Body>
                 <Card.Footer>
                 <div className="button-center">
-                    <Button className="submit-button">Claim this task</Button>
+                    <Button className="submit-button1">Claim this task</Button>
                 </div>
                 <div className="button-center">
-                    <Button>Go Back to Search</Button>
+                    <Button className="submit-button2">Go Back to Search</Button>
                 </div>
                 </Card.Footer>
             </Card>

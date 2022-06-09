@@ -46,9 +46,7 @@
 body {
   margin: 0;
   padding: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Poppins", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: var(--font-family-poppins)
 }
 
 img {
@@ -56,16 +54,16 @@ img {
   height: 56px;
 }
 
-#PetCardSign {
-  /* height: 100px;
+/* #PetCardSign {
+  height: 100px;
   display: flex;
   padding: 21px;
   align-items: flex-start;
   min-width: 100px;
   background-color: var(--aqua-spring);
   border-radius: 24px;
-  border: 1px solid var(--euclayptus); */
-}
+  border: 1px solid var(--euclayptus);
+} */
 
 #plant-card-sign {
   height: 100px;
@@ -78,26 +76,27 @@ img {
   border: 1px solid var(--euclayptus);
   margin: auto;
 }
-#TravelCardSign {
-  /* height: 100px;
+/* #TravelCardSign {
+  height: 100px;
   display: flex;
   padding: 21px;
   align-items: flex-start;
   min-width: 100px;
   background-color: var(--aqua-spring);
   border-radius: 24px;
-  border: 1px solid var(--euclayptus); */
-}
-#FoodCardSign {
-  /* height: 100px;
+  border: 1px solid var(--euclayptus);
+} */
+
+/* #FoodCardSign {
+  height: 100px;
   display: flex;
   padding: 21px;
   align-items: flex-start;
   min-width: 100px;
   background-color: var(--aqua-spring);
   border-radius: 24px;
-  border: 1px solid var(--euclayptus); */
-}
+  border: 1px solid var(--euclayptus);
+} */
 
 .container-center-horizontal > * {
   display: flex;
@@ -211,7 +210,7 @@ img {
   height: 40px;
   margin-left: 16px;
   display: flex;
-  padding: 7.5 19px;
+  padding: 7.5px 19px;
   align-items: flex-start;
   border-radius: 8px;
   overflow: hidden;
@@ -226,7 +225,7 @@ img {
 
 .button-text-white {
   color: var(--white);
-  font-family: var(--font-family-poppins);
+  font-family: var(--font-family-poppins) !important;
   font-size: var(--font-size-m);
   font-weight: 400;
   font-style: normal;
@@ -239,7 +238,7 @@ img {
 .button-text-black {
   color: var(--licorice);
   font-family: var(--font-family-poppins) !important;
-  font-size: var(font-size-m) !important;
+  font-size: var(--font-size-m) !important;
   font-weight: 400;
   font-style: normal;
   height: 24px;
@@ -247,6 +246,7 @@ img {
   text-align: center !important;
   letter-spacing: 0;
 }
+
 /* ----- SIGNUP ----- */
 /* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
 
@@ -262,7 +262,7 @@ img {
   min-height: 24px;
   letter-spacing: 0;
   color: var(--granite-gray3);
-  font-family: var(--font-family-poppins);
+  font-family: var(--font-family-poppins) !important;
   font-size: var(--font-size-m);
   font-weight: 400;
   font-style: normal;
@@ -281,7 +281,7 @@ img {
   min-height: 24px;
   letter-spacing: 0;
   color: var(--granite-gray-32);
-  font-family: var(--font-family-poppins);
+  font-family: var(--font-family-poppins) !important;
   font-size: var(--font-size-m);
   font-weight: 400;
   font-style: normal;
@@ -289,7 +289,7 @@ img {
 
 .card-title {
   color: var(--mine-shaft);
-  font-family: var(--font-family-poppins);
+  font-family: var(--font-family-poppins) !important;
   font-size: var(--font-size-xxxl);
   font-weight: 500;
   font-style: normal;
@@ -306,66 +306,7 @@ img {
   padding-top: 20px;
 }
 
-/* ----- SIGNUP ----- */
-/* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
-
-.signup-form {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-}
-
-.form-label {
-  margin-top: 20px;
-  min-height: 24px;
-  letter-spacing: 0;
-  color: var(--granite-gray3);
-  font-family: var(--font-family-poppins);
-  font-size: var(--font-size-m);
-  font-weight: 400;
-  font-style: normal;
-}
-
-.form-input {
-  margin: 10px;
-  width: 715px;
-  height: 56px;
-  padding: 15px 24px;
-  display: flex;
-  align-items: flex-start;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--granite-gray-5);
-  min-height: 24px;
-  letter-spacing: 0;
-  color: var(--granite-gray-32);
-  font-family: var(--font-family-poppins);
-  font-size: var(--font-size-m);
-  font-weight: 400;
-  font-style: normal;
-}
-
-.card-title {
-  color: var(--mine-shaft);
-  font-family: var(--font-family-poppins);
-  font-size: var(--font-size-xxxl);
-  font-weight: 500;
-  font-style: normal;
-  height: 48px;
-  min-width: 304px;
-  text-align: center;
-  letter-spacing: 0;
-}
-.card-subtitle {
-  height: 48px;
-  min-width: 304px;
-  text-align: center;
-  letter-spacing: 0;
-  padding-top: 20px;
-}
-
-.submit-button {
+.submit-button1 {
   width: 715px;
   height: 64px;
   display: flex;
@@ -381,6 +322,23 @@ img {
   min-width: 209px;
   text-align: center;
 }
+.submit-button2 {
+  width: 715px;
+  height: 64px;
+  display: flex;
+  padding: 20px 252.5px;
+  align-items: flex-start;
+  background-color: var(--eucalyptus);
+  border-radius: 40px;
+  overflow: hidden;
+  opacity: 0.25;
+  letter-spacing: 0;
+  margin-left: 1px;
+  margin-top: 20px;
+  min-width: 209px;
+  text-align: center;
+}
+
 
 /* ----- LOGIN ----- */
 
