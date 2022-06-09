@@ -24,6 +24,7 @@ import Home from './pages/Home';
 
 // import Main from './pages/Main';
 import Nav from './components/Nav';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import Header from './components/Header';
 
@@ -56,7 +57,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
+
+
           {/* the re-styled Nav.js is in Header.js */}
+
           <Header />
           <div className="container">
             <Routes>
@@ -66,8 +70,16 @@ function App() {
               />
               <Route
 
-                path="/createtask"
-                element={<CreateTask />}
+
+                // path="/createtask"
+                // element={<CreateTask />}
+
+                path="/"
+                element={<Home />}
+
+                // path="/createtask"
+                // element={<CreateTask />}
+
               />
               <Route
                 path="/profile"

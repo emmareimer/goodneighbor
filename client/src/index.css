@@ -43,6 +43,10 @@
   --font-family-poppins: "Poppins";
 }
 
+a {
+  text-decoration: node;
+}
+
 body {
   margin: 0;
   padding: 20px;

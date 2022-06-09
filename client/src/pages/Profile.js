@@ -28,7 +28,7 @@ const Profile = () => {
 
     if (!user?.username) {
         return (
-            <h4>Redirect to login page </h4>
+            <h4>Please login first! </h4>
         );
     }
 
@@ -86,7 +86,7 @@ const Profile = () => {
 export default Profile;
 
 
-{/* The code below is closer to the figma design. I want to */ }
+{/* The code below is closer to the figma design. I want to use it later for reference */ }
 {/* <div className="rectangle-2">
                 <div className="articles">
                     <p>Water Tiffany's mango tree</p>
