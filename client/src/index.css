@@ -51,6 +51,53 @@ body {
     sans-serif;
 }
 
+img {
+  width: 56px;
+  height: 56px;
+}
+
+#PetCardSign {
+  /* height: 100px;
+  display: flex;
+  padding: 21px;
+  align-items: flex-start;
+  min-width: 100px;
+  background-color: var(--aqua-spring);
+  border-radius: 24px;
+  border: 1px solid var(--euclayptus); */
+}
+
+#plant-card-sign {
+  height: 100px;
+  display: flex;
+  padding: 21px;
+  align-items: flex-start;
+  min-width: 100px;
+  background-color: var(--aqua-spring);
+  border-radius: 24px;
+  border: 1px solid var(--euclayptus);
+  margin: auto;
+}
+#TravelCardSign {
+  /* height: 100px;
+  display: flex;
+  padding: 21px;
+  align-items: flex-start;
+  min-width: 100px;
+  background-color: var(--aqua-spring);
+  border-radius: 24px;
+  border: 1px solid var(--euclayptus); */
+}
+#FoodCardSign {
+  /* height: 100px;
+  display: flex;
+  padding: 21px;
+  align-items: flex-start;
+  min-width: 100px;
+  background-color: var(--aqua-spring);
+  border-radius: 24px;
+  border: 1px solid var(--euclayptus); */
+}
 
 .container-center-horizontal > * {
   display: flex;
@@ -76,6 +123,10 @@ body {
   font-weight: 700;
   color: var(--blue-ribbon);
   font-size: var(--font-size-xxxl);
+}
+
+.footer {
+  margin-top: 25px;
 }
 
 /* ----- NAVBAR ----- */
@@ -187,13 +238,13 @@ body {
 
 .button-text-black {
   color: var(--licorice);
-  font-family: var(--font-family-poppins) important!;
-  font-size: var(font-size-m);
+  font-family: var(--font-family-poppins) !important;
+  font-size: var(font-size-m) !important;
   font-weight: 400;
   font-style: normal;
   height: 24px;
   min-width: 61px;
-  text-align: center;
+  text-align: center !important;
   letter-spacing: 0;
 }
 /* ----- SIGNUP ----- */
@@ -360,11 +411,10 @@ body {
   height: 33px;
   min-width: 65px;
   color: (var--white);
-  font-family: var(--font-family-poppins);
-  font-size: var(--font-size-xl);
+  font-family: var(--font-family-poppins) !important;
+  font-size: var(--font-size-xl) !important;
   font-weight: 500;
   font-style: normal;
-  border: 1px solid var(--licorice);
   text-align: center;
   letter-spacing: 0;
 }
@@ -382,7 +432,24 @@ body {
   justify-content: center;
 }
 
-/* -----CREATE A TASK----- */
-.category-icon {
-  /* this is where the custom styling for the styling for the little travel, Pets, Plants, and Food icons will go */
+/* -----TASK DESCRIPTION----- */
+.content{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 660px;
 }
+
+.frame{
+  width: 438px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 78px;
+}
+
+/* -----CREATE A TASK----- */
+
+

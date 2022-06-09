@@ -16,9 +16,12 @@ import SignUp from './pages/SignUp';
 // import Profile from './pages/Profile';
 // import ClaimedTask from './pages/ClaimedTask';
 // import CompletedTask from './pages/CompletedTask';
-// import CreateTask from './pages/CreateTask';
-// import TaskDescription from './pages/TaskDescription';
+
+import CreateTask from './pages/CreateTask';
+import TaskDescription from './pages/TaskDescription';
+
 import Home from './pages/Home';
+
 // import Main from './pages/Main';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -60,6 +63,10 @@ function App() {
                 element={<Login />}
               />
               <Route
+
+                path="/createtask"
+                element={<CreateTask />}
+
                 path="/home"
                 element={<Home />}
               />
@@ -67,22 +74,14 @@ function App() {
                 path="/profile"
                 element={<Profile />}
               /> */}
-              {/* <Route 
+              <Route
+                path="/taskdescription"
+                element={<TaskDescription />}
+              />
+              <Route 
                 path="/signup" 
                 element={<SignUp />}
               />
-              {/* <Route 
-                // path="/profiles/:username" or path="/me"
-                // element={<Profile />}
-              />
-              <Route 
-                path="" 
-                // element={<ClaimedTask />}
-              />
-              <Route 
-                path="" 
-                // element={<CompletedTask />}
-              /> */}
             </Routes>
           </div>
           <Footer />

@@ -155,7 +155,7 @@ const Login = (props) => {
                         <Link to="/">back to the homepage.</Link>
                       </p>
                     ) : (
-                      <Form classNane="signup-form" onSubmit={handleFormSubmit}>
+                      <Form className="signup-form" onSubmit={handleFormSubmit}>
                         <Form.Group controlId="email">
                         <Form.Label className="form-label" style={styles.InputTitle}>Email address</Form.Label>
                         <Form.Control
@@ -167,7 +167,7 @@ const Login = (props) => {
                           onChange={handleChange}
                         />
                         </Form.Group>
-                        <Form.Group control-Id="password">
+                        <Form.Group controlId="password">
                             <Form.Label className="form-label" style={styles.InputTitle}>Password</Form.Label>
                             <Form.Control
                               className="form-input"
@@ -187,9 +187,9 @@ const Login = (props) => {
                         </Button>
                       </Form>
                     )}
-                    <Card.Divider styles={styles.Divider}>
+                    <div styles={styles.Divider}>
                       <div styles={styles.Divider1}></div>
-                    </Card.Divider>
+                    </div>
                     <Card.Footer styles={styles.SignUp}>
                         <span styles={styles.ButtonTitle}> Don't have an account? </span>
                         <Button
