@@ -54,7 +54,8 @@ export default function Header() {
                 <a href="./login" class="button-text-white"> Log in </a>
               </Button>
               <Button className="white-button">
-                <span className="button-text-black"> Sign up</span>
+                {/* <span className="button-text-black"> Sign up</span> */}
+                <a href="./signup" class="button-text-black"> Sign up </a>
               </Button>
             </div>
           </div>
