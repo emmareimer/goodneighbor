@@ -18,7 +18,7 @@ export default function Header() {
               />
             </Navbar.Brand>
             <Nav className="links">
-              <Nav.Link to='./pages/profile.js' className="profile">
+              <Nav.Link to='/profile' className="profile">
                 Profile
               </Nav.Link>
               <Nav.Link className="claimed-tasks">
@@ -51,11 +51,11 @@ export default function Header() {
             <div className="LoginSignUp">
               <Button className="green-button">
                 {/* <span className="button-text-white"> Log in</span> */}
-                <a href="./login" class="button-text-white"> Log in </a>
+                <a href="/login" class="button-text-white"> Log in </a>
               </Button>
               <Button className="white-button">
                 {/* <span className="button-text-black"> Sign up</span> */}
-                <a href="./signup" class="button-text-black"> Sign up </a>
+                <a href="/signup" class="button-text-black"> Sign up </a>
               </Button>
             </div>
           </div>
