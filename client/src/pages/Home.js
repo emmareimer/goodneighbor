@@ -1,20 +1,23 @@
-import React from 'react';
 import React, { useState, useEffect } from 'react';
 import { Jumbotron, Container, Col, Form, Button, Card, CardColumns } from 'react-bootstrap';
+import { useMutation } from '@apollo/client';
+
 
 const Home = () => {
     const [searchedTasks, setSearchedTasks] = useState([]);
     const [searchInput, setSearchInput] = useState('');
 
-    const [savedTaskIds, setSavedTaskIds] = useState(getSavedTaskIds());
+    // const [savedTaskIds, setSavedTaskIds] = useState(getSavedTaskIds());
 
-    const [claimTask] = useMutation(CLAIM_TASK);
+    // const [addTask] = useMutation(ADD_TASK);
 
-    useEffect(() => {
-        return () => saveTaskIds(savedTaskIds);
-    });
+    // useEffect(() => {
+    //     return () => saveTaskIds(savedTaskIds);
+    // });
 
-    // create method to search for Tasks and set state on form submit
+    const searchBar = ()
+
+
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
@@ -23,7 +26,7 @@ const Home = () => {
         }
 
         try {
-            const response = await searchGoogleTasks(searchInput);
+            const response = await searchBar(searchInput);
 
             if (!response.ok) {
                 throw new Error('something went wrong!');
@@ -32,11 +35,12 @@ const Home = () => {
             const { items } = await response.json();
 
             const TaskData = items.map((Task) => ({
-                TaskId: Task.id,
-                authors: Task.volumeInfo.authors || ['No author to display'],
-                title: Task.volumeInfo.title,
-                description: Task.volumeInfo.description,
-                image: Task.volumeInfo.imageLinks?.thumbnail || '',
+                name: Task.name,
+                description: Task.taskDescription,
+                open: Task.open,
+                category: Task.category,
+                instruction: Task.instruction,
+                zipcode: Task.zipcode,
             }));
 
             setSearchedTasks(TaskData);
@@ -60,8 +64,8 @@ const Home = () => {
 
 
         try {
-            console.log('TaskToSave: ', TaskToSave);
-            console.log('SAVE_Task: ', saveTask);
+            // console.log('TaskToSave: ', TaskToSave);
+            // console.log('ADD_Task: ', addTask);
             const response = await saveTask({
                 variables: { input: TaskToSave }
             });
@@ -140,3 +144,5 @@ const Home = () => {
         </>
     );
 }
+
+export default Home;
