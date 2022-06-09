@@ -1,8 +1,13 @@
 import React from 'react'
+import { } from 'react-bootstrap'
 
 export default function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <div className="container-center-horizontal">
+      <div className="center-text">
+      Be a <span className="logo-text">goodneighbor</span>
+      </div>
+    </div>
+  );
 }
 

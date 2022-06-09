@@ -4,7 +4,7 @@ Forget my password option (GET and DELETE hashed password from local storage?)
 */
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useMutation } from "@apollo/client";
+import { useMutation } from "@apollo/react-hooks";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { Container, Card, Button, Form } from "react-bootstrap";
@@ -102,6 +102,7 @@ const styles = {
   }
 };
 const Login = (props) => {
+    // set initial form state
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -144,7 +145,7 @@ const Login = (props) => {
             <Container>
                 <Card>
                   <Card.Header className="card-title center-text">
-                    Login to <span>goodneighbor</span>
+                    Login to <span className="logo-text">goodneighbor</span>
                   </Card.Header>
                   <Card.Body>
                     {/* Dont forget to edit link and message. */}
@@ -155,7 +156,7 @@ const Login = (props) => {
                       </p>
                     ) : (
                       <Form classNane="signup-form" onSubmit={handleFormSubmit}>
-                        <Form.Group controlId="username">
+                        <Form.Group controlId="email">
                         <Form.Label className="form-label" style={styles.InputTitle}>Email address</Form.Label>
                         <Form.Control
                           className="form-input"
@@ -166,7 +167,7 @@ const Login = (props) => {
                           onChange={handleChange}
                         />
                         </Form.Group>
-                        <Form.Group control-Id="email">
+                        <Form.Group control-Id="password">
                             <Form.Label className="form-label" style={styles.InputTitle}>Password</Form.Label>
                             <Form.Control
                               className="form-input"
