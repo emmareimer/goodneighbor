@@ -79,10 +79,10 @@ const styles = {
     minHeight: "116px", 
   },
   ButtonTitle: {
-    minHeight: "36px",
-    minWidth: "288px",
-    textAlign: "center",
-    letterSpacing: 0, 
+    // minHeight: "36px",
+    // minWidth: "288px",
+    // textAlign: "center",
+    // letterSpacing: 0, 
   },
   RedirectButton: {
     // width: "580px",
@@ -145,7 +145,7 @@ const Login = (props) => {
             <Container>
                 <Card>
                   <Card.Header className="card-title center-text">
-                    Login to <span className="logo-text">goodneighbor</span>
+                    Login to  <span className="logo-text"> goodneighbor</span>
                   </Card.Header>
                   <Card.Body>
                     {/* Dont forget to edit link and message. */}
@@ -179,11 +179,11 @@ const Login = (props) => {
                             />
                         </Form.Group>
                         <Button
-                          className="button-login"
+                          className="submit-button1"
                           style={{ cursor: "pointer" }}
                           type="submit"
                         >
-                        Log in
+                        <span className="button-text-1"> Log in</span>
                         </Button>
                       </Form>
                     )}
@@ -191,14 +191,14 @@ const Login = (props) => {
                       <div styles={styles.Divider1}></div>
                     </div>
                     <Card.Footer styles={styles.SignUp}>
-                        <span styles={styles.ButtonTitle}> Don't have an account? </span>
+                        <span className="button-title"> Don't have an account? </span>
                         <Button
-                          className="redirect-button"
+                          className="submit-button2"
                           style={{ cursor: "pointer" }}
                           type="button"
                         //   onClick="/signup"
                         >
-                         <div className="button-text-2" > Sign up </div>
+                         <span className="button-text-1" > Sign up </span>
                         </Button>
                     </Card.Footer>
                     {error && (

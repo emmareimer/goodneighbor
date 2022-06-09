@@ -86,6 +86,12 @@ const Home = () => {
                 <Container className="searchBar">
                     <Form onSubmit={handleFormSubmit} >
                         <Form.Row>
+
+        <div>
+            <Jumbotron fluid className='text-light bg-muted'> 
+                <Container>
+                    <Form onSubmit={handleFormSubmit}>
+                        <Form.Row>
                             <Col xs={12} md={8}>
                                 <Form.Control
                                     name='searchInput'
@@ -117,10 +123,10 @@ const Home = () => {
                                     <input type="submit" value="Submit" />
                                 </form>
                             </Col>
-                        </Form.Row>
+                        {/* </Form.Row> */}
                     </Form>
                 </Container>
-            </Jumbotron>
+            {/* </Jumbotron> */}
 
             <Container>
                 {/* <h2>
@@ -128,7 +134,7 @@ const Home = () => {
                         ? `Viewing ${searchedTasks.length} results:`
                         : 'Search for a Task to begin'}
                 </h2> */}
-                <CardColumns>
+                {/* <CardColumns> */}
                     {searchedTasks.map((task) => {
                         return (
                             <Card key={task.taskId} border='dark'>
@@ -153,7 +159,7 @@ const Home = () => {
                             </Card>
                         );
                     })}
-                </CardColumns>
+                {/* </CardColumns> */}
             </Container>
         </div>
         // </div>

@@ -170,7 +170,7 @@ const CreateTask = () => {
                         style={{ cursor: "pointer" }}
                         type="submit"
                       >
-                        Create a task
+                        <span className="button-text-1">Create a task</span>
                       </Button>
                     </div>
                   </Form>

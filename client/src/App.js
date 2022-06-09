@@ -26,6 +26,7 @@ import Home from './pages/Home';
 import Nav from './components/Nav';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Header from './components/Header';
 
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
@@ -56,6 +57,10 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
+
+
+          {/* the re-styled Nav.js is in Header.js */}
+
           <Header />
           <div className="container">
             <Routes>
@@ -65,16 +70,26 @@ function App() {
               />
               <Route
 
+
                 // path="/createtask"
                 // element={<CreateTask />}
 
                 path="/"
                 element={<Home />}
+
+                // path="/createtask"
+                // element={<CreateTask />}
+
               />
               <Route
                 path="/profile"
                 element={<Profile />}
-              />
+              /> 
+              {/* <Route
+                path="/home"
+                element={<Home />}
+              /> 
+              */}
               <Route
                 path="/taskdescription"
                 element={<TaskDescription />}
