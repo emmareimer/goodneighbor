@@ -9,9 +9,8 @@ mutation addUser ($email: String!, $password: String!, $username: String!) {
   addUser(email: $email, password: $password, username: $username) {
     token
     user {
+      _id
       username
-      email
-      password
     }
   }
 }
