@@ -67,8 +67,15 @@ body {
 
 .center-text {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+}
+
+.logo-text {
+  font-family: var(--font-family-poppins);
+  font-weight: 700;
+  color: var(--blue-ribbon);
+  font-size: var(--font-size-xxxl);
 }
 
 /* ----- NAVBAR ----- */
@@ -79,11 +86,9 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: var(--white);
-  border: 1px solid var(--granite-gray3)
 }
 
 .flex-row {
-  margin-top: 17px;
   display: flex;
   align-items: center;
   min-width: 1360px;
@@ -138,7 +143,7 @@ body {
   letter-spacing: 0;
 }
 
-.green-button {
+.green-button > {
   width: 98px;
   height: 40px;
   display: flex;
