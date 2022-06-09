@@ -55,7 +55,7 @@ const typeDefs = gql`
 
         # --- TASK MUTATIONS ---
         addTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: String, contactless: Boolean, city: String, state:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
-        updateTask(id: ID, completed_by: String, completed_at: String, open: Boolean, latitude: Int, longitude: Int): Task
+        updateTask(id: ID, claimed_by: String, completed_by: String, completed_at: String, open: Boolean, latitude: Int, longitude: Int): Task
     }
 `;
 

@@ -164,8 +164,47 @@ mutation Mutation($name: String, $taskDescription: String, $open: Boolean, $cate
 //   "createdBy": "629cd21cb085f4d937f863c9",
 // }
 
-// --------------- UPDATE SINGLE TASK -----------------
+// --------------- UPDATE SINGLE TASK OPEN, COMPLETED_BY ----------------- ***
+
+export const UPDATE_TASK_OPEN_COMPLETEDBY = gql`
+mutation Mutation($updateTaskId: ID, $open: Boolean, $completedBy: String) {
+  updateTask(id: $updateTaskId, open: $open, completed_by: $completedBy) {
+    open
+    completed_at
+    completed_by {
+      _id
+    }
+  }
+}
+`;
+
+// TEST DATA FOR UPDATING TASK BY OPEN AND COMPLETED BY
+
+// {
+//   "open": false,
+//   "updateTaskId": "62a2116c2fc3723c1337c801",
+//   "completedBy": "62a2116c2fc3723c1337c801"
+// }
+
+// --- UPDATE SINGLE TASK CLAIMED_BY AND UPDATE USER CLAIMED_TASKS --- ***
+
+export const UPDATE_TASK_CLAIMED = gql`
+mutation Mutation($claimedBy: String, $updateTaskId: ID) {
+  updateTask(claimed_by: $claimedBy, id: $updateTaskId) {
+    claimed_by {
+      _id
+    }
+  }
+}
+`
 
 // TEST DATA FOR UPDATE TASKS
 
+// {
+//   "claimedBy": "62a16d738c34461fa96726b2",
+//   "updateTaskId": "62a2116c2fc3723c1337c801",
+// }
+
 // --------------- DELETE TASK ---------------------
+
+
