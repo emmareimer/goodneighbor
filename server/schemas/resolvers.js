@@ -23,7 +23,6 @@ const resolvers = {
       addUser: async (parent, args) => {
         const user = await User.create(args);
         const token = signToken(user);
-
         // Sends email to user upon signup
         sendUserSignup(user.email);
         

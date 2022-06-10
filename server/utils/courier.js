@@ -14,7 +14,7 @@ const courier = CourierClient({ authorizationToken: process.env.COURIER_AUTH_TOK
 // //   data: {}, // optional variables for merging into templates
 // // });
 
-
+console.log(process.env.COURIER_AUTH_TOKEN)
 const sendUserSignup = async (email) => {
   const { messageId } = await courier.send({
   

@@ -25,7 +25,6 @@ const SignUp = () => {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
 
     try {
       const { data } = await addUser({
@@ -95,7 +94,7 @@ const SignUp = () => {
                       />
                       <span className="input-subtitle">
                         Use 8 or more characters with a mix of letters, numbers
-                        /u0026 symbols
+                       and symbols
                       </span>
                     </Form.Group>
                 <div className="button-center">
@@ -109,11 +108,11 @@ const SignUp = () => {
                 </div>
                 </Form>
               )}
-              {error && (
+              {/* {error && (
                 <div className="my-3 p-3 bg-danger text-white">
                   {error.message}
                 </div>
-              )}
+              )} */}
             </Card.Body>
           </Card>
         </Container>

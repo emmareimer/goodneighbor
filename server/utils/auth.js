@@ -4,6 +4,8 @@ require('dotenv').config({path: "../.env"})
 const secret = process.env.JWT_TOKEN;
 const expiration = '2h';
 
+console.log(process.env.JWT_TOKEN)
+
 module.exports = {
   authMiddleware: function ({ req }) {
     // allows token to be sent via req.body, req.query, or headers
