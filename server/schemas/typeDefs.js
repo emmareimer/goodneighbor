@@ -3,14 +3,15 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type User {
         _id: ID!
-        name: String!
+        name: String
+        email: String!
         username: String!
         password: String!
         posted_tasks: [Task]
         claimed_tasks: [Task]
         city: String
         state: String
-        zipcode: Int!
+        zipcode: Int
         streetAddress: String
         optionalUnitNumber: String
     }
@@ -27,8 +28,8 @@ const typeDefs = gql`
         open: Boolean
         category: String!
         instructions: String!
-        created_by: User!
-        created_at: String!
+        created_by: User
+        created_at: String
         claimed_by: User
         completed_by: User
         completed_at: String
@@ -41,18 +42,20 @@ const typeDefs = gql`
     }
 
     type Query {
-        tasks: [Task]
-        user(_id: ID!): User
+        task(id: ID): Task
+        tasks(zipcode: Int): [Task]
+        user(email: String!): User
     }
 
     type Mutation {
-        updateTask(id: ID, completed_by: String, completed_at: String, open: Boolean, latitude: Int, longitude: Int): Task
-        updateUser(id: ID, posted_tasks: String, claimed_tasks: String, address: String, city: String, state: String): User
+        # --- USER MUTATIONS ---
+        addUser(email: String!, password: String!, username: String!, name: String, zipcode: Int,): Auth
+        loginUser(email: String, password: String!, username: String): Auth
+        updateUser(id: ID, name: String, email: String, username: String, password: String, posted_tasks: [ID], claimed_tasks: [ID], city: String, state: String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): User
 
-        createTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: User, contactless: Boolean, city: String, State:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
-
-        registerUser(email: String!, password: String!): Auth
-        loginUser(email: String!, password: String!): Auth
+        # --- TASK MUTATIONS ---
+        addTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: String, contactless: Boolean, city: String, state:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
+        updateTask(id: ID, claimed_by: String, completed_by: String, completed_at: String, open: Boolean, latitude: Int, longitude: Int): Task
     }
 `;
 

@@ -20,52 +20,51 @@ const taskSchema = new Schema ({
         type: String,
         required: true,
     },
-    created_by: [
-        {
+    created_by:  {
             type: Schema.Types.ObjectId,
             ref: 'User',
-        }
-    ],
+        },
     created_at: {
         type: Date,
         default: Date.now,
     },
-    claimed_by: [
+    claimed_by: 
         {
             type: Schema.Types.ObjectId,
             ref: 'User',
         }
-    ],
-    completed_by: [
+    ,
+    completed_by: 
         {
             type: Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'User',
         }
-    ],
+    ,
     completed_at: {
-        Type: Date,
+        type: Date,
+        default: Date.now,
     },
     contactless: {
-        Type: Boolean,
+        type: Boolean,
     },
     city: {
-        Type: String,
+        type: String,
         required: true,
     },
     state: {
-        Type: String,
+        type: String,
         required: true,
     },
     zipcode: {
-        Type: Number,
+        type: Number,
         required: true,
     },
     streetAddress: {
-        Type: String,
+        type: String,
         required: true,
     },
     optionalUnitNumber: {
-        Type: String,
+        type: String,
     }
 });
 
