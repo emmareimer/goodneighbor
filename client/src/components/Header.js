@@ -4,7 +4,12 @@ import { Navbar, Nav, Button } from "react-bootstrap";
 import "../index.css";
 import "../App.css";
 
-export default function Header() {
+const Header = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  }
+
   return (
     <Navbar>
       {Auth.loggedIn() ? (
@@ -31,8 +36,8 @@ export default function Header() {
                 Tasks Near Me
               </Nav.Link>
             </Nav>
-            <Button className="green-button">
-              Log Out
+            <Button className="green-button" onClick={logout}>
+              Logout
             </Button>
           </div>
           {/* <div className="divider"></div> */}
@@ -64,3 +69,5 @@ export default function Header() {
     </Navbar>
   );
 }
+
+export default Header;
