@@ -26,6 +26,18 @@ query User($email: String!) {
 //   "email": "emma@test.com"
 // }
 
+// ------------- QUERY ME ------------------
+
+export const QUERY_ME = gql `
+query Query {
+  me {
+    _id
+    email
+    username
+  }
+}
+`;
+
 // ------------- GET USER POSTED TASKS -------------
 
 export const GET_USER_POSTED_TASKS = gql`
