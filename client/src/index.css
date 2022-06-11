@@ -126,7 +126,6 @@ img {
   font-weight: 700;
   color: var(--blue-ribbon);
   font-size: var(--font-size-xxxl);
-  margin: 10px;
 }
 
 .footer {
@@ -295,7 +294,7 @@ img {
   font-size: var(--font-size-xxxl);
   font-weight: 500;
   font-style: normal;
-  height: 48px;
+  height: 63px;
   min-width: 304px;
   text-align: center;
   letter-spacing: 0;
