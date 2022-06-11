@@ -4,31 +4,31 @@ import { useQuery } from '@apollo/client';
 
 import ClaimedTasks from '../components/ClaimedTasks';
 
-import { GET_USER, GET_USER_CLAIMED_TASKS } from '../utils/queries';
+import { GET_USER, QUERY_ME, GET_USER_CLAIMED_TASKS } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
 
 const Profile = () => {
-    const { email: useParam } = useParams();
-    console.log(useParams);
+    const { email: userParam } = useParams();
+    console.log(userParam);
 
     // NEED HELP, how do we get the current user's data??? the code block below should tell our page what user to pull info from 
-    const { data } = useQuery(GET_USER, {
-        variables: { email: useParam },
+    const { data } = useQuery(userParam ? GET_USER : QUERY_ME, {
+        variables: { email: userParam },
     }
     );
 
     console.log(data);
 
-    const user = data?.email || {};
+    const user = data?.me || data?.email || {};
     // navigate to personal profile page if username is yours
-    if (Auth.loggedIn() && Auth.getProfile().data.email === useParam) {
+    if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
         return <Navigate to="/profile" />;
     }
 
     // we could re-direct to the login page 
-    if (!user?.username) {
+    if (!user?.email) {
         return (
             <h4>
                 Please sign in.
