@@ -64,10 +64,6 @@ function App() {
           <div className="container">
             <Routes>
               <Route
-                path="/login"
-                element={<Login />}
-              />
-              <Route
 
 
                 // path="/createtask"
@@ -79,6 +75,10 @@ function App() {
               // path="/createtask"
               // element={<CreateTask />}
 
+              />
+              <Route
+                path="/login"
+                element={<Login />}
               />
               <Route
                 path="/profile"
