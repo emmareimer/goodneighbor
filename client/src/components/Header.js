@@ -3,8 +3,14 @@ import React from "react"
 import { Navbar, Nav, Button } from "react-bootstrap";
 import "../index.css";
 import "../App.css";
+import gnLogo from "./goodneighbor.png"
 
-export default function Header() {
+const Header = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  }
+
   return (
     <Navbar>
       {Auth.loggedIn() ? (
@@ -12,7 +18,7 @@ export default function Header() {
           <div className="flex-row">
             <Navbar.Brand href="/">
               <img
-                src="https://via.placeholder.com/150x30"
+                src={gnLogo}
                 className="logo"
                 alt="goodneighbor Logo"
               />
@@ -31,8 +37,8 @@ export default function Header() {
                 Tasks Near Me
               </Nav.Link>
             </Nav>
-            <Button className="green-button">
-              Log Out
+            <Button className="green-button" onClick={logout}>
+              Logout
             </Button>
           </div>
           {/* <div className="divider"></div> */}
@@ -43,7 +49,7 @@ export default function Header() {
           <div className="flex-row">
             <Navbar.Brand href="/">
               <img
-                src="https://via.placeholder.com/150x30"
+                src={gnLogo}
                 className="logo"
                 alt="goodneighbor Logo"
               />
@@ -64,3 +70,5 @@ export default function Header() {
     </Navbar>
   );
 }
+
+export default Header;

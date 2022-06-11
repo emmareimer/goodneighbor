@@ -42,7 +42,7 @@ const SignUp = () => {
     <main> 
       {/* HeaderNav with Login and SignUp buttons; GN logo*/}
       <div className="container-center-horizontal">
-        <div className="signup screen">
+        <div className="signupScreen">
         <Container>
           <Card>
             <Card.Header className="card-title center-text">
@@ -92,10 +92,6 @@ const SignUp = () => {
                         value={formState.password}
                         onChange={handleChange}
                       />
-                      <span className="input-subtitle">
-                        Use 8 or more characters with a mix of letters, numbers
-                       and symbols
-                      </span>
                     </Form.Group>
                 <div className="button-center">
                   <Button

@@ -49,13 +49,18 @@ a {
 
 body {
   margin: 0;
-  padding: 20px;
+  padding: 5px 20px 0px 20px;
   font-family: var(--font-family-poppins)
 }
 
 img {
   width: 56px;
   height: 56px;
+}
+
+.footer {
+  padding: 20px 0px 20px 0px;
+  margin-top: 30px;
 }
 
 /* #PetCardSign {
@@ -107,11 +112,22 @@ img {
   flex-direction: row;
   justify-content: center;
   pointer-events: none;
-  width: 100%;
+}
+
+.container-center-horizontal1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 2%;
+  margin-bottom: 3%;
 }
 
 .container-center-horizontal > * {
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
   pointer-events: auto;
 }
 
@@ -126,34 +142,27 @@ img {
   font-weight: 700;
   color: var(--blue-ribbon);
   font-size: var(--font-size-xxxl);
-  margin: 10px;
-}
-
-.footer {
-  margin-top: 25px;
 }
 
 /* ----- NAVBAR ----- */
 .header-nav {
-  width: 1440px;
-  height: 73px;
+  /* width: 1440px;
+  height: 73px; */
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: var(--white);
+  padding: 0px;
 }
 
 .flex-row {
   display: flex;
   align-items: center;
-  min-width: 1360px;
+  /* min-width: 1360px; */
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
-  background-color: var(--eucalyptus);
-  border-radius: 20px;
+  width: 250px;
 }
 
 .links {
@@ -207,7 +216,7 @@ img {
   background-color: var(--eucalyptus) !important;
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--licorice) !important;
+  /* border: 1px solid var(--licorice) !important; */
 } 
 
 .white-button {
@@ -222,9 +231,8 @@ img {
 }
 
 .LoginSignUp {
-  margin-left: 1108px;
   display: flex;
-  align-items: flex-start;
+  align-items: right;
   min-width: 212px;
 }
 
@@ -240,6 +248,10 @@ img {
   letter-spacing: 0;
 }
 
+.button-text-white:hover {
+  color: var(--black);
+}
+
 .button-text-black {
   color: var(--licorice);
   font-family: var(--font-family-poppins) !important;
@@ -252,6 +264,10 @@ img {
   letter-spacing: 0;
 }
 
+.button-text-black:hover {
+  color: var(--white);
+}
+
 /* ----- SIGNUP ----- */
 /* HAS COMMON CLASSES WITH OTHER FORMS ON LOGIN AND CREATE TASK PAGES */
 
@@ -259,8 +275,10 @@ img {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
 }
+
+
 
 .form-label {
   margin-top: 20px;
@@ -298,11 +316,12 @@ img {
   font-size: var(--font-size-xxxl);
   font-weight: 500;
   font-style: normal;
-  height: 48px;
+  height: 63px;
   min-width: 304px;
   text-align: center;
   letter-spacing: 0;
 }
+
 .card-subtitle {
   height: 48px;
   min-width: 304px;
@@ -327,6 +346,11 @@ img {
   min-width: 209px;
   text-align: center;
 }
+
+.submit-button1:hover {
+  opacity: 1;
+}
+
 .submit-button2 {
   width: 715px;
   height: 64px;
@@ -440,3 +464,97 @@ img {
   flex-direction: row;
 }
 
+
+/* ------------- Mobile Media Screen ------------- */
+
+@media screen and (max-width: 768px) {
+
+  body {
+    margin: 0;
+    padding: 5px 10px 0px 10px;
+    font-family: var(--font-family-poppins)
+  }
+
+  .form-group {
+    align-items: center;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+  }
+
+  .card-body {
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 0px 20px 0px;
+  }
+
+.form-input {
+  margin: 10px;
+  width: 300px;
+  height: 56px;
+  padding: 15px 24px;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--granite-gray-5);
+  min-height: 24px;
+  letter-spacing: 0;
+  color: var(--granite-gray-32);
+  font-family: var(--font-family-poppins) !important;
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.input-subtitle {
+  width: 300px;
+}
+
+.submit-button1 {
+  width: 300px;
+  height: 64px;
+  padding: 20px;
+}
+
+.card-title {
+  color: var(--mine-shaft);
+  font-family: var(--font-family-poppins) !important;
+  font-size: var(--font-size-x12);
+  font-weight: 500;
+  font-style: normal;
+  height: 63px;
+  min-width: 304px;
+  text-align: center;
+  letter-spacing: 0;
+}
+
+.logo-text {
+  font-family: var(--font-family-poppins);
+  font-weight: 700;
+  color: var(--blue-ribbon);
+  font-size: var(--font-size-x12);
+}
+
+.loginScreen, .signupScreen {
+  display: block;
+  align-items: center;
+  pointer-events: none;
+  margin-top: 10%;
+  margin-right: -10%;
+  margin-bottom: 10%;
+  margin-left: -10%
+}
+
+.logo {
+  width: 150px;
+}
+
+
+}
