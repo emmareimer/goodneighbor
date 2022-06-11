@@ -139,8 +139,8 @@ const Login = (props) => {
 
   return (
     <main>
-      <div className="container-center-horizontal1">
-          <div className="login screen">
+      <div className="container-center-horizontal">
+          <div className="loginScreen">
             {/* HeaderNav with Login and SignUp buttons; GN logo*/}
             <Container>
                 <Card>

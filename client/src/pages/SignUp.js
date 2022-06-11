@@ -41,8 +41,8 @@ const SignUp = () => {
   return (
     <main> 
       {/* HeaderNav with Login and SignUp buttons; GN logo*/}
-      <div className="container-center-horizontal1">
-        <div className="signup screen">
+      <div className="container-center-horizontal">
+        <div className="signupScreen">
         <Container>
           <Card>
             <Card.Header className="card-title center-text">

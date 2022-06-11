@@ -542,7 +542,7 @@ img {
   font-size: var(--font-size-x12);
 }
 
-.container-center-horizontal1 {
+.loginScreen, .signupScreen {
   display: block;
   align-items: center;
   pointer-events: none;
