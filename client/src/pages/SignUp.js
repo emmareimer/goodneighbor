@@ -92,10 +92,6 @@ const SignUp = () => {
                         value={formState.password}
                         onChange={handleChange}
                       />
-                      <span className="input-subtitle">
-                        Use 8 or more characters with a mix of letters, numbers
-                       and symbols
-                      </span>
                     </Form.Group>
                 <div className="button-center">
                   <Button
