@@ -5,7 +5,7 @@ import gnLogo from "./goodneighbor.png"
 export default function Footer() {
   return (
     <div className="container-center-horizontal">
-      <div className="center-text footer">
+      <div className="footer center-text">
       Be a <span className="logo-text">
         <img
               src={gnLogo}
