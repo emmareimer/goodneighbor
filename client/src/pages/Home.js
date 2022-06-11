@@ -103,7 +103,7 @@ const Home = () => {
                                 </Button>
                             </Col>
                             <Col>
-                                <form action="#">
+                                {/* <form action="#">
                                     <label htmlFor="lang">Category</label>
                                     <select name="languages" id="lang">
                                         <option value="food">food</option>
@@ -115,7 +115,7 @@ const Home = () => {
                                         <option value="moving">moving</option>
                                     </select>
                                     <input type="submit" value="Submit" />
-                                </form>
+                                </form> */}
                             </Col>
                         </Form.Row>
                     </Form>
