@@ -60,6 +60,7 @@ img {
 
 .footer {
   padding: 20px 0px 20px 0px;
+  margin-top: 30px;
 }
 
 /* #PetCardSign {
@@ -111,6 +112,18 @@ img {
   flex-direction: row;
   justify-content: center;
   pointer-events: none;
+}
+
+.container-center-horizontal1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  margin-left: 40%;
+  margin-right: 40%;
+  margin-top: 2%;
+  margin-bottom: 3%;
 }
 
 .container-center-horizontal > * {
@@ -264,6 +277,8 @@ img {
   flex-direction: column;
   align-items: center;
 }
+
+
 
 .form-label {
   margin-top: 20px;
@@ -526,5 +541,20 @@ img {
   color: var(--blue-ribbon);
   font-size: var(--font-size-x12);
 }
+
+.container-center-horizontal1 {
+  display: block;
+  align-items: center;
+  pointer-events: none;
+  margin-top: 10%;
+  margin-right: -10%;
+  margin-bottom: 10%;
+  margin-left: -10%
+}
+
+.logo {
+  width: 150px;
+}
+
 
 }
