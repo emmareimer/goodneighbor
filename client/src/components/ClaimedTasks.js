@@ -7,9 +7,9 @@ const ClaimedTasks = ({
     showTitle = true,
     showUsername = true,
 }) => {
-    if (!tasks.length) {
-        return <h3>No Claimed Tasks Yet</h3>;
-    }
+    // if (!tasks.length) {
+    //     return <h3>No Claimed Tasks Yet</h3>;
+    // }
 
     return (
         <div>
