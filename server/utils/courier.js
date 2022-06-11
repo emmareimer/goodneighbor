@@ -1,7 +1,7 @@
 require('dotenv').config({path: "../.env"})
 const { CourierClient } = require("@trycourier/courier");
 
-const courier = CourierClient({ authorizationToken: "pk_prod_4KQW4YJRWJMJCPKZGCBM3B4B2A78" }); // get from the Courier UI
+const courier = CourierClient({ authorizationToken: process.env.COURIER_AUTH_TOKEN }); // get from the Courier UI
 
 // // Example: send a message supporting email & SMS
 // // const { messageId } = await courier.send({
@@ -14,7 +14,6 @@ const courier = CourierClient({ authorizationToken: "pk_prod_4KQW4YJRWJMJCPKZGCB
 // //   data: {}, // optional variables for merging into templates
 // // });
 
-console.log(process.env.COURIER_AUTH_TOKEN)
 const sendUserSignup = async (email) => {
   const { messageId } = await courier.send({
   
