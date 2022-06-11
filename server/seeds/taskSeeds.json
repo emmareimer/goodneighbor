@@ -1,0 +1,79 @@
+[
+  {
+    "name": "Task 1",
+    "taskDescription": "task description",
+    "open": true,
+    "category": "moving",
+    "instructions": "instructions here",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90210",
+    "streetAddress": "123 Main St.",
+    "optionalUnitNumber": ""
+  },
+
+  {
+    "name": "Task 2",
+    "taskDescription": "desc",
+    "open": true,
+    "category": "moving",
+    "instructions": "instructions",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90210",
+    "streetAddress": "127 Main St.",
+    "optionalUnitNumber": ""
+  },
+
+  {
+    "name": "Task 3",
+    "taskDescription": "desc",
+    "open": true,
+    "category": "moving",
+    "instructions": "instructions",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90210",
+    "streetAddress": "129 Main St.",
+    "optionalUnitNumber": ""
+  },
+
+  {
+    "name": "Task 4",
+    "taskDescription": "desc",
+    "open": true,
+    "category": "moving",
+    "instructions": "instructions",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90210",
+    "streetAddress": "130 Main St.",
+    "optionalUnitNumber": ""
+  },
+
+  {
+    "name": "Task 5",
+    "taskDescription": "desc",
+    "open": true,
+    "category": "moving",
+    "instructions": "instructions",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90034",
+    "streetAddress": "132 Main St.",
+    "optionalUnitNumber": ""
+  },
+
+  {
+    "name": "Task 6",
+    "taskDescription": "desc",
+    "open": true,
+    "category": "moving",
+    "instructions": "instructions",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90213",
+    "streetAddress": "1037 Syracuse St.",
+    "optionalUnitNumber": ""
+  }
+]
