@@ -139,7 +139,7 @@ const Login = (props) => {
 
   return (
     <main>
-      <div className="container-center-horizontal">
+      <div className="container-center-horizontal1">
           <div className="login screen">
             {/* HeaderNav with Login and SignUp buttons; GN logo*/}
             <Container>
