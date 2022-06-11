@@ -3,6 +3,7 @@ import React from "react"
 import { Navbar, Nav, Button } from "react-bootstrap";
 import "../index.css";
 import "../App.css";
+import gnLogo from "./goodneighbor.png"
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
           <div className="flex-row">
             <Navbar.Brand href="/">
               <img
-                src="https://via.placeholder.com/150x30"
+                src={gnLogo}
                 className="logo"
                 alt="goodneighbor Logo"
               />
@@ -43,7 +44,7 @@ export default function Header() {
           <div className="flex-row">
             <Navbar.Brand href="/">
               <img
-                src="https://via.placeholder.com/150x30"
+                src={gnLogo}
                 className="logo"
                 alt="goodneighbor Logo"
               />
