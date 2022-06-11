@@ -104,7 +104,7 @@ const Home = () => {
                             </Col>
                             <Col>
                                 <form action="#">
-                                    <label for="lang">Category</label>
+                                    <label htmlFor="lang">Category</label>
                                     <select name="languages" id="lang">
                                         <option value="food">food</option>
                                         <option value="landscaping">landscaping</option>

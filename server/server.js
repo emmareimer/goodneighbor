@@ -15,15 +15,15 @@ const server = new ApolloServer({
 });
 
 app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+app.use(express.json({limit: '1mb'}));
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
+// });
 
 
 // Create a new instance of an Apollo server with the GraphQL schema
