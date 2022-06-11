@@ -144,8 +144,8 @@ const Login = (props) => {
             {/* HeaderNav with Login and SignUp buttons; GN logo*/}
             <Container>
                 <Card>
-                  <Card.Header className="card-title center-text">
-                    Login to  <span className="logo-text"> goodneighbor</span>
+                  <Card.Header className="card-title">
+                    Login to <span className="logo-text">goodneighbor</span>
                   </Card.Header>
                   <Card.Body>
                     {/* Dont forget to edit link and message. */}
@@ -157,7 +157,7 @@ const Login = (props) => {
                     ) : (
                       <Form className="signup-form" onSubmit={handleFormSubmit}>
                         <Form.Group controlId="email">
-                        <Form.Label className="form-label" style={styles.InputTitle}>Email address</Form.Label>
+                        <Form.Label className="form-label">Email address</Form.Label>
                         <Form.Control
                           className="form-input"
                           placeholder=""
@@ -168,7 +168,7 @@ const Login = (props) => {
                         />
                         </Form.Group>
                         <Form.Group controlId="password">
-                            <Form.Label className="form-label" style={styles.InputTitle}>Password</Form.Label>
+                            <Form.Label className="form-label">Password</Form.Label>
                             <Form.Control
                               className="form-input"
                               placeholder=""
@@ -190,22 +190,7 @@ const Login = (props) => {
                     <div styles={styles.Divider}>
                       <div styles={styles.Divider1}></div>
                     </div>
-                    <Card.Footer styles={styles.SignUp}>
-                        <span className="button-title"> Don't have an account? </span>
-                        <Button
-                          className="submit-button2"
-                          style={{ cursor: "pointer" }}
-                          type="button"
-                        //   onClick="/signup"
-                        >
-                         <span className="button-text-1" > Sign up </span>
-                        </Button>
-                    </Card.Footer>
-                    {error && (
-                      <div className="">
-                        {error.message}
-                      </div>
-                    )}
+                  
                   </Card.Body>
                 </Card>
             </Container>
