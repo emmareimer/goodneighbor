@@ -1,64 +1,61 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import { useMutation } from '@apollo/client';
+import { useQuery, useMutation } from '@apollo/client';
 
 import { ADD_TASK } from '../utils/mutations';
-import { GET_USER_POSTED_TASKS, QUERY_ME } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
 
-const TaskForm = () => {
 
+const TaskForm = () => {
+    const { loading, data } = useQuery(QUERY_ME, {
+        variables: { email: Auth.getProfile().data.email },
+        skip: !Auth.loggedIn(),
+    });
     // -------------------------------------------------------------------------------------------------
 
     // const [name, setName] = useState('');
-    const [taskDescription, setTaskDescription] = useState('');
-
-    const [addTask, { error }] = useMutation(ADD_TASK, {
-        update(cache, { data: { addTask } }) {
-            try {
-                const { tasks } = cache.readQuery({ query: GET_USER_POSTED_TASKS });
-
-                cache.writeQuery({
-                    query: GET_USER_POSTED_TASKS,
-                    data: { tasks: [addTask, ...tasks] },
-                });
-            } catch (e) {
-                console.error(e);
-            }
-
-            const { me } = cache.readQuery({ query: QUERY_ME });
-            cache.writeQuery({
-                query: QUERY_ME,
-                data: { me: { tasks: [...me.tasks, addTask] } },
-            });
-        },
+    const [formState, setFormState] = useState({
+        name: "",
+        taskDescription: "",
+        instructions: "",
+        zipcode: 0,
+        open: true,
+        created_by: Auth.getProfile().data._id,
     });
+
+    const [addTask, { error }] = useMutation(ADD_TASK)
+
 
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-
+        console.log()
         try {
             const { data } = await addTask({
-                variables: {
-                    taskDescription,
-                    // created_by: Auth.getProfile.data.username,
-                },
+                variables: { ...formState }
             });
         } catch (err) {
+            console.log('hello');
             console.error(err);
-        }
+        } setFormState({
+            name: "",
+            taskDescription: "",
+            instructions: "",
+            zipcode: 0,
+            open: true,
+            created_by: Auth.getProfile().data._id,
+        })
     };
 
     const handleChange = (event) => {
-        const { name, value } = event.target;
+        const { value } = event.target;
 
-        if (name === "taskDescription") {
-            // setName(value);
-            setTaskDescription(value);
-        }
+        setFormState({ ...formState, [event.target.name]: value });
+
     };
+
 
     // -------------------------------------------------------------------------------------------------
 
@@ -74,19 +71,35 @@ const TaskForm = () => {
                         onSubmit={handleFormSubmit}
                     >
                         <div className="col-12 col-lg-9">
-                            {/* <textarea
+                            <textarea
                                 name="name"
                                 placeholder="Task title"
-                                value={name}
+                                value={formState.name}
                                 className="form-input w-100"
                                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                                 onChange={handleChange}
                             >
-                            </textarea> */}
+                            </textarea>
                             <textarea
                                 name="taskDescription"
                                 placeholder="Mow my yard"
-                                value={taskDescription}
+                                value={formState.taskDescription}
+                                className="form-input w-100"
+                                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                                onChange={handleChange}
+                            ></textarea>
+                            <textarea
+                                name="instructions"
+                                placeholder="Mow my yard"
+                                value={formState.instructions}
+                                className="form-input w-100"
+                                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                                onChange={handleChange}
+                            ></textarea>
+                            <textarea
+                                name="zipcode"
+                                placeholder="Mow my yard"
+                                value={formState.zipcode}
                                 className="form-input w-100"
                                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                                 onChange={handleChange}

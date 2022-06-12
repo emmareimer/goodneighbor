@@ -3,11 +3,11 @@ const { Schema, model } = require('mongoose');
 const taskSchema = new Schema({
     name: {
         type: String,
-        required: true,
+        // required: true,
     },
     taskDescription: {
         type: String,
-        required: true,
+        // required: true,
     },
     open: {
         type: Boolean,

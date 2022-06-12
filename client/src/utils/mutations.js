@@ -122,30 +122,22 @@ mutation UpdateUser($email: String, $claimedTasks: [ID]) {
 // ---------------- ADD TASK ------------------
 
 export const ADD_TASK = gql`
-mutation addTask($name: String, $taskDescription: String, $open: Boolean, $category: String, $createdBy: String, $city: String, $state: String, $zipcode: Int, $streetAddress: String, $optionalUnitNumber: String, $instructions: String, $email: String, $postedTasks: [ID]) {
-  addTask(name: $name, taskDescription: $taskDescription, open: $open, category: $category, created_by: $createdBy, city: $city, state: $state, zipcode: $zipcode, streetAddress: $streetAddress, optionalUnitNumber: $optionalUnitNumber, instructions: $instructions) {
+mutation addTask($name: String, $taskDescription: String, $instructions: String, $zipcode: Int, $open: Boolean, $createdBy: String) {
+  addTask(name: $name, taskDescription: $taskDescription, instructions: $instructions, zipcode: $zipcode, open: $open, created_by: $createdBy) {
     name
     taskDescription
-    open
-    category
     instructions
+    zipcode
+    created_at
     created_by {
       _id
     }
-    created_at
-    city
-    state
-    zipcode
-    streetAddress
-    optionalUnitNumber
-  }
-  updateUser(email: $email) {
-    posted_tasks {
-      _id
-    }
+    open
   }
 }
 `;
+
+
 
 // TEST DATA FOR ADD TASK
 

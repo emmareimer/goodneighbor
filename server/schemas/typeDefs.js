@@ -24,8 +24,8 @@ const typeDefs = gql`
 
     type Task {
         _id: ID!
-        name: String!
-        taskDescription: String!
+        name: String
+        taskDescription: String
         open: Boolean
         category: String
         instructions: String
@@ -37,7 +37,7 @@ const typeDefs = gql`
         contactless: Boolean
         city: String
         state: String
-        zipcode: Int!
+        zipcode: Int
         streetAddress: String
         optionalUnitNumber: String
     }
