@@ -11,12 +11,21 @@ import {
   ThemeProvider,
 } from "react-bootstrap";
 // import { useMutation } from '@apollo/client';
+import { useLazyQuery } from "@apollo/client";
+import { GET_ALL_TASKS_BY_ZIP_CODE } from "../utils/queries";
 import Auth from "../utils/auth";
-import toggle from "../utils/card-expansion";
+import searchZip from "../utils/search";
 
 const Home = () => {
   const [searchedTasks, setSearchedTasks] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [currentZip, setCurrentZip] = useState("");
+  const [SearchByZip, { called, loading, data }] = useLazyQuery(
+    GET_ALL_TASKS_BY_ZIP_CODE,
+    {
+      variables: { zipcode: parseInt(currentZip) },
+    }
+  );
 
   // const [savedTaskIds, setSavedTaskIds] = useState(getSavedTaskIds());
 
@@ -55,6 +64,29 @@ const Home = () => {
     }
   };
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    searchZip().then((zips) => {
+      setCurrentZip(zips[0]);
+      SearchByZip().then((data) => {
+        console.log(data.data.tasks);
+      });
+      //   zips.forEach((element) => {
+      //     setCurrentZip(element);
+      //     SearchByZip()
+      //     console.log(data);
+      //     // const { loading, error, data } = useLazyQuery(
+      //     //   GET_ALL_TASKS_BY_ZIP_CODE,
+      //     //   {
+      //     //     variables: { zipcode: element },
+      //     //   }
+      //     // );
+
+      //     // console.log(data);
+      //   });
+    });
+  };
+
   // // create function to handle saving a Task to our database
   // const handleSaveTask = async (TaskId) => {
   //     // find the Task in `searchedTasks` state by the matching id
@@ -88,7 +120,7 @@ const Home = () => {
     // <div className="bgImageHome">
     <Container className="home-page">
       {Auth.loggedIn()}
-      <Form className="search-bar">
+      <Form className="search-bar" onSubmit={handleSearch}>
         <Row className="searchbar-row hide-desc">
           <Col xs={6}>
             <Form.Control
@@ -96,7 +128,7 @@ const Home = () => {
               className="zipcode-input"
               name="zipCode"
               type="numeric"
-              id="zipcode"
+              id="zip-code"
             />
           </Col>
           <Col xs={4}>
@@ -112,7 +144,9 @@ const Home = () => {
             </Form.Control>
           </Col>
           <Col xs="auto">
-            <Button className="zipcode-search">Search</Button>
+            <Button className="zipcode-search" type="submit">
+              Search
+            </Button>
           </Col>
         </Row>
       </Form>

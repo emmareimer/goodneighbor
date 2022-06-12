@@ -265,12 +265,6 @@ section {
 
 @import url("https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@400;500;700&display=swap");
 
-@media screen and (max-width: 1366px) {
-  .home-page {
-    width: 40%;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .home-page {
     width: 70%;

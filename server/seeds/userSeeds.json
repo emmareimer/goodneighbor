@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Dylan",
+    "username": "djm14",
+    "email": "djmc1400@gmail.com",
+    "password": "Pdoggy",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90210",
+    "streetAddress": "12345 M St.",
+    "optionalUnitNumber": ""
+  },
+  {
+    "name": "Alexa",
+    "username": "alexa",
+    "email": "alexa@test.com",
+    "password": "password",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90210",
+    "streetAddress": "none",
+    "optionalUnitNumber": ""
+  },
+  {
+    "name": "Shauna",
+    "username": "shauna",
+    "email": "shauna@test.com",
+    "password": "password2",
+    "city": "LA",
+    "state": "CA",
+    "zipcode": "90210",
+    "streetAddress": "5498 Lexus Ave.",
+    "optionalUnitNumber": ""
+  }
+]
