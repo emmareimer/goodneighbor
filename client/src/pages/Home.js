@@ -11,10 +11,12 @@ import {
   ThemeProvider,
 } from "react-bootstrap";
 // import { useMutation } from '@apollo/client';
-import { useLazyQuery } from "@apollo/client";
+import { useLazyQuery, useMutation } from "@apollo/client";
 import { GET_ALL_TASKS_BY_ZIP_CODE } from "../utils/queries";
 import Auth from "../utils/auth";
 import searchZip from "../utils/search";
+import { UPDATE_TASK_CLAIMED } from "../utils/mutations";
+// import { toggle, toggleClass } from "../utils/card-expansion";
 
 const Home = () => {
   const [searchedTasks, setSearchedTasks] = useState([]);
@@ -26,6 +28,8 @@ const Home = () => {
       variables: { zipcode: parseInt(currentZip) },
     }
   );
+
+  const [updateClaim, { error }] = useMutation(UPDATE_TASK_CLAIMED);
 
   // const [savedTaskIds, setSavedTaskIds] = useState(getSavedTaskIds());
 
@@ -69,22 +73,25 @@ const Home = () => {
     searchZip().then((zips) => {
       setCurrentZip(zips[0]);
       SearchByZip().then((data) => {
-        console.log(data.data.tasks);
-      });
-      //   zips.forEach((element) => {
-      //     setCurrentZip(element);
-      //     SearchByZip()
-      //     console.log(data);
-      //     // const { loading, error, data } = useLazyQuery(
-      //     //   GET_ALL_TASKS_BY_ZIP_CODE,
-      //     //   {
-      //     //     variables: { zipcode: element },
-      //     //   }
-      //     // );
+        let info = data.data.tasks;
 
-      //     // console.log(data);
-      //   });
+        console.log(info);
+        setSearchedTasks(info);
+      });
     });
+  };
+
+  const claimTask = async (event) => {
+    if (Auth.loggedIn()) {
+      console.log(event.target.name);
+      console.log(Auth.getProfile().data._id);
+      const { data } = await updateClaim({
+        variables: {
+          claimed_by: Auth.getProfile().data._id,
+          id: event.target.name,
+        },
+      });
+    }
   };
 
   // // create function to handle saving a Task to our database
@@ -119,7 +126,7 @@ const Home = () => {
   return (
     // <div className="bgImageHome">
     <Container className="home-page">
-      {Auth.loggedIn()}
+      {/* {Auth.loggedIn()} */}
       <Form className="search-bar" onSubmit={handleSearch}>
         <Row className="searchbar-row hide-desc">
           <Col xs={6}>
@@ -208,8 +215,44 @@ const Home = () => {
             </Form.Row>
           </Form> */}
 
-      <Row className="card-row scrollable-cards">
-        <Card className="displayed-task">
+      <Row className="card-row scrollable-cards" id="open-tasks">
+        {searchedTasks.map((element) => {
+          if (element.open == true) {
+            return (
+              <Card className="displayed-task">
+                <Card.Body>
+                  <Row>
+                    <Col className="image-placeholder"></Col>
+                    <Col className="card-titles">
+                      <Card.Title className="task-title">
+                        {element.name}
+                      </Card.Title>
+                      <Card.Subtitle className="task-date">
+                        {element.zipcode}
+                      </Card.Subtitle>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Card.Subtitle className="task-subtitle">
+                      Task Description
+                    </Card.Subtitle>
+                    <Card.Text className="task-description">
+                      {element.description}
+                    </Card.Text>
+
+                    <Button
+                      name={element._id}
+                      onClick={(event) => claimTask(event)}
+                    >
+                      Claim Task
+                    </Button>
+                  </Row>
+                </Card.Body>
+              </Card>
+            );
+          }
+        })}
+        {/* <Card className="displayed-task hide-desc">
           <Card.Body>
             <Row>
               <Col className="image-placeholder"></Col>
@@ -342,6 +385,7 @@ const Home = () => {
             </Row>
           </Card.Body>
         </Card>
+        */}
       </Row>
 
       <Row className="card-row single-card">
@@ -393,36 +437,7 @@ const Home = () => {
                         ? `Viewing ${searchedTasks.length} results:`
                         : 'Search for a Task to begin'}
                 </h2> */}
-        <CardColumns>
-          {searchedTasks.map((task) => {
-            return (
-              <Card key={task.taskId} border="dark">
-                {task.image ? (
-                  <Card.Img
-                    src={task.image}
-                    alt={`The cover for ${task.title}`}
-                    variant="top"
-                  />
-                ) : null}
-                <Card.Body>
-                  <Card.Title>{task.title}</Card.Title>
-                  <p className="small">Authors: {task.authors}</p>
-                  <Card.Text>{task.description}</Card.Text>
-                  {Auth.loggedIn() && (
-                    <Button>
-                      {/* disabled={savedTaskIds?.some((savedTaskId) => savedTaskId === Task.TaskId)}
-                                            className='btn-block btn-info'
-                                            onClick={() => handleSaveTask(task.taskId)}>
-                                            {savedTaskIds?.some((savedTaskId) => savedTaskId === task.TaskId)
-                                                ? 'This task  has already been claimed!'
-                                                : 'Claim this Task!'} */}
-                    </Button>
-                  )}
-                </Card.Body>
-              </Card>
-            );
-          })}
-        </CardColumns>
+        <CardColumns></CardColumns>
       </Container>
     </Container>
   );
