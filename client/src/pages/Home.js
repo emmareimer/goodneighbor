@@ -13,10 +13,25 @@ import {
 // import { useMutation } from '@apollo/client';
 import Auth from "../utils/auth";
 import toggle from "../utils/card-expansion";
+import { useQuery, useMutation } from "@apollo/client";
+import { UPDATE_MY_CLAIM } from "../utils/mutations";
+import { QUERY_ME } from "../utils/queries";
 
 const Home = () => {
   const [searchedTasks, setSearchedTasks] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+
+  // ---------------- David added ------------------------
+  const [updateMyClaim] = useMutation(UPDATE_MY_CLAIM);
+  // const [loading, data] = useQuery(QUERY_ME);
+
+  const handleClaim = async (taskId) => {
+    await updateMyClaim({
+      variables: { taskId }
+    });
+  }
+  // ---------------- David added ------------------------
+
 
   // const [savedTaskIds, setSavedTaskIds] = useState(getSavedTaskIds());
 
@@ -26,7 +41,9 @@ const Home = () => {
   //     return () => saveTaskIds(savedTaskIds);
   // });
 
-  const searchBar = () => {};
+
+
+  const searchBar = () => { };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -202,6 +219,9 @@ const Home = () => {
                 mollis, eros dui efficitur ante, eu semper arcu diam vel mauris.
                 Sed consectetur varius eros non facilisis.
               </Card.Text>
+            </Row>
+            <Row>
+              {/* <button onClick={() => handleClaim(taskId)}>Claim Task</button> */}
             </Row>
           </Card.Body>
         </Card>

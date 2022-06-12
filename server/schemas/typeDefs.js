@@ -1,5 +1,6 @@
 const { gql } = require('apollo-server-express');
 
+// David added "updateMyTask", line 61
 const typeDefs = gql`
     type User {
         _id: ID!
@@ -26,16 +27,16 @@ const typeDefs = gql`
         name: String!
         taskDescription: String!
         open: Boolean
-        category: String!
-        instructions: String!
+        category: String
+        instructions: String
         created_by: User
         created_at: String
         claimed_by: User
         completed_by: User
         completed_at: String
         contactless: Boolean
-        city: String!
-        state: String!
+        city: String
+        state: String
         zipcode: Int!
         streetAddress: String
         optionalUnitNumber: String
@@ -45,7 +46,7 @@ const typeDefs = gql`
         task(id: ID): Task
         tasks(zipcode: Int): [Task]
         user(email: String!): User
-        me: User
+        me(email: String!): User
     }
 
     type Mutation {
@@ -57,6 +58,7 @@ const typeDefs = gql`
         # --- TASK MUTATIONS ---
         addTask(name: String, taskDescription: String, open: Boolean, category: String, instructions: String, created_by: String, contactless: Boolean, city: String, state:   String, zipcode: Int, streetAddress: String, optionalUnitNumber: String): Task
         updateTask(id: ID, claimed_by: String, completed_by: String, completed_at: String, open: Boolean, latitude: Int, longitude: Int): Task
+        updateMyClaim(taskId: ID!): User
     }
 `;
 

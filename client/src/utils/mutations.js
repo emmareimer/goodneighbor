@@ -122,7 +122,7 @@ mutation UpdateUser($email: String, $claimedTasks: [ID]) {
 // ---------------- ADD TASK ------------------
 
 export const ADD_TASK = gql`
-mutation Mutation($name: String, $taskDescription: String, $open: Boolean, $category: String, $createdBy: String, $city: String, $state: String, $zipcode: Int, $streetAddress: String, $optionalUnitNumber: String, $instructions: String, $email: String, $postedTasks: [ID]) {
+mutation addTask($name: String, $taskDescription: String, $open: Boolean, $category: String, $createdBy: String, $city: String, $state: String, $zipcode: Int, $streetAddress: String, $optionalUnitNumber: String, $instructions: String, $email: String, $postedTasks: [ID]) {
   addTask(name: $name, taskDescription: $taskDescription, open: $open, category: $category, created_by: $createdBy, city: $city, state: $state, zipcode: $zipcode, streetAddress: $streetAddress, optionalUnitNumber: $optionalUnitNumber, instructions: $instructions) {
     name
     taskDescription
@@ -187,8 +187,9 @@ mutation Mutation($updateTaskId: ID, $open: Boolean, $completedBy: String) {
 
 // --- UPDATE SINGLE TASK CLAIMED_BY AND UPDATE USER CLAIMED_TASKS --- ***
 
+// 
 export const UPDATE_TASK_CLAIMED = gql`
-mutation Mutation($claimedBy: String, $updateTaskId: ID) {
+mutation updateClaim($claimedBy: String, $updateTaskId: ID) {
   updateTask(claimed_by: $claimedBy, id: $updateTaskId) {
     claimed_by {
       _id
@@ -196,6 +197,18 @@ mutation Mutation($claimedBy: String, $updateTaskId: ID) {
   }
 }
 `
+
+// ---------------- David added ------------------------
+export const UPDATE_MY_CLAIM = gql`
+mutation updateMyClaim($taskId: ID!) {
+  updateMyClaim(taskId: $taskId) {
+    _id
+  }
+}
+`
+// ---------------- David added ------------------------
+
+
 
 // TEST DATA FOR UPDATE TASKS
 

@@ -4,7 +4,7 @@ import { gql } from "@apollo/client";
 
 // TODO UPDATE TO GET USER ID
 // -------------- GET USER --------------
-export const GET_USER = gql `
+export const GET_USER = gql`
 query User($email: String!) {
     user(email: $email) {
       name
@@ -28,9 +28,9 @@ query User($email: String!) {
 
 // ------------- QUERY ME ------------------
 
-export const QUERY_ME = gql `
-query Query {
-  me {
+export const QUERY_ME = gql`
+query me($email: String!) {
+  me(email: $email) {
     _id
     email
     username
@@ -78,7 +78,7 @@ query Query($email: String!) {
 
 // -------------- GET SINGLE TASK ------------------ ****
 
-export const GET_SINGLE_TASK = gql `
+export const GET_SINGLE_TASK = gql`
 query Query($taskId: ID) {
   task(id: $taskId) {
     name
@@ -103,7 +103,7 @@ query Query($taskId: ID) {
 
 // -------------- GET ALL TASKS BY ZIP CODE -------- ****
 
-export const GET_ALL_TASKS_BY_ZIP_CODE = gql `
+export const GET_ALL_TASKS_BY_ZIP_CODE = gql`
 query Query($zipcode: Int) {
   tasks(zipcode: $zipcode) {
     name
