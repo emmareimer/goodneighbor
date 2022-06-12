@@ -1,8 +1,8 @@
-const { Task, User } = require('../models');
-const { AuthenticationError } = require('apollo-server-express');
-const { signToken } = require('../utils/auth');
+const { Task, User } = require("../models");
+const { AuthenticationError } = require("apollo-server-express");
+const { signToken } = require("../utils/auth");
 // Imports sendusersignup function from courier util
-const { sendUserSignup } = require('../utils/courier');
+const { sendUserSignup } = require("../utils/courier");
 
 const resolvers = {
   Query: {
@@ -17,16 +17,9 @@ const resolvers = {
     user: async (parent, { email }) => {
       return User.findOne({ email });
     },
-    // me: async (parent, { email }) => {
-    //   const params = email ? { email } : {};
-    //   return User.findOne(params);
-    // },
-    me: async (parent, { email }) => {
-
-      console.log('me.query: ', email);
-      const response = User.findOne({ email });
-      console.log('response: ', response);
-      return response;
+    me: async (parent, { _id }) => {
+      const params = _id ? { _id } : {};
+      return User.findOne(params);
     },
   },
 
@@ -44,13 +37,13 @@ const resolvers = {
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const correctPw = await user.isCorrectPassword(password);
 
       if (!correctPw) {
-        throw new AuthenticationError('Incorrect credentials');
+        throw new AuthenticationError("Incorrect credentials");
       }
 
       const token = signToken(user);
@@ -58,23 +51,48 @@ const resolvers = {
       return { token, user };
     },
     updateUser: async (parent, args) => {
-      return await User.findOneAndUpdate({ email: args.email }, { name: args.name, email: args.email, username: args.username, password: args.password, posted_tasks: args.posted_tasks, claimed_tasks: args.claimed_tasks, city: args.city, state: args.state, zipcode: args.zipcode, streetAddress: args.streetAddress, optionalUnityNumber: args.optionalUnitNumber }, { new: true })
+      return await User.findOneAndUpdate(
+        { email: args.email },
+        {
+          name: args.name,
+          email: args.email,
+          username: args.username,
+          password: args.password,
+          posted_tasks: args.posted_tasks,
+          claimed_tasks: args.claimed_tasks,
+          city: args.city,
+          state: args.state,
+          zipcode: args.zipcode,
+          streetAddress: args.streetAddress,
+          optionalUnityNumber: args.optionalUnitNumber,
+        },
+        { new: true }
+      );
     },
     addTask: async (parent, args) => {
       const task = await Task.create(args);
-      await User.findOneAndUpdate({ _id: task.created_by }, { $push: { posted_tasks: task._id } })
+      await User.findOneAndUpdate(
+        { _id: task.created_by },
+        { $push: { posted_tasks: task._id } }
+      );
       return task;
     },
     updateTask: async (parent, args) => {
-      return await Task.findByIdAndUpdate({ _id: args.id }, { open: args.open, claimed_by: args.claimed_by, completed_by: args.completed_by, completed_at: args.completed_at }, { new: true })
+      const task = await Task.findOneAndUpdate(
+        { _id: args.id },
+        {
+          open: args.open,
+          claimed_by: args.claimed_by,
+          completed_by: args.completed_by,
+          completed_at: args.completed_at,
+        },
+        { new: true }
+      );
+      await User.findOneAndUpdate(
+        { _id: task.claimed_by },
+        { $push: { claimed_tasks: task._id } }
+      );
     },
-
-    // ---------------- David added ------------------------
-    updateMyClaim: async (parent, args, context) => {
-      return await User.findOneAndUpdate({ _id: context.user._id }, { $push: { claimed_tasks: { _id: args.taskId } } })
-    },
-    // ---------------- David added ------------------------
-
   },
 };
 

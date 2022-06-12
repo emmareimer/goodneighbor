@@ -37,5 +37,3 @@ export default async function searchZip(e) {
 
   zipCode.value = "";
 }
-
-// zipcodeCard.addEventListener(`click`, searchZip);
