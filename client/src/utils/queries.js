@@ -29,8 +29,8 @@ export const GET_USER = gql`
 // ------------- QUERY ME ------------------
 
 export const QUERY_ME = gql`
-  query Query {
-    me {
+  query me($email: String!) {
+    me(email: $email) {
       _id
       email
       username
