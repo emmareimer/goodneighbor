@@ -1,44 +1,44 @@
 const { Schema, model } = require('mongoose');
 
-const taskSchema = new Schema ({
+const taskSchema = new Schema({
     name: {
         type: String,
-        required: true,
+        // required: true,
     },
     taskDescription: {
         type: String,
-        required: true,
+        // required: true,
     },
     open: {
         type: Boolean,
     },
     category: {
         type: String,
-        required: true,
+        // required: true,
     },
     instructions: {
         type: String,
-        required: true,
+        // required: true,
     },
-    created_by:  {
-            type: Schema.Types.ObjectId,
-            ref: 'User',
-        },
+    created_by: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    },
     created_at: {
         type: Date,
         default: Date.now,
     },
-    claimed_by: 
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User',
-        }
+    claimed_by:
+    {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    }
     ,
-    completed_by: 
-        {
-            type: Schema.Types.ObjectId,
-            ref: 'User',
-        }
+    completed_by:
+    {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+    }
     ,
     completed_at: {
         type: Date,
@@ -49,19 +49,19 @@ const taskSchema = new Schema ({
     },
     city: {
         type: String,
-        required: true,
+        // required: true,
     },
     state: {
         type: String,
-        required: true,
+        // required: true,
     },
     zipcode: {
         type: Number,
-        required: true,
+        // required: true,
     },
     streetAddress: {
         type: String,
-        required: true,
+        // required: true,
     },
     optionalUnitNumber: {
         type: String,

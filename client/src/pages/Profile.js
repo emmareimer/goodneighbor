@@ -3,6 +3,7 @@ import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
 import ClaimedTasks from '../components/ClaimedTasks';
+import TaskForm from '../components/TaskForm';
 
 import { GET_USER, QUERY_ME, GET_USER_CLAIMED_TASKS } from '../utils/queries';
 
@@ -12,36 +13,37 @@ import Auth from '../utils/auth';
 const Profile = () => {
     const { email: userParam } = useParams();
     console.log(userParam);
+    const { loading, data } = useQuery(QUERY_ME, {
+        variables: { email: Auth.getProfile().data.email },
+        skip: !Auth.loggedIn(),
+    });
+    console.log('profile: ', Auth.getProfile().data);
 
-    // NEED HELP, how do we get the current user's data??? the code block below should tell our page what user to pull info from 
-    const { data } = useQuery(userParam ? GET_USER : QUERY_ME, {
-        variables: { email: userParam },
-    }
-    );
-
-    console.log(data);
-
-    const user = data?.me || data?.email || {};
-    // navigate to personal profile page if username is yours
-    if (Auth.loggedIn() && Auth.getProfile().data.email === userParam) {
-        return <Navigate to="/profile" />;
+    if (loading) {
+        return <div>Loading...</div>;
     }
 
-    // we could re-direct to the login page 
-    if (!user?.email) {
+    // guard
+    if (!Auth.loggedIn()) {
+        console.log('Not logged in');
         return (
             <h4>
                 Please sign in.
             </h4>
         );
     }
+    console.log('logged in');
+
+    const user = data?.me;
+
+    console.log('data: ', data);
 
     return (
         // the profile card is naturally going to be pretty dry. Do we want to add a default stock image as a stand in for profile pics?
         <>
             <div>
                 <h2>{user.username}</h2>
-                <h3>{user.name}</h3>
+                {/* <h3>{user.name}</h3> */}
                 <h3>{user.email}</h3>
                 <h3>Current location: {user.zipcode}</h3>
             </div>
@@ -54,6 +56,15 @@ const Profile = () => {
                     showUsername={false}
                 />
             </div>
+
+            {!userParam && (
+                <div
+                    className="col-12 col-md-10 mb-3 p-3"
+                    style={{ border: '1px dotted #1a1a1a' }}
+                >
+                    <TaskForm />
+                </div>
+            )}
         </>
     );
 }

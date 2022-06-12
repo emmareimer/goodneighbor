@@ -3,7 +3,8 @@ import React from "react"
 import { Navbar, Nav, Button } from "react-bootstrap";
 import "../index.css";
 import "../App.css";
-import gnLogo from "./goodneighbor.png"
+import gnLogo from "./goodneighbor.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const logout = (event) => {
@@ -24,10 +25,10 @@ const Header = () => {
               />
             </Navbar.Brand>
             <Nav className="links">
-              <Nav.Link to='/profile' className="profile">
+              <Link to='/profile' className="profile">
                 Profile
-              </Nav.Link>
-              <Nav.Link className="claimed-tasks">
+              </Link>
+              {/* <Nav.Link className="claimed-tasks">
                 Claimed Tasks
               </Nav.Link>
               <Nav.Link className="completed-tasks">
@@ -35,7 +36,7 @@ const Header = () => {
               </Nav.Link>
               <Nav.Link className="nearby-tasks">
                 Tasks Near Me
-              </Nav.Link>
+              </Nav.Link> */}
             </Nav>
             <Button className="green-button" onClick={logout}>
               Logout
