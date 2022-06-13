@@ -12,11 +12,15 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
+
 import { ADD_TASK } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries";
+
 import Auth from "../utils/auth";
+
 const PostedTasks = (element) => {
   const [tasks, setTasks] = useState("");
+
   return (
     <>
       <Card className="displayed-task">
@@ -43,4 +47,5 @@ const PostedTasks = (element) => {
     </>
   );
 };
+
 export default PostedTasks;

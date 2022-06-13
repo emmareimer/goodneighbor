@@ -29,13 +29,16 @@ export const GET_USER = gql`
 // ------------- QUERY ME ------------------
 
 export const QUERY_ME = gql`
-  query me($email: String!) {
-    me(email: $email) {
+query Query($email: String!) {
+  me(email: $email) {
+    _id
+    email
+    username
+    posted_tasks {
       _id
-      email
-      username
     }
   }
+}
 `;
 
 // ------------- GET USER POSTED TASKS -------------
