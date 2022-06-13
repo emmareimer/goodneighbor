@@ -2,12 +2,14 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
+import PostedTasks from '../components/PostedTasks';
 import ClaimedTasks from '../components/ClaimedTasks';
 import TaskForm from '../components/TaskForm';
 
 import { GET_USER, QUERY_ME, GET_USER_CLAIMED_TASKS } from '../utils/queries';
 
 import Auth from '../utils/auth';
+
 
 
 const Profile = () => {
@@ -32,11 +34,12 @@ const Profile = () => {
             </h4>
         );
     }
-    console.log('logged in');
+
 
     const user = data?.me;
+    console.log('user: ', user);
+    console.log(user.posted_tasks);
 
-    console.log('data: ', data);
 
     return (
         // the profile card is naturally going to be pretty dry. Do we want to add a default stock image as a stand in for profile pics?
@@ -49,13 +52,23 @@ const Profile = () => {
             </div>
 
             <div>
-                <ClaimedTasks
-                    tasks={user.claimed_tasks}
-                    title={`Your tasks...`}
-                    showTitle={false}
-                    showUsername={false}
-                />
+                {(user.claimed_tasks || []).map((claimTasks) => {
+
+                    <PostedTasks
+                        element={claimTasks}
+                    />
+                })}
             </div>
+            <div>
+                {(user.posted_tasks || []).map((postedTasks) => {
+
+                    <PostedTasks
+                        element={postedTasks}
+                    />
+                })}
+
+            </div>
+
 
             {!userParam && (
                 <div
