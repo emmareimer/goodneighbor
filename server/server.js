@@ -25,7 +25,7 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.resolve(__dirname, '../client/build/index.html'));
   });
 
-}
+};
 
 
 // Create a new instance of an Apollo server with the GraphQL schema
