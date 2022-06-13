@@ -21,6 +21,9 @@ const Header = () => {
               <img src={gnLogo} className="logo" alt="goodneighbor Logo" />
             </Navbar.Brand>
             <Nav className="links">
+              <Link to="/profile#add-a-task" className="profile">
+                Add A Task
+              </Link>
               <Link to="/profile" className="profile">
                 Profile
               </Link>
