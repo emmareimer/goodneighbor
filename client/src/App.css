@@ -79,6 +79,10 @@ a {
   scrollbar-width: none;
 }
 
+.task-desc p {
+  margin: 15px 0 10px 0;
+}
+
 .home-page::-webkit-scrollbar {
   display: none;
 }
@@ -150,12 +154,12 @@ select:hover {
 .hide-desc > .card-body > .task-desc {
   max-height: 0px;
   overflow: hidden;
-  transition: height 0.5s ease-in;
+  transition: max-height 0.5s ease-in;
 }
 
 .show-desc > .card-body > .task-desc {
   max-height: 200px;
-  transition: height 0.5s ease-in;
+  transition: max-height 0.5s ease-in;
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -250,9 +254,46 @@ select:hover {
   display: none;
 }
 
+.profile-card {
+  background-color: #e3e3e3;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 25px;
+  align-items: center;
+  border-radius: 0.25rem;
+  margin-bottom: 25px;
+}
+
+.profile-card h2 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.profile-card h3 {
+  color: #9ba1a7;
+  font-style: italic;
+  font-size: 1.25rem;
+  text-align: center;
+}
+.dylan-img {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 450px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
 .single-card {
   display: none;
 }
+
+.created-desc {
+  border-right: solid 1px #282c34;
+}
+
+.claimed-col {
+  text-align: center;
+}
+
 /* .card-row {
   position: relative;
   top: 25%;

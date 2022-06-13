@@ -16,12 +16,7 @@ import { GET_ALL_TASKS_BY_ZIP_CODE } from "../utils/queries";
 import Auth from "../utils/auth";
 import searchZip from "../utils/search";
 import { UPDATE_TASK_CLAIMED } from "../utils/mutations";
-import {
-  isActive,
-  setActive,
-  toggle,
-  toggleClass,
-} from "../utils/card-expansion";
+import Add from "../utils/card-expansion";
 
 const Home = () => {
   const [searchedTasks, setSearchedTasks] = useState([]);
@@ -93,18 +88,21 @@ const Home = () => {
 
     if (Auth.loggedIn()) {
       console.log(event.target.name);
-      console.log(Auth.getProfile());
+      console.log(Auth.getProfile(), Auth.getProfile().data._id);
+      const userId = Auth.getProfile().data._id || "";
       const { data } = await updateClaim({
         variables: {
-          claimed_by: Auth.getProfile().data._id || "",
-          id: event.target.name || "",
+          claimedBy: userId,
+          updateTaskId: event.target.name || "",
         },
       });
+
+      console.log(data);
     }
   };
 
-  const toggle = (event) => {
-    event.currentTarget.classList.add("show-desc");
+  const Add = (event) => {
+    return event.currentTarget.classList.add("show-desc");
   };
 
   return (
@@ -144,7 +142,11 @@ const Home = () => {
         {searchedTasks.map((element) => {
           if (element.open == true) {
             return (
-              <Card className="hide-desc task-cards" onClick={toggle}>
+              <Card
+                key={element._id}
+                className="hide-desc task-cards"
+                onClick={Add}
+              >
                 <Card.Body>
                   <Row>
                     <Col className="image-placeholder"></Col>
@@ -159,12 +161,14 @@ const Home = () => {
                   </Row>
                   <Row className="task-desc">
                     <Card.Subtitle className="task-subtitle">
-                      <u>Task Description</u>
+                      <strong>
+                        <u>Task Description</u>
+                      </strong>
                     </Card.Subtitle>
                     <Card.Text className="task-description">
-                      <p>{element.taskDescription}</p>
+                      {element.taskDescription}
                       <p>
-                        <b>Special Instructions:</b>
+                        <i>Special Instructions:</i>
                       </p>
                       {element.instructions}
                     </Card.Text>
