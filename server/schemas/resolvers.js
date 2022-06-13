@@ -17,9 +17,9 @@ const resolvers = {
     user: async (parent, { email }) => {
       return User.findOne({ email });
     },
-    me: async (parent, { _id }) => {
-      const params = _id ? { _id } : {};
-      return User.findOne(params);
+    me: async (parent, { email }) => {
+      const response = User.findOne({ email });
+      return response;
     },
   },
 

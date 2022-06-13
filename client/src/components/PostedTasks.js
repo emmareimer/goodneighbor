@@ -12,9 +12,10 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useQuery, useMutation } from "@apollo/client";
+import { ADD_TASK } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries";
 import Auth from "../utils/auth";
-const ClaimedTasks = (element) => {
+const PostedTasks = (element) => {
   const [tasks, setTasks] = useState("");
   return (
     <>
@@ -42,4 +43,4 @@ const ClaimedTasks = (element) => {
     </>
   );
 };
-export default ClaimedTasks;
+export default PostedTasks;

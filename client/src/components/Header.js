@@ -1,5 +1,5 @@
-import Auth from "../utils/auth"
-import React from "react"
+import Auth from "../utils/auth";
+import React from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
 import "../index.css";
 import "../App.css";
@@ -10,7 +10,7 @@ const Header = () => {
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
-  }
+  };
 
   return (
     <Navbar>
@@ -18,14 +18,10 @@ const Header = () => {
         <div className="header-nav">
           <div className="flex-row">
             <Navbar.Brand href="/">
-              <img
-                src={gnLogo}
-                className="logo"
-                alt="goodneighbor Logo"
-              />
+              <img src={gnLogo} className="logo" alt="goodneighbor Logo" />
             </Navbar.Brand>
             <Nav className="links">
-              <Link to='/profile' className="profile">
+              <Link to="/profile" className="profile">
                 Profile
               </Link>
               {/* <Nav.Link className="claimed-tasks">
@@ -37,10 +33,10 @@ const Header = () => {
               <Nav.Link className="nearby-tasks">
                 Tasks Near Me
               </Nav.Link> */}
+              <Button xs className="green-button" onClick={logout}>
+                Logout
+              </Button>
             </Nav>
-            <Button className="green-button" onClick={logout}>
-              Logout
-            </Button>
           </div>
           {/* <div className="divider"></div> */}
         </div>
@@ -49,20 +45,22 @@ const Header = () => {
         <div className="header-nav">
           <div className="flex-row">
             <Navbar.Brand href="/">
-              <img
-                src={gnLogo}
-                className="logo"
-                alt="goodneighbor Logo"
-              />
+              <img src={gnLogo} className="logo" alt="goodneighbor Logo" />
             </Navbar.Brand>
             <div className="LoginSignUp">
               <Button className="green-button">
                 {/* <span className="button-text-white"> Log in</span> */}
-                <a href="/login" className="button-text-white"> Log in </a>
+                <a href="/login" className="button-text-white">
+                  {" "}
+                  Log in{" "}
+                </a>
               </Button>
               <Button className="white-button">
                 {/* <span className="button-text-black"> Sign up</span> */}
-                <a href="/signup" className="button-text-black"> Sign up </a>
+                <a href="/signup" className="button-text-black">
+                  {" "}
+                  Sign up{" "}
+                </a>
               </Button>
             </div>
           </div>
@@ -70,6 +68,6 @@ const Header = () => {
       )}
     </Navbar>
   );
-}
+};
 
 export default Header;
