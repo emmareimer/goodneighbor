@@ -215,10 +215,17 @@ select:hover {
 
 .image-placeholder {
   width: 80px;
+  height: 80px;
   max-width: 15%;
   max-height: 95%;
   aspect-ratio: 1/1;
+  background-image: url("./assets/vacuum-cleaner.png");
+  background-size: contain;
   background-color: #ced4da;
+}
+
+.attribution-link {
+  font-size: x-small;
 }
 
 .card-titles {

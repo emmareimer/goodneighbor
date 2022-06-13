@@ -33,7 +33,7 @@ const Header = () => {
               <Nav.Link className="nearby-tasks">
                 Tasks Near Me
               </Nav.Link> */}
-              <Button xs className="green-button" onClick={logout}>
+              <Button className="green-button" onClick={logout}>
                 Logout
               </Button>
             </Nav>

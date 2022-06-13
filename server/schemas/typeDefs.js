@@ -12,7 +12,7 @@ const typeDefs = gql`
     claimed_tasks: [Task]
     city: String
     state: String
-    zipcode: Int
+    zipcode: String
     streetAddress: String
     optionalUnitNumber: String
   }
@@ -27,7 +27,7 @@ const typeDefs = gql`
     name: String!
     taskDescription: String!
     open: Boolean
-    category: String!
+    category: String
     instructions: String!
     created_by: User
     created_at: String
@@ -35,16 +35,16 @@ const typeDefs = gql`
     completed_by: User
     completed_at: String
     contactless: Boolean
-    city: String!
-    state: String!
-    zipcode: Int!
+    city: String
+    state: String
+    zipcode: String!
     streetAddress: String
     optionalUnitNumber: String
   }
 
   type Query {
     task(id: ID): Task
-    tasks(zipcode: Int, id: ID): [Task]
+    tasks(zipcode: String, id: ID): [Task]
     user(email: String!): User
     me(email: String!): User
   }
@@ -56,7 +56,7 @@ const typeDefs = gql`
       password: String!
       username: String!
       name: String
-      zipcode: Int
+      zipcode: String
     ): Auth
     loginUser(email: String, password: String!, username: String): Auth
     updateUser(
@@ -69,7 +69,7 @@ const typeDefs = gql`
       claimed_tasks: [ID]
       city: String
       state: String
-      zipcode: Int
+      zipcode: String
       streetAddress: String
       optionalUnitNumber: String
     ): User
@@ -85,7 +85,7 @@ const typeDefs = gql`
       contactless: Boolean
       city: String
       state: String
-      zipcode: Int
+      zipcode: String
       streetAddress: String
       optionalUnitNumber: String
     ): Task

@@ -15,7 +15,7 @@ const TaskForm = () => {
     name: "",
     taskDescription: "",
     instructions: "",
-    zipcode: 0,
+    zipcode: "",
     open: true,
     created_by: Auth.getProfile().data._id,
   });
@@ -35,7 +35,7 @@ const TaskForm = () => {
       name: "",
       taskDescription: "",
       instructions: "",
-      zipcode: 0,
+      zipcode: "",
       open: true,
       created_by: Auth.getProfile().data._id,
     });
@@ -57,7 +57,7 @@ const TaskForm = () => {
             <div className="col-12 col-lg-9">
               <textarea
                 name="name"
-                placeholder="Task title"
+                placeholder="What task do you want completed?"
                 value={formState.name}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -65,7 +65,7 @@ const TaskForm = () => {
               ></textarea>
               <textarea
                 name="taskDescription"
-                placeholder="Mow my yard"
+                placeholder="How do you want this task completed?"
                 value={formState.taskDescription}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -73,7 +73,7 @@ const TaskForm = () => {
               ></textarea>
               <textarea
                 name="instructions"
-                placeholder="Mow my yard"
+                placeholder="Do you have any special instructions for us?"
                 value={formState.instructions}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}
@@ -81,7 +81,7 @@ const TaskForm = () => {
               ></textarea>
               <textarea
                 name="zipcode"
-                placeholder="Mow my yard"
+                placeholder="Please input your zipcode."
                 value={formState.zipcode}
                 className="form-input w-100"
                 style={{ lineHeight: "1.5", resize: "vertical" }}

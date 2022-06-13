@@ -30,7 +30,7 @@ const Home = () => {
   const [SearchByZip, { called, loading, data }] = useLazyQuery(
     GET_ALL_TASKS_BY_ZIP_CODE,
     {
-      variables: { zipcode: parseInt(currentZip) },
+      variables: { zipcode: currentZip },
     }
   );
 
@@ -76,10 +76,12 @@ const Home = () => {
   const handleSearch = (event) => {
     event.preventDefault();
     searchZip().then((zips) => {
+      console.log(typeof zips[0]);
       setCurrentZip(zips[0]);
       SearchByZip().then((data) => {
         let info = data.data.tasks;
 
+        console.log(data);
         console.log(info);
         setSearchedTasks(info);
       });
@@ -157,10 +159,14 @@ const Home = () => {
                   </Row>
                   <Row className="task-desc">
                     <Card.Subtitle className="task-subtitle">
-                      Task Description
+                      <u>Task Description</u>
                     </Card.Subtitle>
                     <Card.Text className="task-description">
-                      {element.description}
+                      <p>{element.taskDescription}</p>
+                      <p>
+                        <b>Special Instructions:</b>
+                      </p>
+                      {element.instructions}
                     </Card.Text>
 
                     <Button
@@ -170,6 +176,15 @@ const Home = () => {
                     >
                       Claim Task
                     </Button>
+                    <i>
+                      <a
+                        href="https://www.flaticon.com/free-icons/clean"
+                        title="clean icons"
+                        className="attribution-link"
+                      >
+                        Clean icons created by srip - Flaticon
+                      </a>
+                    </i>
                   </Row>
                 </Card.Body>
               </Card>
