@@ -16,7 +16,12 @@ import { GET_ALL_TASKS_BY_ZIP_CODE } from "../utils/queries";
 import Auth from "../utils/auth";
 import searchZip from "../utils/search";
 import { UPDATE_TASK_CLAIMED } from "../utils/mutations";
-// import { toggle, toggleClass } from "../utils/card-expansion";
+import {
+  isActive,
+  setActive,
+  toggle,
+  toggleClass,
+} from "../utils/card-expansion";
 
 const Home = () => {
   const [searchedTasks, setSearchedTasks] = useState([]);
@@ -82,54 +87,29 @@ const Home = () => {
   };
 
   const claimTask = async (event) => {
+    // event.nativeEvent.stopPropagation();
+
     if (Auth.loggedIn()) {
       console.log(event.target.name);
-      console.log(Auth.getProfile().data._id);
+      console.log(Auth.getProfile());
       const { data } = await updateClaim({
         variables: {
-          claimed_by: Auth.getProfile().data._id,
-          id: event.target.name,
+          claimed_by: Auth.getProfile().data._id || "",
+          id: event.target.name || "",
         },
       });
     }
   };
 
-  // // create function to handle saving a Task to our database
-  // const handleSaveTask = async (TaskId) => {
-  //     // find the Task in `searchedTasks` state by the matching id
-  //     const taskToSave = searchedTasks.find((Task) => Task.TaskId === TaskId);
-  //     // get token
-  //     const token = Auth.loggedIn() ? Auth.getToken() : null;
-
-  //     if (!token) {
-  //         return false;
-  //     }
-
-  //     try {
-  //         // console.log('TaskToSave: ', TaskToSave);
-  //         // console.log('ADD_Task: ', addTask);
-  //         const response = await saveTask({
-  //             variables: { input: TaskToSave }
-  //         });
-  //         console.log('saveTask Response: ', response);
-  //         if (response.errors) {
-  //             throw new Error('something went wrong!');
-  //         }
-
-  //         // if Task successfully saves to user's account, save Task id to state
-  //         setSavedTaskIds([...savedTaskIds, TaskToSave.TaskId]);
-  //     } catch (err) {
-  //         console.error(err);
-  //     }
-  // };
+  const toggle = (event) => {
+    event.currentTarget.classList.add("show-desc");
+  };
 
   return (
-    // <div className="bgImageHome">
     <Container className="home-page">
-      {/* {Auth.loggedIn()} */}
       <Form className="search-bar" onSubmit={handleSearch}>
-        <Row className="searchbar-row hide-desc">
-          <Col xs={6}>
+        <Row className="searchbar-row">
+          <Col xs={8}>
             <Form.Control
               placeholder="Search Zipcodes"
               className="zipcode-input"
@@ -138,7 +118,7 @@ const Home = () => {
               id="zip-code"
             />
           </Col>
-          <Col xs={4}>
+          {/* <Col xs={4}>
             <Form.Control className="category-select" as="select">
               <option>All Categories</option>
               <option value="food">Food</option>
@@ -149,8 +129,8 @@ const Home = () => {
               <option value="errands">Errands</option>
               <option value="moving">Moving</option>
             </Form.Control>
-          </Col>
-          <Col xs="auto">
+          </Col> */}
+          <Col xs="3">
             <Button className="zipcode-search" type="submit">
               Search
             </Button>
@@ -162,7 +142,7 @@ const Home = () => {
         {searchedTasks.map((element) => {
           if (element.open == true) {
             return (
-              <Card className="displayed-task">
+              <Card className="hide-desc task-cards" onClick={toggle}>
                 <Card.Body>
                   <Row>
                     <Col className="image-placeholder"></Col>
@@ -175,7 +155,7 @@ const Home = () => {
                       </Card.Subtitle>
                     </Col>
                   </Row>
-                  <Row>
+                  <Row className="task-desc">
                     <Card.Subtitle className="task-subtitle">
                       Task Description
                     </Card.Subtitle>
@@ -186,6 +166,7 @@ const Home = () => {
                     <Button
                       name={element._id}
                       onClick={(event) => claimTask(event)}
+                      className="claim-task"
                     >
                       Claim Task
                     </Button>

@@ -88,6 +88,8 @@ a {
   height: 100px;
   border-radius: 0.25rem;
   padding-top: 20px;
+  justify-content: space-around;
+  text-align: center;
 }
 
 input,
@@ -110,6 +112,19 @@ select:hover {
   color: white;
   border-radius: 0.25rem;
   cursor: pointer;
+  width: 75%;
+  height: 60px;
+}
+.zipcode-search:hover,
+.zipcode-search:active,
+.zipcode-search:focus {
+  background-color: white;
+  text-align: center;
+  color: black;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  width: 75%;
+  height: 60px;
 }
 
 .search-bar {
@@ -120,10 +135,51 @@ select:hover {
   z-index: 1;
 }
 
-/* .zipcode-input {
-  width: 45%;
-  margin-right: 5%;
-} */
+.zipcode-input {
+  width: 75%;
+  justify-self: center;
+  margin: 0 auto;
+  height: 60px;
+}
+
+.task-cards {
+  margin-bottom: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hide-desc > .card-body > .task-desc {
+  max-height: 0px;
+  overflow: hidden;
+  transition: height 0.5s ease-in;
+}
+
+.show-desc > .card-body > .task-desc {
+  max-height: 200px;
+  transition: height 0.5s ease-in;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  justify-content: end;
+}
+
+.task-desc::-webkit-scrollbar {
+  display: none;
+}
+
+.claim-task {
+  width: 25%;
+  color: white;
+  background-color: black;
+  border: solid 1px black;
+}
+
+.claim-task:hover,
+.claim-task:active,
+.claim-task:focus {
+  background-color: white;
+  color: black;
+  border: solid 1px black;
+}
 
 /* .category-select {
   width: 25%;
@@ -154,6 +210,7 @@ select:hover {
   overflow-y: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .image-placeholder {
