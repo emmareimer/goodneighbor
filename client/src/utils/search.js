@@ -10,6 +10,9 @@ export default async function searchZip(e) {
     "McJoP5WVgt3PzVLZFUG7nu5J9Jc68jX4XOATaButc7wGf4cqmssk8XvcvGkdWwco";
   let zipCode = document.getElementById("zip-code");
 
+  console.log(zipCode.value);
+  console.log(typeof zipCode.value);
+
   return await fetch(
     `https://www.zipcodeapi.com/rest/${apikey}/radius.json/${zipCode.value}/5/mile`
   )
@@ -30,10 +33,12 @@ export default async function searchZip(e) {
         // console.log(data);
         // 2. Return those tasks, and nest another for each statement where cards are built featuring tasks of all the returned zip codes
       });
+      zipCode = "";
+
+      console.log(res);
+
       return res;
     });
   console.log("Zipcode: " + zipCode.value);
   // console.log("Category: " + categories.value);
-
-  zipCode.value = "";
 }

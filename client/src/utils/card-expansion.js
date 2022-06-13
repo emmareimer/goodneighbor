@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
-export default function toggleClass() {
-  const [isActive, setActive] = useState(false);
+// export default function toggleClass() {
+//   const [isActive, setActive] = useState(false);
 
-  const toggle = (event) => {
-    setActive((current) => !current);
-    console.log(`click!`);
-  };
-}
+//   const toggle = (event) => {
+//     setActive((current) => !current);
+//     console.log(`click!`);
+//   };
+// }

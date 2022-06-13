@@ -29,16 +29,16 @@ export const GET_USER = gql`
 // ------------- QUERY ME ------------------
 
 export const QUERY_ME = gql`
-query Query($email: String!) {
-  me(email: $email) {
-    _id
-    email
-    username
-    posted_tasks {
+  query Query($email: String!) {
+    me(email: $email) {
       _id
+      email
+      username
+      posted_tasks {
+        _id
+      }
     }
   }
-}
 `;
 
 // ------------- GET USER POSTED TASKS -------------
@@ -107,7 +107,7 @@ export const GET_SINGLE_TASK = gql`
 // -------------- GET ALL TASKS BY ZIP CODE -------- ****
 
 export const GET_ALL_TASKS_BY_ZIP_CODE = gql`
-  query Query($zipcode: Int) {
+  query Query($zipcode: String) {
     tasks(zipcode: $zipcode) {
       _id
       name
