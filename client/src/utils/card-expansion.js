@@ -1,7 +1,10 @@
-// let card = document.getElementById;
+import React from "react";
 
-// export default function toggle() {
-//   card.classList.toggle("show-desc");
+// export default function toggleClass() {
+//   const [isActive, setActive] = useState(false);
+
+//   const toggle = (event) => {
+//     setActive((current) => !current);
+//     console.log(`click!`);
+//   };
 // }
-
-// card.addEventListener("click", toggle);

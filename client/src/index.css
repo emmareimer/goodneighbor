@@ -50,7 +50,7 @@ a {
 body {
   margin: 0;
   padding: 5px 20px 0px 20px;
-  font-family: var(--font-family-poppins)
+  font-family: var(--font-family-poppins);
 }
 
 img {
@@ -153,11 +153,15 @@ img {
   align-items: center;
   background-color: var(--white);
   padding: 0px;
+  width: 100%;
 }
 
 .flex-row {
   display: flex;
   align-items: center;
+  width: 80%;
+  align-items: center;
+  justify-content: space-around;
   /* min-width: 1360px; */
 }
 
@@ -166,12 +170,12 @@ img {
 }
 
 .links {
-  height: 24px;
+  /* height: 24px;
   margin-left: 40px;
-  margin-top: 8px;
+  margin-top: 8px; */
   display: flex;
-  align-items: flex-start;
-  min-width: 541px;
+  align-items: center;
+  justify-items: flex-end;
   color: var(--granite-gray2);
   font-family: var(--font-family-poppins);
   font-size: var(--font-size-m);
@@ -184,7 +188,6 @@ img {
   min-height: 24px;
   min-width: 50px;
   letter-spacing: 0;
-
 }
 
 .claimed-tasks {
@@ -212,12 +215,13 @@ img {
   height: 40px;
   display: flex;
   padding: 7.5px 18.5px;
-  align-items: flex-start;
+  align-items: flex-end;
   background-color: var(--eucalyptus) !important;
   border-radius: 8px;
   overflow: hidden;
+  margin-left: 50px;
   /* border: 1px solid var(--licorice) !important; */
-} 
+}
 
 .white-button {
   width: 98px;
@@ -277,8 +281,6 @@ img {
   flex-direction: column;
   align-items: center;
 }
-
-
 
 .form-label {
   margin-top: 20px;
@@ -368,7 +370,6 @@ img {
   text-align: center;
 }
 
-
 /* ----- LOGIN ----- */
 
 .submit-button-login {
@@ -380,7 +381,7 @@ img {
   background-color: var(--blue-ribbon);
   border-radius: 32px;
   overflow: hidden;
-  opacity: 0.25,
+  opacity: 0.25;
 }
 
 .redirect-button {
@@ -430,7 +431,7 @@ img {
   /* min-height: 36px; */
   /* min-width: 288px; */
   text-align: center;
-  letter-spacing: 0; 
+  letter-spacing: 0;
   width: 580px;
   margin-top: 20px;
   display: flex;
@@ -438,7 +439,7 @@ img {
 }
 
 /* -----TASK DESCRIPTION----- */
-.content{
+.content {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -446,7 +447,7 @@ img {
   min-height: 660px;
 }
 
-.frame{
+.frame {
   width: 438px;
   margin-top: 20px;
   display: flex;
@@ -456,23 +457,21 @@ img {
 }
 
 /* -----CREATE A TASK----- */
-.form-check{
+.form-check {
   margin: auto;
-  padding: 40px; 
+  padding: 40px;
   display: inline-flex;
   justify-content: space-around;
   flex-direction: row;
 }
 
-
 /* ------------- Mobile Media Screen ------------- */
 
 @media screen and (max-width: 768px) {
-
   body {
     margin: 0;
     padding: 5px 10px 0px 10px;
-    font-family: var(--font-family-poppins)
+    font-family: var(--font-family-poppins);
   }
 
   .form-group {
@@ -494,67 +493,66 @@ img {
     padding: 0px 0px 20px 0px;
   }
 
-.form-input {
-  margin: 10px;
-  width: 300px;
-  height: 56px;
-  padding: 15px 24px;
-  display: flex;
-  align-items: flex-start;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid var(--granite-gray-5);
-  min-height: 24px;
-  letter-spacing: 0;
-  color: var(--granite-gray-32);
-  font-family: var(--font-family-poppins) !important;
-  font-size: var(--font-size-m);
-  font-weight: 400;
-  font-style: normal;
-}
+  .form-input {
+    margin: 10px;
+    width: 300px;
+    height: 56px;
+    padding: 15px 24px;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--granite-gray-5);
+    min-height: 24px;
+    letter-spacing: 0;
+    color: var(--granite-gray-32);
+    font-family: var(--font-family-poppins) !important;
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    font-style: normal;
+  }
 
-.input-subtitle {
-  width: 300px;
-}
+  .input-subtitle {
+    width: 300px;
+  }
 
-.submit-button1 {
-  width: 300px;
-  height: 64px;
-  padding: 20px;
-}
+  .submit-button1 {
+    width: 300px;
+    height: 64px;
+    padding: 20px;
+  }
 
-.card-title {
-  color: var(--mine-shaft);
-  font-family: var(--font-family-poppins) !important;
-  font-size: var(--font-size-x12);
-  font-weight: 500;
-  font-style: normal;
-  height: 63px;
-  min-width: 304px;
-  text-align: center;
-  letter-spacing: 0;
-}
+  .card-title {
+    color: var(--mine-shaft);
+    font-family: var(--font-family-poppins) !important;
+    font-size: var(--font-size-x12);
+    font-weight: 500;
+    font-style: normal;
+    height: 63px;
+    min-width: 304px;
+    text-align: center;
+    letter-spacing: 0;
+  }
 
-.logo-text {
-  font-family: var(--font-family-poppins);
-  font-weight: 700;
-  color: var(--blue-ribbon);
-  font-size: var(--font-size-x12);
-}
+  .logo-text {
+    font-family: var(--font-family-poppins);
+    font-weight: 700;
+    color: var(--blue-ribbon);
+    font-size: var(--font-size-x12);
+  }
 
-.loginScreen, .signupScreen {
-  display: block;
-  align-items: center;
-  pointer-events: none;
-  margin-top: 10%;
-  margin-right: -10%;
-  margin-bottom: 10%;
-  margin-left: -10%
-}
+  .loginScreen,
+  .signupScreen {
+    display: block;
+    align-items: center;
+    pointer-events: none;
+    margin-top: 10%;
+    margin-right: -10%;
+    margin-bottom: 10%;
+    margin-left: -10%;
+  }
 
-.logo {
-  width: 150px;
-}
-
-
+  .logo {
+    width: 150px;
+  }
 }
