@@ -26,6 +26,10 @@ section {
   }
 }
 
+.add-task-link {
+margin-right: 25px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -306,8 +310,14 @@ select:hover {
   height: 100%;
 } */
 
+.add-task-container {
+  height: 500px;
+}
+
 .footer {
   position: fixed;
+  margin: 0;
+  padding: 5 20 0 20;
   left: 0;
   bottom: 0;
   width: 100%;
